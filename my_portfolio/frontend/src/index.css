@@ -1,0 +1,198 @@
+/* ── Fonts ── */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css");
+
+/* ── CSS Variables ── */
+:root {
+  --bg:          #0d0b14;
+  --surface:     rgba(255, 255, 255, 0.025);
+  --border:      rgba(167, 139, 250, 0.15);
+  --border-soft: rgba(167, 139, 250, 0.07);
+  --gold:        #c9a96e;
+  --gold-dim:    rgba(201, 169, 110, 0.08);
+  --accent:      #a78bfa;
+  --accent-dim:  rgba(167, 139, 250, 0.08);
+  --text:        #ede9fe;
+  --text-muted:  #c4b5fd;
+  --text-dim:    #7c6fa0;
+  --text-ghost:  #4c4270;
+  --font-serif:  "Cormorant Garamond", Georgia, serif;
+  --font-mono:   "DM Mono", monospace;
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --section-pad: 7rem 2rem;
+  --max-w:       1120px;
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 169, 110, 0.3);
+  border-radius: 2px;
+}
+
+/* ── Grain overlay ── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px;
+  opacity: 0.45;
+}
+
+/* ── Keyframes ── */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-rev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-10px)
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+/* ── Page entry ── */
+#root {
+  animation: page-in 0.9s var(--ease) forwards;
+}
+
+/* ── Shared section wrapper ── */
+.section-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--section-pad);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── FadeIn utility ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Section label ── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+/* ── Section title ── */
+.section-title {
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 3rem 0;
+  color: var(--text);
+}
+
+.mockupIcon {
+  font-size: 2.8rem;
+  position: relative;
+  z-index: 1;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-rev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-10px)
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}

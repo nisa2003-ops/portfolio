@@ -1,0 +1,73 @@
+.section {
+  background: rgba(201,169,110,0.02);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  background: var(--surface);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.main { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.degree {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.institution {
+  font-size: 1rem;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.location {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-ghost);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.28rem 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: var(--accent-dim);
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.9rem;
+  align-self: start;
+}
+
+@media (max-width: 600px) {
+  .card   { grid-template-columns: 1fr; }
+  .period { justify-self: start; }
+}
