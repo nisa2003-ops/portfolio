@@ -61,7 +61,7 @@ export default function Hero() {
         <div className={styles.ring2} />
 
         <div className={styles.avatar}>
-          {<img src="/public/Nisadu.jpeg" alt={OWNER.name} className={styles.avatarImg} /> }
+          {<img src="/Nisadu.jpeg" alt={OWNER.name} className={styles.avatarImg} /> }
         </div>
 
         <div className={styles.badge}>{OWNER.location}</div>
