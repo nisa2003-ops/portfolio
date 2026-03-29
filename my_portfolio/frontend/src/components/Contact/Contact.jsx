@@ -41,7 +41,7 @@ export default function Contact() {
   const handleResume = () => {
     const a = document.createElement("a");
     a.href = OWNER.resumeUrl;
-    a.download = "Nisadu_Perera_Resume.pdf";
+    a.download = "Nisadu_Nimsitha_Resume.pdf";
     a.click();
   };
 
@@ -66,8 +66,8 @@ export default function Contact() {
               <div className={styles.infoPanel}>
                 {[
                   { label: "Email",    value: OWNER.email,    copy: true },
-                  { label: "GitHub",   value: "github.com/nisadu",   href: OWNER.github },
-                  { label: "LinkedIn", value: "linkedin.com/in/nisadu", href: OWNER.linkedin },
+                  { label: "GitHub",   value: "github.com/nisadu2003-ops",   href: OWNER.github },
+                  { label: "LinkedIn", value: "linkedin.com/in/nisadu-nimsitha-512a24348", href: OWNER.linkedin },
                 ].map((row, i, arr) => (
                   <div key={row.label}>
                     <div className={styles.infoRow}>
