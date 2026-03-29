@@ -66,7 +66,7 @@ export default function Contact() {
               <div className={styles.infoPanel}>
                 {[
                   { label: "Email",    value: OWNER.email,    copy: true },
-                  { label: "GitHub",   value: "github.com/nisadu2003-ops",   href: OWNER.github },
+                  { label: "GitHub",   value: "github.com/nisa2003-ops",   href: OWNER.github },
                   { label: "LinkedIn", value: "linkedin.com/in/nisadu-nimsitha-512a24348", href: OWNER.linkedin },
                 ].map((row, i, arr) => (
                   <div key={row.label}>
