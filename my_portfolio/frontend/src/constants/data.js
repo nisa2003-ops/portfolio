@@ -123,7 +123,7 @@ export const EDUCATION = [
     degree: "G.C.E Ordinary Level",
     institution: "St.Peter's College",
     period: "2014-2019",
-    location: "Colombo 10",
+    location: "Colombo 04",
     highlights: [
       "Obtained A pass for all 9 subjects",
     ],
