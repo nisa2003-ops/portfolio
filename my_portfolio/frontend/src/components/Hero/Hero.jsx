@@ -68,6 +68,9 @@ export default function Hero() {
           <button className={styles.ctaPrimary} onClick={() => scrollTo("projects")}>
             View Projects
           </button>
+          <button className={styles.ctaSecondary} onClick={handleResume}>
+            ↓ Download CV
+          </button>
         </div>
 
         <div className={styles.socials}>
