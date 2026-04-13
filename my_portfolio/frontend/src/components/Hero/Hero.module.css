@@ -169,6 +169,14 @@
   text-transform: uppercase;
 }
 
+.cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 300;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .hero        { justify-content: center; text-align: center; padding-top: 6rem; }
