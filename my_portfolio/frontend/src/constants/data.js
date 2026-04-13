@@ -17,6 +17,7 @@ export const OWNER = {
     { value: "4+", label: "Projects" },
     { value: "3+", label: "Tech Stacks" },
   ],
+  resumeUrl: "/Nisadu_Nimsitha_CV.pdf"
 };
 
 export const NAV_LINKS = ["About", "Education", "Projects", "Skills", "Contact"];
