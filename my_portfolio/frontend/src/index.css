@@ -196,3 +196,32 @@ body::before {
     transform: translateY(0)
   }
 }
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0
+  }
+}
+
+[data-theme="light"] {
+  --bg: #f5f3ff;
+  --surface: rgba(109, 40, 217, 0.04);
+  --border: rgba(109, 40, 217, 0.15);
+  --border-soft: rgba(109, 40, 217, 0.08);
+  --accent: #7c3aed;
+  --accent-dim: rgba(124, 58, 237, 0.08);
+  --text: #1e1b2e;
+  --text-muted: #4c3d6e;
+  --text-dim: #6d5a8a;
+  --text-ghost: #9d8ec0;
+}
+
+[data-theme="light"] body::before {
+  opacity: 0.15;
+}
