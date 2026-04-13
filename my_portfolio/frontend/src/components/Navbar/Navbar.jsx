@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { NAV_LINKS, OWNER } from "../../constants/data";
 import styles from "./Navbar.module.css";
 
-export default function Navbar() {
-  const [active, setActive]     = useState("");
+export default function Navbar({ theme, toggleTheme }) {
+  const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -31,16 +31,11 @@ export default function Navbar() {
     setMenuOpen(false);
   };
 
-  const handleResume = () => {
-    const a = document.createElement("a");
-    a.href = OWNER.resumeUrl;
-    a.download = "Nisadu_Nimsitha_Resume.pdf";
-    a.click();
-  };
-
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.inner}>
+
+        {/* Logo */}
         <span
           className={styles.logo}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -48,7 +43,7 @@ export default function Navbar() {
           N<span className={styles.dot}>.</span>
         </span>
 
-        {/* Desktop */}
+        {/* Desktop links */}
         <div className={styles.links}>
           {NAV_LINKS.map((n) => (
             <button
@@ -59,18 +54,35 @@ export default function Navbar() {
               {n}
             </button>
           ))}
+          <button
+            className={styles.themeBtn}
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? "☀" : "☾"}
+          </button>
         </div>
 
-        {/* Hamburger */}
-        <button
-          className={styles.hamburger}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={`${styles.bar} ${menuOpen ? styles.bar1Open : ""}`} />
-          <span className={`${styles.bar} ${menuOpen ? styles.barHide : ""}`} />
-          <span className={`${styles.bar} ${menuOpen ? styles.bar3Open : ""}`} />
-        </button>
+        {/* Mobile right side */}
+        <div className={styles.mobileRight}>
+          <button
+            className={styles.themeBtn}
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? "☀" : "☾"}
+          </button>
+          <button
+            className={styles.hamburger}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`${styles.bar} ${menuOpen ? styles.bar1Open : ""}`} />
+            <span className={`${styles.bar} ${menuOpen ? styles.barHide : ""}`} />
+            <span className={`${styles.bar} ${menuOpen ? styles.bar3Open : ""}`} />
+          </button>
+        </div>
+
       </div>
 
       {/* Mobile menu */}
