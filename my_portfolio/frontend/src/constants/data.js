@@ -94,7 +94,7 @@ export const STATUS_COLORS = {
 
 export const EDUCATION = [
   {
-    degree: "Bachelor of Science in Computer Science, Statistics & Mathematics",
+    degree: "BSc in Computer Science, Statistics and Mathematics",
     institution: "University of Sri Jayewardenepura",
     period: "2024 — Present",
     location: "Nugegoda, Sri Lanka",
