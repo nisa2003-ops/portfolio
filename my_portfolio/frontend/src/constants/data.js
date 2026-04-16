@@ -1,7 +1,3 @@
-// ─────────────────────────────────────────
-//  PORTFOLIO DATA  –  edit this file only
-// ─────────────────────────────────────────
-
 export const OWNER = {
   name: "Nisadu Nimsitha",
   title: "Undergraduate Student",
