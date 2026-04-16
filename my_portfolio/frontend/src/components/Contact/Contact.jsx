@@ -1,9 +1,12 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import FadeIn from "../FadeIn";
 import { OWNER } from "../../constants/data";
 import styles from "./Contact.module.css";
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+const SERVICE_ID  = "service_hbg2b1q";
+const TEMPLATE_ID = "template_2enulx6";
+const PUBLIC_KEY  = "jewkLNoRoysScc5nu";
 
 const INITIAL = { name: "", email: "", message: "" };
 
@@ -18,16 +21,22 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");
+
     try {
-      const res = await fetch(`${BACKEND_URL}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Server error");
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name:  form.name,
+          from_email: form.email,
+          message:    form.message,
+        },
+        PUBLIC_KEY
+      );
       setStatus("success");
       setForm(INITIAL);
-    } catch {
+    } catch (err) {
+      console.error("EmailJS error:", err);
       setStatus("error");
     }
   };
@@ -65,9 +74,10 @@ export default function Contact() {
             <FadeIn delay={0.15}>
               <div className={styles.infoPanel}>
                 {[
-                  { label: "Email",    value: OWNER.email,    copy: true },
-                  { label: "GitHub",   value: "github.com/nisa2003-ops",   href: OWNER.github },
-                  { label: "LinkedIn", value: "linkedin.com/in/nisadu-nimsitha-512a24348", href: OWNER.linkedin },
+                  { label: "Email",    content: OWNER.email,                    copy: true },
+                  { label: "GitHub",   content: "github.com/nisa2003-ops",      href: OWNER.github },
+                  { label: "LinkedIn", content: "linkedin.com/in/nisadu",       href: OWNER.linkedin },
+                  { label: "Location", content: OWNER.location },
                 ].map((row, i, arr) => (
                   <div key={row.label}>
                     <div className={styles.infoRow}>
@@ -75,10 +85,10 @@ export default function Contact() {
                       <div className={styles.infoValue}>
                         {row.href ? (
                           <a href={row.href} target="_blank" rel="noopener noreferrer" className={styles.infoLink}>
-                            {row.value}
+                            {row.content}
                           </a>
                         ) : (
-                          <span>{row.value}</span>
+                          <span>{row.content}</span>
                         )}
                         {row.copy && (
                           <button className={styles.copyBtn} onClick={handleCopy}>
@@ -91,6 +101,9 @@ export default function Contact() {
                   </div>
                 ))}
 
+                <button className={styles.resumeBtn} onClick={handleResume}>
+                  ↓ Download Full Resume / CV
+                </button>
               </div>
             </FadeIn>
 
@@ -154,7 +167,7 @@ export default function Contact() {
                 )}
                 {status === "error" && (
                   <p className={styles.errorMsg}>
-                    Something went wrong. Please try emailing directly.
+                    Something went wrong. Please email me directly.
                   </p>
                 )}
               </form>
