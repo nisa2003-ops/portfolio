@@ -7,7 +7,7 @@ export const OWNER = {
   linkedin: "https://www.linkedin.com/in/nisadu-nimsitha-512a24348",
   bio: [
     "I'm a Computer Science student at the University of Sri Jayewardenepura, with a genuine passion for coding and technology. I love turning ideas into real, working software that people can actually use.",
-    "From mobile apps to full-stack web experiences, I enjoy the entire process of building — designing the interface, writing the logic, and seeing it all come together. I'm always exploring new technologies and pushing my skills further.",
+    "From mobile apps to full-stack web experiences, I enjoy the entire process of building, designing the interface, writing the logic, and seeing it all come together. I'm always exploring new technologies and pushing my skills further.",
   ],
   stats: [
     { value: "4+", label: "Projects" },
