@@ -1,7 +1,7 @@
 export const OWNER = {
   name: "Nisadu Nimsitha",
   title: "Undergraduate Student",
-  university: "University of Sri Jayewardenepura",
+  university: "University of Sri Jayawardenepura",
   email: "nisadu2003@gmail.com",
   github: "https://github.com/nisa2003-ops",
   linkedin: "https://www.linkedin.com/in/nisadu-nimsitha-512a24348",
