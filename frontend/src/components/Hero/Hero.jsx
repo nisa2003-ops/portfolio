@@ -60,8 +60,8 @@ export default function Hero() {
         </h1>
 
         <p className={styles.sub}>
-          Building polished, purposeful software from AI powered mobile apps
-          to full stack web experiences.
+          Building polished, purposeful software from AI-powered mobile apps
+          and full-stack web experiences to DevOps pipelines and Machine Learning solutions.
         </p>
 
         <div className={styles.ctas}>
