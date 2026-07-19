@@ -347,34 +347,136 @@
   51%, 100% { opacity: 0; }
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 980px) {
   .hero {
     flex-direction: column;
-    padding: 8rem 1.25rem 3rem;
+    padding: 7.5rem 1.25rem 2.5rem;
     min-height: auto;
+    gap: 1.5rem;
   }
   .avatarWrap {
     width: 100%;
-    max-width: 360px;
-    height: 380px;
+    max-width: 320px;
+    height: 340px;
     order: -1;
   }
   .avatar {
-    width: 240px;
-    height: 280px;
+    width: 220px;
+    height: 260px;
     transform: none;
   }
+  .ring1 { width: 260px; height: 260px; }
+  .ring2 { width: 160px; height: 160px; }
   .content {
     padding: 1.8rem;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .content::before,
+  .content::after {
+    filter: blur(16px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6.5rem 1rem 2rem;
+  }
+  .content {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+  .name {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.1;
+  }
+  .sub {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+  .tag {
+    font-size: 0.6rem;
+    padding: 5px 10px;
+    margin-bottom: 1.2rem;
+  }
+  .badge {
+    font-size: 0.6rem;
+    padding: 6px 11px;
+    bottom: 10px;
+    right: -4px;
   }
 }
 
 @media (max-width: 600px) {
-  .name {
-    font-size: 2.4rem;
+  .hero {
+    padding: 6rem 1rem 1.5rem;
   }
-  .sub {
-    font-size: 0.95rem;
+  .avatarWrap {
+    height: 300px;
+    max-width: 280px;
+  }
+  .avatar {
+    width: 200px;
+    height: 230px;
+  }
+  .content {
+    min-width: auto;
+    width: 100%;
+    padding: 1.35rem;
+  }
+  .ctas {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.95rem 1.2rem;
+    min-height: 48px;
+    font-size: 0.92rem;
+  }
+  .socials {
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .socialLink {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    min-height: 36px;
+  }
+  .name {
+    font-size: clamp(1.9rem, 8.5vw, 2.4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 5.5rem 0.85rem 1.25rem;
+  }
+  .content {
+    padding: 1.2rem;
+    border-radius: 18px;
+  }
+  .tag {
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 360px) {
+  .content {
+    padding: 1rem;
+  }
+  .avatarWrap {
+    height: 260px;
+    max-width: 240px;
+  }
+  .avatar {
+    width: 180px;
+    height: 200px;
   }
 }
