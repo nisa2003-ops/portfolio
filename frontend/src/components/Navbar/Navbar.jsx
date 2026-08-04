@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NAV_LINKS, OWNER } from "../../constants/data";
+import { NAV_LINKS } from "../../constants/data";
 import styles from "./Navbar.module.css";
 
 export default function Navbar({ theme, toggleTheme }) {
@@ -14,12 +14,12 @@ export default function Navbar({ theme, toggleTheme }) {
   }, []);
 
   useEffect(() => {
-    const sections = NAV_LINKS.map((n) =>
-      document.getElementById(n.toLowerCase())
-    );
+    const sections = NAV_LINKS.map((n) => document.getElementById(n.toLowerCase()));
     const obs = new IntersectionObserver(
       (entries) =>
-        entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); }),
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        }),
       { rootMargin: "-40% 0px -55% 0px" }
     );
     sections.forEach((s) => s && obs.observe(s));
@@ -34,8 +34,6 @@ export default function Navbar({ theme, toggleTheme }) {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.inner}>
-
-        {/* Logo */}
         <span
           className={styles.logo}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -43,7 +41,6 @@ export default function Navbar({ theme, toggleTheme }) {
           N<span className={styles.dot}>.</span>
         </span>
 
-        {/* Desktop links */}
         <div className={styles.links}>
           {NAV_LINKS.map((n) => (
             <button
@@ -58,12 +55,12 @@ export default function Navbar({ theme, toggleTheme }) {
             className={styles.themeBtn}
             onClick={toggleTheme}
             aria-label="Toggle theme"
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
           >
             {theme === "dark" ? "☀" : "☾"}
           </button>
         </div>
 
-        {/* Mobile right side */}
         <div className={styles.mobileRight}>
           <button
             className={styles.themeBtn}
@@ -82,10 +79,8 @@ export default function Navbar({ theme, toggleTheme }) {
             <span className={`${styles.bar} ${menuOpen ? styles.bar3Open : ""}`} />
           </button>
         </div>
-
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className={styles.mobileMenu}>
           {NAV_LINKS.map((n) => (

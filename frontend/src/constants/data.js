@@ -16,7 +16,7 @@ export const OWNER = {
   resumeUrl: "/Nisadu_Nimsitha_CV.pdf"
 };
 
-export const NAV_LINKS = ["About", "Education", "Projects", "Skills", "Contact"];
+export const NAV_LINKS = ["About", "Education", "Certifications", "Projects", "Skills", "Contact"];
 
 export const PROJECTS = [
   {
