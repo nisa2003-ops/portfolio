@@ -214,7 +214,7 @@ export const SKILL_GROUPS = [
       { cls: "devicon-mysql-plain colored", label: "MySQL" },
       { cls: "devicon-java-plain colored", label: "Java" },
       { cls: "devicon-javafx-plain colored", label: "JavaFX" },
-      { cls: "devicon-javafx-plain colored", label: "PostgreSQL" }
+      { cls: "devicon-postgresql-plain colored", label: "PostgreSQL" }
     ],
   },
   {
