@@ -20,16 +20,16 @@ export const NAV_LINKS = ["About", "Education", "Certifications", "Projects", "S
 
 export const PROJECTS = [
   {
-    id: "notes-summarizer",
-    title: "AI Notes Summarizer",
+    id: "lanka-microjob",
+    title: "Lanka MicroJob",
     description:
-      "Flutter app that captures notes via OCR (Google ML Kit) and summarises them with Gemini 2.5 Flash. Features dark-themed UI and PDF export.",
-    tags: ["Flutter", "Gemini API", "Google ML Kit", "OCR"],
-    color: "#c9a96e",
-    status: "In Development",
+        "District-aware microjob marketplace for Sri Lanka that connects workers, employers, and brokers. Built with a React frontend and Spring Boot microservices, featuring role-based authentication, job matching, applications, broker-managed placements, notifications, and admin approvals.",
+    tags: ["Docker", "Kubernetes", "Jenkins","React", "Spring Boot", "PostgreSQL"],
+    color: "#d4a84f",
+    status: "Completed",
     demo: null,
-    github: "",
-    mockupIcon: "📝",
+    github: "https://github.com/nisa2003-ops/Lanka-Microjob-V1.git",
+    mockupIcon: "💼",
     mockupBg: "linear-gradient(135deg,#1a1612,#2a2218,#1a1612)",
   },
   {
@@ -133,11 +133,11 @@ export const EDUCATION = [
 export const CERTIFICATIONS = [
   {
     id: "cert-1",
-    title: "YouTube Labs - Kubernetes Crash Course",
+    title: "AWS Academy Graduate - Cloud Security Foundations",
     platform: "KodeKloud",
-    date: "May 2026",
-    credentialUrl: "https://learn.kodekloud.com/certificate/8a90819f-6656-4cc5-ba1a-1e0103bd7e66",
-    icon: "☸️",
+    date: "July 2026",
+    credentialUrl: "https://www.credly.com/badges/0837b3eb-49ed-4e86-a210-a1973df227e6/public_url",
+    icon: "🔐",
     color: "#8eafc2",
   },
   {
@@ -151,6 +151,34 @@ export const CERTIFICATIONS = [
   },
   {
     id: "cert-3",
+    title: "AWS Academy Graduate - Microservices and CI/CD Pipeline Builder",
+    platform: "Amazon Web Services (AWS)",
+    date: "August 2026",
+    credentialUrl: "https://www.credly.com/badges/3508f16c-bc97-4ca3-98d1-a0808731e073/public_url",
+    icon: "☁️",
+    color: "#c9a96e",
+  },
+  {
+    id: "cert-4",
+    title: "AWS Academy Graduate - Cloud Security Builder",
+    platform: "Amazon Web Services (AWS)",
+    date: "September 2026",
+    credentialUrl: "https://www.credly.com/badges/69c7a723-5514-4544-b8e3-d28712da6f91/public_url",
+    icon: "🔐",
+    color: "#c9a96e",
+  },
+
+  {
+    id: "cert-5",
+    title: "YouTube Labs - Kubernetes Crash Course",
+    platform: "KodeKloud",
+    date: "May 2026",
+    credentialUrl: "https://learn.kodekloud.com/certificate/8a90819f-6656-4cc5-ba1a-1e0103bd7e66",
+    icon: "☸️",
+    color: "#8eafc2",
+  },
+  {
+    id: "cert-6",
     title: "Crash Course: Linux For Absolute Beginners",
     platform: "KodeKloud",
     date: "May 2026",
