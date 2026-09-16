@@ -209,11 +209,17 @@ export const SKILL_GROUPS = [
   {
     category: "Backend",
     icons: [
+      { cls: "devicon-spring-plain colored", label: "Spring Boot" },
       { cls: "devicon-php-plain colored", label: "PHP" },
       { cls: "devicon-python-plain colored", label: "Python" },
-      { cls: "devicon-mysql-plain colored", label: "MySQL" },
       { cls: "devicon-java-plain colored", label: "Java" },
       { cls: "devicon-javafx-plain colored", label: "JavaFX" },
+    ],
+  },
+  {
+    category: "Databases",
+    icons: [
+      { cls: "devicon-mysql-plain colored", label: "MySQL" },
       { cls: "devicon-postgresql-plain colored", label: "PostgreSQL" }
     ],
   },
@@ -222,9 +228,10 @@ export const SKILL_GROUPS = [
     icons: [
       { cls: "devicon-git-plain colored", label: "Git" },
       { cls: "devicon-github-original", label: "GitHub" },
-      { cls: "devicon-vscode-plain colored", label: "VS Code" },
+      { cls: "devicon-intellij-idea-plain colored", label: "Intellij Idea" },
       { cls: "devicon-figma-plain colored", label: "Figma" },
-      { cls: "devicon-r-plain colored", label: "R" }
+      { cls: "devicon-r-plain colored", label: "R" },
+      { cls: "devicon-postman-icon-plain colored", label: "Postman" }
     ],
   },
   {
@@ -233,6 +240,9 @@ export const SKILL_GROUPS = [
     { cls: "devicon-docker-plain colored",     label: "Docker" },
     { cls: "devicon-kubernetes-plain colored", label: "Kubernetes" },
     { cls: "devicon-linux-plain colored",      label: "Linux" },
+    { cls: "devicon-jenkins-plain colored",      label: "Jenkins" },
+    { cls: "devicon-sonarqube-plain colored",      label: "SonarQube" },
+    { cls: "devicon-nginx-plain colored",      label: "Nginx" },
   ],
 },
 ];
