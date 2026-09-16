@@ -228,10 +228,10 @@ export const SKILL_GROUPS = [
     icons: [
       { cls: "devicon-git-plain colored", label: "Git" },
       { cls: "devicon-github-original", label: "GitHub" },
-      { cls: "devicon-intellij-idea-plain colored", label: "Intellij Idea" },
+      { cls: "devicon-intellij-plain colored", label: "Intellij Idea" },
       { cls: "devicon-figma-plain colored", label: "Figma" },
       { cls: "devicon-r-plain colored", label: "R" },
-      { cls: "devicon-postman-icon-plain colored", label: "Postman" }
+      { cls: "devicon-postman-plain colored", label: "Postman" }
     ],
   },
   {
