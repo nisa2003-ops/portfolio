@@ -134,7 +134,7 @@ export const CERTIFICATIONS = [
   {
     id: "cert-1",
     title: "AWS Academy Graduate - Cloud Security Foundations",
-    platform: "KodeKloud",
+    platform: "Amazon Web Services (AWS)",
     date: "July 2026",
     credentialUrl: "https://www.credly.com/badges/0837b3eb-49ed-4e86-a210-a1973df227e6/public_url",
     icon: "🔐",
