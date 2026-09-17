@@ -33,6 +33,19 @@ export const PROJECTS = [
     mockupBg: "linear-gradient(135deg,#1a1612,#2a2218,#1a1612)",
   },
   {
+    id: "dengue",
+    title: "Dengue Outbreak Risk Classifier",
+    description:
+        "An MLOps-powered machine learning system that predicts dengue outbreak risk across Sri Lankan districts using historical dengue cases and weather data, with automated training, experiment tracking, API deployment, CI/CD, and model monitoring.",
+    tags: ["Python", "Scikit-learn", "MLflow", "FastAPI", "Docker", "MLOps"],
+    color: "#a8c5b0",
+    status: "In Progress",
+    demo: null,
+    github: "",
+    mockupIcon: "🦟",
+    mockupBg: "linear-gradient(135deg,#0d1812,#14251a,#0d1812)",
+  },
+  {
     id: "Airline Reservation System",
     title: "Airline Reservation System",
     description:
@@ -44,19 +57,6 @@ export const PROJECTS = [
     github: "https://github.com/nisa2003-ops/AirlineReservationSystem",
     mockupIcon: "✈️",
     mockupBg: "linear-gradient(135deg,#111820,#1a2830,#111820)",
-  },
-  {
-    id: "food_order",
-    title: "Food Ordering System",
-    description:
-      "Full Java stack application for managing online food orders.",
-    tags: ["Java", "Linked-List", "Merge Sort"],
-    color: "#a8c5a0",
-    status: "Completed",
-    demo: null,
-    github: "https://github.com/nisa2003-ops/SimpleFoodOrderingSystem",
-    mockupIcon: "🍛",
-    mockupBg: "linear-gradient(135deg,#101812,#182018,#101812)",
   },
   {
     id: "travel",
