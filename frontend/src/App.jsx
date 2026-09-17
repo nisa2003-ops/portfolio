@@ -19,7 +19,7 @@ export default function App() {
       {/* Aurora orbs — CLEAR version - more defined, less blur */}
       <div
         style={{
-          position: "fixed",
+          position: "absolute",
           top: "-100px",
           left: "-80px",
           width: "560px",
@@ -35,7 +35,7 @@ export default function App() {
       />
       <div
         style={{
-          position: "fixed",
+          position: "absolute",
           top: "6%",
           right: "-100px",
           width: "640px",
@@ -51,7 +51,7 @@ export default function App() {
       />
       <div
         style={{
-          position: "fixed",
+          position: "absolute",
           bottom: "-80px",
           left: "28%",
           width: "720px",
