@@ -1,12 +1,12 @@
-import { useInView } from "./useInView";
+import { useInView } from "../hooks/useInView";
 
-export default function FadeIn({ children, style = {} }) {
+export default function FadeIn({ children, delay = 0, style = {} }) {
   const [ref, visible] = useInView();
   return (
     <div
       ref={ref}
       className={`fade-in${visible ? " visible" : ""}`}
-      style={{ ...style }}
+      style={{ transitionDelay: `${delay}s`, ...style }}
     >
       {children}
     </div>

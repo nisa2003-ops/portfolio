@@ -6,8 +6,13 @@ export default function Skills() {
   return (
     <section id="skills" className={styles.section}>
       <div className="section-inner">
-        <FadeIn><p className="section-label">05 — Skills</p></FadeIn>
+        <FadeIn><p className="section-label">Skills</p></FadeIn>
         <FadeIn delay={0.1}><h2 className="section-title">Technical Toolkit</h2></FadeIn>
+        <FadeIn delay={0.15}>
+          <p className="section-description">
+            A focused toolkit for building software, developing models and shipping reliable systems.
+          </p>
+        </FadeIn>
 
         <div className={styles.grid}>
           {SKILL_GROUPS.map((group, gi) => (
@@ -16,8 +21,12 @@ export default function Skills() {
                 <p className={styles.category}>{group.category}</p>
                 <div className={styles.icons}>
                   {group.icons.map((ic) => (
-                    <div key={ic.label} className={styles.iconWrap} title={ic.label}>
-                      <i className={`${ic.cls} ${styles.icon}`} />
+                    <div key={ic.label} className={styles.iconWrap}>
+                      {ic.cls ? (
+                        <i className={`${ic.cls} ${styles.icon}`} aria-hidden="true" />
+                      ) : (
+                        <span className={styles.iconMark} aria-hidden="true">{ic.mark}</span>
+                      )}
                       <span className={styles.iconLabel}>{ic.label}</span>
                     </div>
                   ))}

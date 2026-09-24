@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.25rem;
-  grid-auto-rows: minmax(340px, auto);
+  grid-auto-rows: minmax(360px, auto);
 }
 
 /* Make first project large (bento) */
@@ -18,39 +18,18 @@
   grid-column: span 5;
 }
 .grid > div:nth-child(3) {
-  grid-column: span 5;
+  grid-column: span 4;
 }
 .grid > div:nth-child(4) {
-  grid-column: span 7;
+  grid-column: span 4;
 }
 .grid > div:nth-child(5) {
-  grid-column: span 12;
-}
-.grid > div:nth-child(5) .card {
-  flex-direction: row;
-}
-.grid > div:nth-child(5) .mockup {
-  width: 42%;
-  height: auto;
-  min-height: 260px;
-  border-bottom: none;
-  border-right: 1px solid var(--border);
-}
-@media (max-width: 900px) {
-  .grid > div:nth-child(5) .card {
-    flex-direction: column;
-  }
-  .grid > div:nth-child(5) .mockup {
-    width: 100%;
-    height: 200px;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+  grid-column: span 4;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: auto;
   }
   .grid > div:nth-child(n) {
@@ -60,48 +39,29 @@
 
 /* Card — glass bento */
 .card {
-  background: var(--surface);
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  background: rgba(255,255,255,0.035);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: all 0.4s var(--ease-out);
+  transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out), background 0.3s var(--ease-out);
   position: relative;
   height: 100%;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-soft);
-  opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: var(--border-strong);
-  background: var(--surface-2);
-  box-shadow: 
-    0 20px 60px rgba(0,0,0,0.35),
-    0 0 0 1px rgba(255,255,255,0.05) inset;
-}
-
-.card:hover::before {
-  opacity: 1;
+  background: rgba(255,255,255,0.055);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.22);
 }
 
 /* Mockup — top preview area */
 .mockup {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,7 +76,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(7,10,20,0.6) 100%);
+  background: linear-gradient(180deg, transparent 65%, rgba(7,10,20,0.45) 100%);
   pointer-events: none;
 }
 
@@ -127,14 +87,14 @@
     linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 28px 28px;
-  opacity: 0.6;
+  opacity: 0.38;
 }
 
 .mockupIcon {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 5px 14px rgba(0,0,0,0.24));
 }
 
 .mockupLabel {
@@ -143,11 +103,7 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.6);
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
+  padding: 0;
   position: relative;
   z-index: 1;
 }
@@ -190,7 +146,6 @@
   white-space: nowrap;
   flex-shrink: 0;
   background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(8px);
 }
 
 .desc {
@@ -198,7 +153,24 @@
   font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.7;
-  flex: 1;
+}
+
+.contribution {
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.contribution span {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .tags {
@@ -213,16 +185,9 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 5px 10px;
-  border-radius: var(--radius-full);
+  border-radius: 7px;
   border: 1px solid;
-  background: rgba(0,0,0,0.15);
-  backdrop-filter: blur(8px);
-  transition: all 0.2s;
-}
-
-.tag:hover {
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.10);
 }
 
 /* Links — pill buttons */
@@ -261,14 +226,12 @@
 .demoLink:hover {
   background: white;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255,255,255,0.12);
 }
 
 .githubLink {
   background: rgba(255,255,255,0.06);
   color: var(--text-muted);
   border: 1px solid var(--border);
-  backdrop-filter: blur(12px);
 }
 
 .githubLink:hover {
@@ -280,20 +243,15 @@
 
 /* Mobile Optimized */
 @media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    gap: 1rem;
-  }
-  .card {
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
+  .grid { gap: 1rem; }
 }
 
 @media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
   .mockup {
-    height: 160px;
+    height: 132px;
   }
   .mockupIcon {
     font-size: 2.2rem;
@@ -310,7 +268,7 @@
     line-height: 1.65;
   }
   .links {
-    flex-direction: column;
+    flex-direction: row;
   }
   .demoLink,
   .githubLink {
@@ -328,6 +286,6 @@
     border-radius: 18px;
   }
   .mockup {
-    height: 140px;
+    height: 124px;
   }
 }

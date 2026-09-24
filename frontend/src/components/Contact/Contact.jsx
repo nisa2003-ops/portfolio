@@ -57,15 +57,15 @@ export default function Contact() {
   return (
     <section id="contact" className={styles.section}>
       <div className="section-inner">
-        <FadeIn><p className="section-label">06 — Contact</p></FadeIn>
+        <FadeIn><p className="section-label">Contact</p></FadeIn>
 
         <div className={styles.wrap}>
           <FadeIn delay={0.1}>
             <h2 className={`section-title ${styles.centreTitle}`}>
-              Let's Build Something.
+              Let&apos;s Build Something Useful.
             </h2>
             <p className={styles.sub}>
-              Open to internships, collaborations, and interesting conversations.
+              Open to software engineering, AI/ML and MLOps internships, collaborations and conversations.
             </p>
           </FadeIn>
 
@@ -91,7 +91,7 @@ export default function Contact() {
                           <span>{row.content}</span>
                         )}
                         {row.copy && (
-                          <button className={styles.copyBtn} onClick={handleCopy}>
+                          <button type="button" className={styles.copyBtn} onClick={handleCopy}>
                             {copied ? "Copied ✓" : "Copy"}
                           </button>
                         )}
@@ -101,7 +101,7 @@ export default function Contact() {
                   </div>
                 ))}
 
-                <button className={styles.resumeBtn} onClick={handleResume}>
+                <button type="button" className={styles.resumeBtn} onClick={handleResume}>
                   ↓ Download Full Resume / CV
                 </button>
               </div>
@@ -109,7 +109,7 @@ export default function Contact() {
 
             {/* ── Contact form ── */}
             <FadeIn delay={0.2}>
-              <form className={styles.form} onSubmit={handleSubmit} noValidate>
+              <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.field}>
                   <label className={styles.label} htmlFor="name">Name</label>
                   <input
@@ -117,6 +117,7 @@ export default function Contact() {
                     name="name"
                     type="text"
                     required
+                    autoComplete="name"
                     value={form.name}
                     onChange={handleChange}
                     className={styles.input}
@@ -131,6 +132,7 @@ export default function Contact() {
                     name="email"
                     type="email"
                     required
+                    autoComplete="email"
                     value={form.email}
                     onChange={handleChange}
                     className={styles.input}
@@ -157,16 +159,16 @@ export default function Contact() {
                   className={styles.submitBtn}
                   disabled={status === "sending"}
                 >
-                  {status === "sending" ? "Sending…" : "Send Message →"}
+                  {status === "sending" ? "Sending…" : "Send Message"}
                 </button>
 
                 {status === "success" && (
-                  <p className={styles.successMsg}>
+                  <p className={styles.successMsg} role="status" aria-live="polite">
                     ✓ Message sent! I'll get back to you soon.
                   </p>
                 )}
                 {status === "error" && (
-                  <p className={styles.errorMsg}>
+                  <p className={styles.errorMsg} role="alert">
                     Something went wrong. Please email me directly.
                   </p>
                 )}

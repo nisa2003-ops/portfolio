@@ -1,30 +1,54 @@
 export const OWNER = {
   name: "Nisadu Nimsitha",
-  title: "Undergraduate Student",
+  title: "Computer Science Undergraduate · Software, AI & MLOps",
   university: "University of Sri Jayawardenepura",
+  location: "Colombo, Sri Lanka",
   email: "nisadu2003@gmail.com",
   github: "https://github.com/nisa2003-ops",
   linkedin: "https://www.linkedin.com/in/nisadu-nimsitha-512a24348",
   bio: [
-    "I'm a Computer Science student at the University of Sri Jayewardenepura, with a genuine passion for coding and technology. I love turning ideas into real, working software that people can actually use.",
-    "From mobile apps to full-stack web experiences, I enjoy the entire process of building, designing the interface, writing the logic, and seeing it all come together. I'm always exploring new technologies and pushing my skills further.",
-  ],
-  stats: [
-    { value: "4+", label: "Projects" },
-    { value: "3+", label: "Tech Stacks" },
+    "I'm a Computer Science undergraduate at the University of Sri Jayewardenepura with an interest in building practical software and intelligent systems. My work spans full-stack development, mobile applications, machine learning and DevOps, with projects involving technologies such as React, Spring Boot, Flutter, Docker, Kubernetes and Python.",
+    "I'm currently developing deeper skills in Machine Learning and MLOps, particularly around taking models from experimentation to reliable, deployable systems. I enjoy projects where software engineering, data and infrastructure come together to solve real problems.",
   ],
   resumeUrl: "/Nisadu_Nimsitha_CV.pdf"
 };
 
-export const NAV_LINKS = ["About", "Education", "Certifications", "Projects", "Skills", "Contact"];
+export const NAV_LINKS = [
+  { label: "Home", id: "home" },
+  { label: "About", id: "about" },
+  { label: "Projects", id: "projects" },
+  { label: "Skills", id: "skills" },
+  { label: "Experience", id: "experience" },
+  { label: "Education", id: "education" },
+  { label: "Contact", id: "contact" },
+];
+
+export const EXPERIENCE = [
+  {
+    role: "Customer Care Executive",
+    company: "Startek",
+    logo: "/startek-logo.jpg",
+    description:
+      "Supported customers with their inquiries, provided clear solutions, and helped deliver a positive service experience.",
+    skills: [
+      "Customer Service",
+      "Communication",
+      "Problem Solving",
+      "Active Listening",
+      "Teamwork",
+    ],
+  },
+];
 
 export const PROJECTS = [
   {
     id: "lanka-microjob",
     title: "Lanka MicroJob",
     description:
-        "District-aware microjob marketplace for Sri Lanka that connects workers, employers, and brokers. Built with a React frontend and Spring Boot microservices, featuring role-based authentication, job matching, applications, broker-managed placements, notifications, and admin approvals.",
-    tags: ["Docker", "Kubernetes", "Jenkins","React", "Spring Boot", "PostgreSQL"],
+      "A district-aware marketplace that connects workers, employers and brokers across Sri Lanka.",
+    contribution:
+      "Built the React experience and Spring Boot microservices for role-based access, job matching, applications, placements, notifications and approvals.",
+    tags: ["React", "Spring Boot", "PostgreSQL", "Docker", "Kubernetes", "Jenkins"],
     color: "#d4a84f",
     status: "Completed",
     demo: null,
@@ -36,7 +60,9 @@ export const PROJECTS = [
     id: "dengue",
     title: "Dengue Outbreak Risk Classifier",
     description:
-        "An MLOps-powered machine learning system that predicts dengue outbreak risk across Sri Lankan districts using historical dengue cases and weather data, with automated training, experiment tracking, API deployment, CI/CD, and model monitoring.",
+      "A machine learning system that predicts dengue outbreak risk using historical case and weather data.",
+    contribution:
+      "Developing the automated training, MLflow experiment tracking, FastAPI serving, CI/CD and model monitoring workflow.",
     tags: ["Python", "Scikit-learn", "MLflow", "FastAPI", "Docker", "MLOps"],
     color: "#a8c5b0",
     status: "In Progress",
@@ -49,7 +75,9 @@ export const PROJECTS = [
     id: "Airline Reservation System",
     title: "Airline Reservation System",
     description:
-      "Java-based airline booking system with database integration.",
+      "A desktop system for searching flights and managing airline reservations.",
+    contribution:
+      "Built the application workflow and database integration with Java, JavaFX and JDBC.",
     tags: ["Java", "JavaFX", "JDBC", "Scene Builder"],
     color: "#8eafc2",
     status: "Completed",
@@ -62,7 +90,9 @@ export const PROJECTS = [
     id: "travel",
     title: "Travel Planner",
     description:
-      "Lanka Travel Planner is an AI-powered trip planning tool that helps you explore Sri Lanka with personalized itineraries, interactive maps, and smart budget estimates.",
+      "An AI-powered trip planner for personalized Sri Lankan itineraries, maps and budget estimates.",
+    contribution:
+      "Built the React planning experience with Node, Leaflet maps and Gemini-powered recommendations.",
     tags: ["React", "Node", "Leaflet", "Gemini API"],
     color: "#c4a8c5",
     status: "Completed",
@@ -75,8 +105,10 @@ export const PROJECTS = [
     id: "inventory",
     title: "Inventory Manager",
     description:
-      "PHP-based inventory system with full CRUD, customer management, and FK-safe deletion. Hosted on XAMPP with a MySQL backend.",
-    tags: ["PHP", "MySQL", "HTML", "JavsScript"],
+      "A web-based inventory system for managing stock records and customer data.",
+    contribution:
+      "Built the PHP and MySQL CRUD workflows, customer management and foreign-key-safe deletion.",
+    tags: ["PHP", "MySQL", "HTML", "JavaScript"],
     color: "#c5b8a8",
     status: "Completed",
     demo: null,
@@ -88,6 +120,7 @@ export const PROJECTS = [
 
 export const STATUS_COLORS = {
   Completed: "#a8c5a0",
+  "In Progress": "#c9a96e",
   "In Development": "#c9a96e",
   "Coming Soon": "#8eafc2",
 };
@@ -96,6 +129,8 @@ export const EDUCATION = [
   {
     degree: "BSc(Hons) in Computer Science",
     institution: "University of Sri Jayawardenepura",
+    logo: "/education/usj-logo.png",
+    logoAlt: "University of Sri Jayewardenepura emblem",
     period: "2024 — Present",
     location: "Nugegoda, Sri Lanka",
     highlights: [
@@ -113,6 +148,8 @@ export const EDUCATION = [
   {
     degree: "G.C.E Advanced Level",
     institution: "Ananda College",
+    logo: "/education/ananda-college-logo.png",
+    logoAlt: "Ananda College emblem",
     period: "2020-2022",
     location: "Colombo 10",
     highlights: [
@@ -124,6 +161,9 @@ export const EDUCATION = [
   {
     degree: "G.C.E Ordinary Level",
     institution: "St.Peter's College",
+    logo: "/education/st-peters-college-full-logo.png",
+    logoAlt: "St. Peter's College emblem",
+    logoStyle: "portrait",
     period: "2014-2019",
     location: "Colombo 04",
     highlights: [
@@ -192,20 +232,14 @@ export const CERTIFICATIONS = [
 
 export const SKILL_GROUPS = [
   {
-    category: "Mobile",
+    category: "DevOps",
     icons: [
-      { cls: "devicon-flutter-plain colored", label: "Flutter" },
-      { cls: "devicon-dart-plain colored", label: "Dart" },
-    ],
-  },
-  {
-    category: "Frontend",
-    icons: [
-      { cls: "devicon-react-original colored", label: "React" },
-      { cls: "devicon-javascript-plain colored", label: "JavaScript" },
-      { cls: "devicon-html5-plain colored", label: "HTML5" },
-      { cls: "devicon-css3-plain colored", label: "CSS3" },
-      { cls: "devicon-vitejs-plain colored", label: "Vite" },
+      { cls: "devicon-docker-plain colored", label: "Docker" },
+      { cls: "devicon-kubernetes-plain colored", label: "Kubernetes" },
+      { cls: "devicon-linux-plain colored", label: "Linux" },
+      { cls: "devicon-jenkins-plain colored", label: "Jenkins" },
+      { cls: "devicon-sonarqube-plain colored", label: "SonarQube" },
+      { cls: "devicon-nginx-plain colored", label: "Nginx" },
     ],
   },
   {
@@ -219,10 +253,22 @@ export const SKILL_GROUPS = [
     ],
   },
   {
+    category: "Frontend",
+    icons: [
+      { cls: "devicon-react-original colored", label: "React" },
+      { cls: "devicon-javascript-plain colored", label: "JavaScript" },
+      { cls: "devicon-html5-plain colored", label: "HTML5" },
+      { cls: "devicon-css3-plain colored", label: "CSS3" },
+      { cls: "devicon-vitejs-plain colored", label: "Vite" },
+    ],
+  },
+  {
     category: "Databases",
     icons: [
       { cls: "devicon-mysql-plain colored", label: "MySQL" },
-      { cls: "devicon-postgresql-plain colored", label: "PostgreSQL" }
+      { cls: "devicon-postgresql-plain colored", label: "PostgreSQL" },
+      { cls: "devicon-mongodb-plain colored", label: "MongoDB" },
+      { cls: "devicon-supabase-plain colored", label: "Supabase" },
     ],
   },
   {
@@ -230,21 +276,10 @@ export const SKILL_GROUPS = [
     icons: [
       { cls: "devicon-git-plain colored", label: "Git" },
       { cls: "devicon-github-original", label: "GitHub" },
-      { cls: "devicon-intellij-plain colored", label: "Intellij Idea" },
+      { cls: "devicon-intellij-plain colored", label: "IntelliJ IDEA" },
       { cls: "devicon-figma-plain colored", label: "Figma" },
       { cls: "devicon-r-plain colored", label: "R" },
-      { cls: "devicon-postman-plain colored", label: "Postman" }
+      { cls: "devicon-postman-plain colored", label: "Postman" },
     ],
   },
-  {
-  category: "DevOps",
-  icons: [
-    { cls: "devicon-docker-plain colored",     label: "Docker" },
-    { cls: "devicon-kubernetes-plain colored", label: "Kubernetes" },
-    { cls: "devicon-linux-plain colored",      label: "Linux" },
-    { cls: "devicon-jenkins-plain colored",      label: "Jenkins" },
-    { cls: "devicon-sonarqube-plain colored",      label: "SonarQube" },
-    { cls: "devicon-nginx-plain colored",      label: "Nginx" },
-  ],
-},
 ];

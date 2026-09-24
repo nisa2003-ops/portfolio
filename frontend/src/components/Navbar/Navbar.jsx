@@ -3,7 +3,7 @@ import { NAV_LINKS } from "../../constants/data";
 import styles from "./Navbar.module.css";
 
 export default function Navbar({ theme, toggleTheme }) {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -14,7 +14,7 @@ export default function Navbar({ theme, toggleTheme }) {
   }, []);
 
   useEffect(() => {
-    const sections = NAV_LINKS.map((n) => document.getElementById(n.toLowerCase()));
+    const sections = NAV_LINKS.map(({ id }) => document.getElementById(id));
     const obs = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
@@ -32,26 +32,31 @@ export default function Navbar({ theme, toggleTheme }) {
   };
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
+    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`} aria-label="Main navigation">
       <div className={styles.inner}>
-        <span
+        <button
+          type="button"
           className={styles.logo}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
         >
-          N<span className={styles.dot}>.</span>
-        </span>
+          Nisadu
+        </button>
 
         <div className={styles.links}>
-          {NAV_LINKS.map((n) => (
+          {NAV_LINKS.map(({ label, id }) => (
             <button
-              key={n}
-              className={`${styles.link} ${active === n.toLowerCase() ? styles.linkActive : ""}`}
-              onClick={() => scrollTo(n.toLowerCase())}
+              type="button"
+              key={id}
+              className={`${styles.link} ${active === id ? styles.linkActive : ""}`}
+              onClick={() => scrollTo(id)}
+              aria-current={active === id ? "page" : undefined}
             >
-              {n}
+              {label}
             </button>
           ))}
           <button
+            type="button"
             className={styles.themeBtn}
             onClick={toggleTheme}
             aria-label="Toggle theme"
@@ -63,6 +68,7 @@ export default function Navbar({ theme, toggleTheme }) {
 
         <div className={styles.mobileRight}>
           <button
+            type="button"
             className={styles.themeBtn}
             onClick={toggleTheme}
             aria-label="Toggle theme"
@@ -70,9 +76,12 @@ export default function Navbar({ theme, toggleTheme }) {
             {theme === "dark" ? "☀" : "☾"}
           </button>
           <button
+            type="button"
             className={styles.hamburger}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
           >
             <span className={`${styles.bar} ${menuOpen ? styles.bar1Open : ""}`} />
             <span className={`${styles.bar} ${menuOpen ? styles.barHide : ""}`} />
@@ -82,14 +91,15 @@ export default function Navbar({ theme, toggleTheme }) {
       </div>
 
       {menuOpen && (
-        <div className={styles.mobileMenu}>
-          {NAV_LINKS.map((n) => (
+        <div id="mobile-navigation" className={styles.mobileMenu}>
+          {NAV_LINKS.map(({ label, id }) => (
             <button
-              key={n}
-              className={styles.mobileLink}
-              onClick={() => scrollTo(n.toLowerCase())}
+              type="button"
+              key={id}
+              className={`${styles.mobileLink} ${active === id ? styles.mobileLinkActive : ""}`}
+              onClick={() => scrollTo(id)}
             >
-              {n}
+              {label}
             </button>
           ))}
         </div>

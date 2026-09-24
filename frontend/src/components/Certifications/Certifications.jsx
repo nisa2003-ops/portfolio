@@ -7,10 +7,15 @@ export default function Certifications() {
     <section id="certifications" className={styles.section}>
       <div className="section-inner">
         <FadeIn>
-          <p className="section-label">03 — Certifications</p>
+          <p className="section-label">Certifications</p>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="section-title">Online Courses & Certificates</h2>
+          <h2 className="section-title">Courses &amp; Certifications</h2>
+        </FadeIn>
+        <FadeIn delay={0.15}>
+          <p className="section-description">
+            Focused learning in cloud foundations, security, delivery pipelines, Kubernetes and Linux.
+          </p>
         </FadeIn>
 
         <div className={styles.grid}>
@@ -19,7 +24,7 @@ export default function Certifications() {
               <div className={styles.card}>
 
                 <div className={styles.top}>
-                  <span className={styles.icon}>{cert.icon}</span>
+                  <span className={styles.icon} aria-hidden="true">{cert.icon}</span>
                   <span
                     className={styles.platform}
                     style={{

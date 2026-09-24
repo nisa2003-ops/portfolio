@@ -9,7 +9,7 @@ function MockupCard({ project }) {
       style={{ background: project.mockupBg, "--accent": project.color }}
     >
       <div className={styles.mockupGrid} />
-      <span className={styles.mockupIcon}>{project.mockupIcon}</span>
+      <span className={styles.mockupIcon} aria-hidden="true">{project.mockupIcon}</span>
       <span className={styles.mockupLabel}>{project.title}</span>
     </div>
   );
@@ -35,6 +35,10 @@ function ProjectCard({ project }) {
         </div>
 
         <p className={styles.desc}>{project.description}</p>
+        <p className={styles.contribution}>
+          <span>What I built</span>
+          {project.contribution}
+        </p>
 
         <div className={styles.tags}>
           {project.tags.map((t) => (
@@ -48,7 +52,7 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
-        <div className={styles.links}>
+        {(project.demo || project.github) && <div className={styles.links}>
           {project.demo && (
             <a
               href={project.demo}
@@ -64,12 +68,12 @@ function ProjectCard({ project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.githubLink}
-            >
-              ⌥ GitHub
+            className={styles.githubLink}
+          >
+              View on GitHub ↗
             </a>
           )}
-        </div>
+        </div>}
       </div>
     </div>
   );
@@ -79,8 +83,13 @@ export default function Projects() {
   return (
     <section id="projects" className={styles.section}>
       <div className="section-inner">
-        <FadeIn><p className="section-label">04 — Projects</p></FadeIn>
+        <FadeIn><p className="section-label">Projects</p></FadeIn>
         <FadeIn delay={0.1}><h2 className="section-title">Selected Work</h2></FadeIn>
+        <FadeIn delay={0.15}>
+          <p className="section-description">
+            Practical systems spanning software engineering, machine learning and deployment workflows.
+          </p>
+        </FadeIn>
 
         <div className={styles.grid}>
           {PROJECTS.map((p, i) => (
