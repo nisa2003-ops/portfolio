@@ -232,6 +232,27 @@ export const CERTIFICATIONS = [
 
 export const SKILL_GROUPS = [
   {
+    category: "Languages",
+    icons: [
+      { cls: "devicon-python-plain colored", label: "Python" },
+      { cls: "devicon-java-plain colored", label: "Java" },
+      { cls: "devicon-javascript-plain colored", label: "JavaScript" },
+      { cls: "devicon-php-plain colored", label: "PHP" },
+      { cls: "devicon-r-plain colored", label: "R" },
+    ],
+  },
+  {
+    category: "Machine Learning & AI",
+    icons: [
+      { cls: "devicon-scikitlearn-plain colored", label: "Scikit-learn" },
+      { cls: "devicon-pandas-plain colored", label: "Pandas" },
+      { cls: "devicon-numpy-plain colored", label: "NumPy" },
+      { cls: "devicon-fastapi-plain colored", label: "FastAPI" },
+      { cls: "devicon-python-plain colored", label: "XGBoost" },
+      { cls: "devicon-python-plain colored", label: "MLflow" },
+    ],
+  },
+  {
     category: "DevOps",
     icons: [
       { cls: "devicon-docker-plain colored", label: "Docker" },
@@ -246,9 +267,8 @@ export const SKILL_GROUPS = [
     category: "Backend",
     icons: [
       { cls: "devicon-spring-plain colored", label: "Spring Boot" },
+      { cls: "devicon-fastapi-plain colored", label: "FastAPI" },
       { cls: "devicon-php-plain colored", label: "PHP" },
-      { cls: "devicon-python-plain colored", label: "Python" },
-      { cls: "devicon-java-plain colored", label: "Java" },
       { cls: "devicon-javafx-plain colored", label: "JavaFX" },
     ],
   },
@@ -256,7 +276,6 @@ export const SKILL_GROUPS = [
     category: "Frontend",
     icons: [
       { cls: "devicon-react-original colored", label: "React" },
-      { cls: "devicon-javascript-plain colored", label: "JavaScript" },
       { cls: "devicon-html5-plain colored", label: "HTML5" },
       { cls: "devicon-css3-plain colored", label: "CSS3" },
       { cls: "devicon-vitejs-plain colored", label: "Vite" },
@@ -265,8 +284,8 @@ export const SKILL_GROUPS = [
   {
     category: "Databases",
     icons: [
-      { cls: "devicon-mysql-plain colored", label: "MySQL" },
       { cls: "devicon-postgresql-plain colored", label: "PostgreSQL" },
+      { cls: "devicon-mysql-plain colored", label: "MySQL" },
       { cls: "devicon-mongodb-plain colored", label: "MongoDB" },
       { cls: "devicon-supabase-plain colored", label: "Supabase" },
     ],
@@ -277,9 +296,8 @@ export const SKILL_GROUPS = [
       { cls: "devicon-git-plain colored", label: "Git" },
       { cls: "devicon-github-original", label: "GitHub" },
       { cls: "devicon-intellij-plain colored", label: "IntelliJ IDEA" },
-      { cls: "devicon-figma-plain colored", label: "Figma" },
-      { cls: "devicon-r-plain colored", label: "R" },
       { cls: "devicon-postman-plain colored", label: "Postman" },
+      { cls: "devicon-figma-plain colored", label: "Figma" },
     ],
   },
 ];
