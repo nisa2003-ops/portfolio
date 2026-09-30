@@ -209,9 +209,18 @@ export const CERTIFICATIONS = [
     icon: "🔐",
     color: "#c9a96e",
   },
-
   {
     id: "cert-5",
+    title: "Getting Started with Cisco Packet Tracer",
+    platform: "Cisco Networking Academy",
+    date: "September 2026",
+    credentialUrl: "https://drive.google.com/file/d/1hEW0dQRlUOgzzdrl061BYvQwBjHjAz6c/view?usp=sharing",
+    icon: "🌐",
+    color: "#c9a96e",
+  },
+
+  {
+    id: "cert-6",
     title: "YouTube Labs - Kubernetes Crash Course",
     platform: "KodeKloud",
     date: "May 2026",
@@ -220,7 +229,7 @@ export const CERTIFICATIONS = [
     color: "#8eafc2",
   },
   {
-    id: "cert-6",
+    id: "cert-7",
     title: "Crash Course: Linux For Absolute Beginners",
     platform: "KodeKloud",
     date: "May 2026",
