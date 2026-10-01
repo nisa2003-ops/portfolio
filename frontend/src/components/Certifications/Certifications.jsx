@@ -24,7 +24,16 @@ export default function Certifications() {
               <div className={styles.card}>
 
                 <div className={styles.top}>
-                  <span className={styles.icon} aria-hidden="true">{cert.icon}</span>
+                  <span
+                    className={styles.icon}
+                    style={{ background: cert.logoBackground }}
+                  >
+                    <img
+                      className={styles.logo}
+                      src={cert.logo}
+                      alt={cert.logoAlt}
+                    />
+                  </span>
                   <span
                     className={styles.platform}
                     style={{
