@@ -219,10 +219,10 @@ export const CERTIFICATIONS = [
   },
   {
     id: "cert-5",
-    title: "Getting Started with Cisco Packet Tracer",
+    title: "Introduction to Packet Tracer",
     platform: "Cisco Networking Academy",
     date: "September 2026",
-    credentialUrl: "https://drive.google.com/file/d/1hEW0dQRlUOgzzdrl061BYvQwBjHjAz6c/view?usp=sharing",
+    credentialUrl: "https://www.credly.com/badges/2d0be4e4-a562-4b2a-a779-1f2313a7a4e9/public_url",
     logo: "/certifications/cisco.svg",
     logoAlt: "Cisco logo",
     logoBackground: "#ffffff",
