@@ -15,10 +15,10 @@ export const OWNER = {
 export const NAV_LINKS = [
   { label: "Home", id: "home" },
   { label: "About", id: "about" },
+  { label: "Education", id: "education" },
   { label: "Projects", id: "projects" },
   { label: "Skills", id: "skills" },
   { label: "Experience", id: "experience" },
-  { label: "Education", id: "education" },
   { label: "Contact", id: "contact" },
 ];
 
