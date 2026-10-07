@@ -65,7 +65,7 @@ export default function Contact() {
               Let&apos;s Build Something Useful.
             </h2>
             <p className={styles.sub}>
-              Open to software engineering, AI/ML and MLOps internships, collaborations and conversations.
+              Open to cloud, DevOps, networking and backend internships, collaborations and conversations.
             </p>
           </FadeIn>
 

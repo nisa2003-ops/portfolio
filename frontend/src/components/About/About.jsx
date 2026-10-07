@@ -24,9 +24,9 @@ export default function About() {
               <div className={styles.direction}>
                 <p className={styles.directionLabel}>Current direction</p>
                 <div className={styles.directionList}>
-                  <span><strong>Primary Focus</strong> DevOps</span>
-                  <span><strong>Growing Focus</strong> Machine Learning &amp; AI</span>
-                  <span><strong>Foundation</strong> Software Engineering</span>
+                  <span><strong>Primary Focus</strong> Cloud &amp; DevOps</span>
+                  <span><strong>Also Exploring</strong> Networking &amp; Backend Systems</span>
+                  <span><strong>Alongside</strong> Machine Learning &amp; AI</span>
                 </div>
               </div>
             </div>

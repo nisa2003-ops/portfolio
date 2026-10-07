@@ -26,7 +26,7 @@ export default function Hero() {
         <p className={styles.role}>{OWNER.title}</p>
 
         <p className={styles.sub}>
-          I build practical software systems across web, mobile, machine learning and cloud infrastructure.
+          I build practical backend and cloud systems, with machine learning projects alongside them.
         </p>
 
         <div className={styles.ctas}>
@@ -34,7 +34,7 @@ export default function Hero() {
             View Projects
           </button>
           <button type="button" className={styles.ctaSecondary} onClick={() => scrollTo("contact")}>
-            Let&apos;s Connect
+            Contact Me
           </button>
           <button type="button" className={styles.ctaTertiary} onClick={handleResume}>
             ↓ Download CV

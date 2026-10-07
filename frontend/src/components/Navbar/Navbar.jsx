@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NAV_LINKS } from "../../constants/data";
+import { NAV_LINKS, OWNER } from "../../constants/data";
 import styles from "./Navbar.module.css";
 
 export default function Navbar({ theme, toggleTheme }) {
@@ -55,6 +55,9 @@ export default function Navbar({ theme, toggleTheme }) {
               {label}
             </button>
           ))}
+          <a className={styles.resumeLink} href={OWNER.resumeUrl} download="Nisadu_Nimsitha_Resume.pdf">
+            Resume ↓
+          </a>
           <button
             type="button"
             className={styles.themeBtn}
@@ -102,6 +105,9 @@ export default function Navbar({ theme, toggleTheme }) {
               {label}
             </button>
           ))}
+          <a className={`${styles.mobileLink} ${styles.mobileResume}`} href={OWNER.resumeUrl} download="Nisadu_Nimsitha_Resume.pdf" onClick={() => setMenuOpen(false)}>
+            Resume ↓
+          </a>
         </div>
       )}
     </nav>

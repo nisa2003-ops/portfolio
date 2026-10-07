@@ -180,6 +180,22 @@ section {
   background: var(--accent);
 }
 
+/* Slightly tighten the transitions from toolkit through contact. */
+#skills .section-inner {
+  padding-bottom: 4.25rem;
+}
+
+#experience .section-inner,
+#education .section-inner,
+#certifications .section-inner {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+#contact .section-inner {
+  padding-top: 4.25rem;
+}
+
 /* Section title — gradient accent */
 .section-title {
   font-family: var(--font-display);
@@ -290,6 +306,21 @@ section {
     padding: var(--section-pad);
   }
 
+  #skills .section-inner {
+    padding-bottom: 3rem;
+  }
+
+  #experience .section-inner,
+  #education .section-inner,
+  #certifications .section-inner {
+    padding-top: 2.65rem;
+    padding-bottom: 2.65rem;
+  }
+
+  #contact .section-inner {
+    padding-top: 3rem;
+  }
+
   .section-title {
     font-size: clamp(1.8rem, 8vw, 2.6rem);
   }
@@ -340,5 +371,22 @@ html, body {
     transition-duration: 0.01ms !important;
     transition-delay: 0s !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #skills .section-inner {
+    padding-bottom: 2.2rem;
+  }
+
+  #experience .section-inner,
+  #education .section-inner,
+  #certifications .section-inner {
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+  }
+
+  #contact .section-inner {
+    padding-top: 2.2rem;
   }
 }

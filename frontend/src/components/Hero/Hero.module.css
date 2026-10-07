@@ -174,10 +174,10 @@
 }
 
 .ctaTertiary {
-  padding: 0.9rem 0.6rem;
-  color: var(--text-muted);
-  background: transparent;
-  border: 0;
+  padding: 0.9rem 1.4rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
   font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 500;
@@ -187,6 +187,7 @@
 
 .ctaTertiary:hover {
   color: var(--text);
+  background: var(--surface-2);
 }
 
 /* Socials — glass pills */

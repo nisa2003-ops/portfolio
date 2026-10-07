@@ -1,8 +1,15 @@
+import { useState } from "react";
 import FadeIn from "../FadeIn";
 import { CERTIFICATIONS } from "../../constants/data";
 import styles from "./Certifications.module.css";
 
 export default function Certifications() {
+  const [showAll, setShowAll] = useState(false);
+  const priority = ["cert-5", "cert-7", "cert-2", "cert-3", "cert-1", "cert-6", "cert-4"];
+  const rank = (id) => priority.includes(id) ? priority.indexOf(id) : priority.length;
+  const ordered = [...CERTIFICATIONS].sort((a, b) => rank(a.id) - rank(b.id));
+  const visible = showAll ? ordered : ordered.slice(0, 6);
+
   return (
     <section id="certifications" className={styles.section}>
       <div className="section-inner">
@@ -14,12 +21,12 @@ export default function Certifications() {
         </FadeIn>
         <FadeIn delay={0.15}>
           <p className="section-description">
-            Focused learning in cloud foundations, security, delivery pipelines, Kubernetes and Linux.
+            Focused learning in networking, Linux, cloud, delivery pipelines and Kubernetes.
           </p>
         </FadeIn>
 
         <div className={styles.grid}>
-          {CERTIFICATIONS.map((cert, i) => (
+          {visible.map((cert, i) => (
             <FadeIn key={cert.id} delay={0.07 * i}>
               <div className={styles.card}>
 
@@ -32,6 +39,7 @@ export default function Certifications() {
                       className={styles.logo}
                       src={cert.logo}
                       alt={cert.logoAlt}
+                      loading="lazy"
                     />
                   </span>
                   <span
@@ -67,6 +75,16 @@ export default function Certifications() {
             </FadeIn>
           ))}
         </div>
+        {ordered.length > 6 && (
+          <button
+            type="button"
+            className={styles.viewAll}
+            onClick={() => setShowAll((current) => !current)}
+            aria-expanded={showAll}
+          >
+            {showAll ? "Show Fewer Certifications" : "View All Certifications"}
+          </button>
+        )}
       </div>
     </section>
   );

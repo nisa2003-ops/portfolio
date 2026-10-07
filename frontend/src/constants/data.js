@@ -1,14 +1,13 @@
 export const OWNER = {
   name: "Nisadu Nimsitha",
-  title: "Computer Science Undergraduate · Software, AI & MLOps",
+  title: "Computer Science Undergraduate · Cloud, DevOps & Networking",
   university: "University of Sri Jayawardenepura",
   location: "Colombo, Sri Lanka",
   email: "nisadu2003@gmail.com",
   github: "https://github.com/nisa2003-ops",
   linkedin: "https://www.linkedin.com/in/nisadu-nimsitha-512a24348",
   bio: [
-    "I'm a Computer Science undergraduate at the University of Sri Jayewardenepura with an interest in building practical software and intelligent systems. My work spans full-stack development, mobile applications, machine learning and DevOps, with projects involving technologies such as React, Spring Boot, Flutter, Docker, Kubernetes and Python.",
-    "I'm currently developing deeper skills in Machine Learning and MLOps, particularly around taking models from experimentation to reliable, deployable systems. I enjoy projects where software engineering, data and infrastructure come together to solve real problems.",
+    "I’m a Computer Science undergraduate interested in cloud infrastructure, DevOps, networking, backend systems, and machine learning. I enjoy taking applications beyond development by containerizing and deploying them, building CI/CD pipelines, working with databases and networking, and testing how systems perform under realistic workloads.",
   ],
   resumeUrl: "/Nisadu_Nimsitha_CV.pdf"
 };
@@ -45,14 +44,18 @@ export const PROJECTS = [
     id: "lanka-microjob",
     title: "Lanka MicroJob",
     description:
-      "A district-aware marketplace that connects workers, employers and brokers across Sri Lanka.",
+      "A microservices-based job marketplace built with Spring Boot and React, containerized with Docker and deployed on AWS EC2 using Kubernetes (k3s), Amazon ECR, CodePipeline, CodeBuild, and Amazon RDS PostgreSQL.",
     contribution:
       "Built the React experience and Spring Boot microservices for role-based access, job matching, applications, placements, notifications and approvals.",
-    tags: ["React", "Spring Boot", "PostgreSQL", "Docker", "Kubernetes", "Jenkins"],
+    tags: ["Spring Boot", "React", "Docker", "Kubernetes", "AWS", "PostgreSQL", "k6"],
+    moreTags: ["EC2", "k3s", "Amazon ECR", "CodePipeline", "CodeBuild", "Amazon RDS", "Jenkins"],
+    architecture: ["Vercel", "Elastic IP", "AWS EC2", "k3s Kubernetes", "API Gateway", "Spring Boot Microservices", "Amazon RDS PostgreSQL"],
+    pipeline: ["GitHub", "AWS CodePipeline", "AWS CodeBuild", "Amazon ECR", "EC2 / k3s"],
     color: "#d4a84f",
     status: "Completed",
-    demo: null,
-    github: "https://github.com/nisa2003-ops/Lanka-Microjob-V1.git",
+    demo: "https://lanka-microjob.vercel.app/",
+    github: "https://github.com/nisa2003-ops/Lanka-Microjob-V1",
+    caseStudy: "https://medium.com/@nisadu2003/from-docker-compose-to-kubernetes-on-aws-deploying-lanka-microjob-with-ci-cd-rds-and-load-6bfe6eea0be4",
     mockupIcon: "💼",
     mockupBg: "linear-gradient(135deg,#1a1612,#2a2218,#1a1612)",
   },
@@ -255,29 +258,9 @@ export const CERTIFICATIONS = [
 
 export const SKILL_GROUPS = [
   {
-    category: "Languages",
+    category: "Cloud & DevOps",
     icons: [
-      { cls: "devicon-python-plain colored", label: "Python" },
-      { cls: "devicon-java-plain colored", label: "Java" },
-      { cls: "devicon-javascript-plain colored", label: "JavaScript" },
-      { cls: "devicon-php-plain colored", label: "PHP" },
-      { cls: "devicon-r-plain colored", label: "R" },
-    ],
-  },
-  {
-    category: "Machine Learning & AI",
-    icons: [
-      { cls: "devicon-scikitlearn-plain colored", label: "Scikit-learn" },
-      { cls: "devicon-pandas-plain colored", label: "Pandas" },
-      { cls: "devicon-numpy-plain colored", label: "NumPy" },
-      { cls: "devicon-fastapi-plain colored", label: "FastAPI" },
-      { cls: "devicon-python-plain colored", label: "XGBoost" },
-      { cls: "devicon-python-plain colored", label: "MLflow" },
-    ],
-  },
-  {
-    category: "DevOps",
-    icons: [
+      { cls: "devicon-amazonwebservices-plain-wordmark colored", label: "AWS" },
       { cls: "devicon-docker-plain colored", label: "Docker" },
       { cls: "devicon-kubernetes-plain colored", label: "Kubernetes" },
       { cls: "devicon-linux-plain colored", label: "Linux" },
@@ -296,6 +279,26 @@ export const SKILL_GROUPS = [
     ],
   },
   {
+    category: "Databases",
+    icons: [
+      { cls: "devicon-postgresql-plain colored", label: "PostgreSQL" },
+      { cls: "devicon-mysql-plain colored", label: "MySQL" },
+      { cls: "devicon-mongodb-plain colored", label: "MongoDB" },
+      { cls: "devicon-supabase-plain colored", label: "Supabase" },
+    ],
+  },
+  {
+    category: "Machine Learning & AI",
+    icons: [
+      { cls: "devicon-scikitlearn-plain colored", label: "Scikit-learn" },
+      { cls: "devicon-pandas-plain colored", label: "Pandas" },
+      { cls: "devicon-numpy-plain colored", label: "NumPy" },
+      { cls: "devicon-fastapi-plain colored", label: "FastAPI" },
+      { cls: "devicon-python-plain colored", label: "XGBoost" },
+      { cls: "devicon-python-plain colored", label: "MLflow" },
+    ],
+  },
+  {
     category: "Frontend",
     icons: [
       { cls: "devicon-react-original colored", label: "React" },
@@ -305,12 +308,13 @@ export const SKILL_GROUPS = [
     ],
   },
   {
-    category: "Databases",
+    category: "Languages",
     icons: [
-      { cls: "devicon-postgresql-plain colored", label: "PostgreSQL" },
-      { cls: "devicon-mysql-plain colored", label: "MySQL" },
-      { cls: "devicon-mongodb-plain colored", label: "MongoDB" },
-      { cls: "devicon-supabase-plain colored", label: "Supabase" },
+      { cls: "devicon-python-plain colored", label: "Python" },
+      { cls: "devicon-java-plain colored", label: "Java" },
+      { cls: "devicon-javascript-plain colored", label: "JavaScript" },
+      { cls: "devicon-php-plain colored", label: "PHP" },
+      { cls: "devicon-r-plain colored", label: "R" },
     ],
   },
   {

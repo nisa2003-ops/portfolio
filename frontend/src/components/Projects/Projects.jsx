@@ -16,13 +16,17 @@ function MockupCard({ project }) {
 }
 
 function ProjectCard({ project }) {
+  const featured = project.id === "lanka-microjob";
   return (
     <div className={styles.card}>
       <MockupCard project={project} />
 
       <div className={styles.body}>
         <div className={styles.titleRow}>
-          <h3 className={styles.title}>{project.title}</h3>
+          <div>
+            <h3 className={styles.title}>{project.title}</h3>
+            {featured && <p className={styles.subtitle}>Cloud-Deployed Microservices Platform</p>}
+          </div>
           <span
             className={styles.status}
             style={{
@@ -34,7 +38,7 @@ function ProjectCard({ project }) {
           </span>
         </div>
 
-        <p className={styles.desc}>{project.description}</p>
+        <p className={`${styles.desc} ${featured ? styles.featuredDesc : ""}`}>{project.description}</p>
         <p className={styles.contribution}>
           <span>What I built</span>
           {project.contribution}
@@ -52,7 +56,28 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
-        {(project.demo || project.github) && <div className={styles.links}>
+        {featured && (
+          <>
+            <div className={styles.performance} aria-label="k6 mixed API workload results">
+              <span className={styles.performanceLabel}>Load-tested with up to 100 concurrent virtual users · mixed API workload (k6)</span>
+              <div className={styles.performanceStats}>
+                <span><strong>100 VUs</strong> peak load</span>
+                <span><strong>0%</strong> failures</span>
+                <span><strong>~480 ms</strong> p95</span>
+              </div>
+            </div>
+            <details className={styles.details}>
+              <summary>Deployment details</summary>
+              <div className={styles.detailContent}>
+                <p><strong>Architecture</strong> {project.architecture.join(" → ")}</p>
+                <p><strong>CI/CD</strong> {project.pipeline.join(" → ")}</p>
+                <p><strong>Also used</strong> {project.moreTags.join(" · ")}</p>
+              </div>
+            </details>
+          </>
+        )}
+
+        {(project.demo || project.github || project.caseStudy) && <div className={styles.links}>
           {project.demo && (
             <a
               href={project.demo}
@@ -68,9 +93,14 @@ function ProjectCard({ project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-            className={styles.githubLink}
-          >
-              View on GitHub ↗
+              className={styles.githubLink}
+            >
+              GitHub ↗
+            </a>
+          )}
+          {project.caseStudy && (
+            <a href={project.caseStudy} target="_blank" rel="noopener noreferrer" className={styles.githubLink}>
+              Case Study ↗
             </a>
           )}
         </div>}
@@ -87,7 +117,7 @@ export default function Projects() {
         <FadeIn delay={0.1}><h2 className="section-title">Selected Work</h2></FadeIn>
         <FadeIn delay={0.15}>
           <p className="section-description">
-            Practical systems spanning software engineering, machine learning and deployment workflows.
+            Cloud and backend systems, with machine learning projects alongside them.
           </p>
         </FadeIn>
 

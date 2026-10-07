@@ -35,6 +35,9 @@
   .grid > div:nth-child(n) {
     grid-column: span 1;
   }
+  .grid > div:nth-child(1) {
+    grid-column: span 2;
+  }
 }
 
 /* Card — glass bento */
@@ -148,11 +151,27 @@
   background: rgba(0,0,0,0.2);
 }
 
+.subtitle {
+  margin-top: 0.25rem;
+  color: var(--text-dim);
+  font-size: 0.73rem;
+  line-height: 1.4;
+}
+
 .desc {
   font-family: var(--font-sans);
   font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.7;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.featuredDesc {
+  display: block;
+  overflow: visible;
 }
 
 .contribution {
@@ -160,6 +179,57 @@
   font-family: var(--font-sans);
   font-size: 0.82rem;
   line-height: 1.65;
+}
+
+.performance {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 0.75rem;
+  color: var(--text-muted);
+}
+
+.performanceLabel {
+  display: block;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.performanceStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.9rem;
+  margin-top: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.performanceStats strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.details {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.details summary {
+  width: fit-content;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.detailContent {
+  display: grid;
+  gap: 0.45rem;
+  padding-top: 0.6rem;
+  overflow-wrap: anywhere;
+}
+
+.detailContent strong {
+  color: var(--text);
+  margin-right: 0.35rem;
 }
 
 .contribution span {
@@ -193,6 +263,7 @@
 /* Links — pill buttons */
 .links {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.6rem;
   padding-top: 0.9rem;
   border-top: 1px solid var(--border-soft);
@@ -201,7 +272,7 @@
 
 .demoLink,
 .githubLink {
-  flex: 1;
+  flex: 1 1 auto;
   text-align: center;
   padding: 0.65rem;
   font-family: var(--font-sans);
@@ -215,6 +286,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+  white-space: nowrap;
 }
 
 .demoLink {
@@ -249,6 +321,9 @@
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+  .grid > div:nth-child(1) {
+    grid-column: span 1;
   }
   .mockup {
     height: 132px;
