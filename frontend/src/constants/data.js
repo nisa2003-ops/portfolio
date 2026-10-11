@@ -19,7 +19,36 @@ export const NAV_LINKS = [
   { label: "Projects", id: "projects" },
   { label: "Skills", id: "skills" },
   { label: "Experience", id: "experience" },
+  { label: "Leadership", id: "leadership" },
+  { label: "Certifications", id: "certifications" },
   { label: "Contact", id: "contact" },
+];
+
+export const LEADERSHIP = [
+  {
+    role: "Web Development Team Member",
+    organization: "Sathsara Dahana 2026",
+    subtitle: "Faculty of Applied Sciences · University of Sri Jayewardenepura",
+    logo: "/sathsara-dahana-logo.png",
+    period: "2026",
+    link: "https://www.sathsaradahana.live/",
+    description:
+      "Contributed as a member of the web development team to build and launch the official web platform for Sathsara Dahana 2026 — the premier annual cultural concert organized by the Faculty of Applied Sciences, University of Sri Jayewardenepura.",
+    highlights: [
+      "Collaborated with the team to develop interactive features including the retro terminal bootloader (SATHSARA_DAHANA.EXE), dynamic canvas visuals, and themed storytelling sections.",
+      "Assisted in developing the live selection results portal enabling audition candidates to verify outcomes across Dancing, Singing, and Instrumental categories.",
+      "Helped implement real-time countdown timers, interactive timeline milestones, and a mobile-responsive UI for thousands of university visitors.",
+    ],
+    skills: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Canvas API",
+      "UI/UX Design",
+      "Web Development",
+      "Team Collaboration",
+    ],
+  },
 ];
 
 export const EXPERIENCE = [

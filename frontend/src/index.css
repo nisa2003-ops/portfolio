@@ -186,6 +186,7 @@ section {
 }
 
 #experience .section-inner,
+#leadership .section-inner,
 #education .section-inner,
 #certifications .section-inner {
   padding-top: 3.5rem;
@@ -311,6 +312,7 @@ section {
   }
 
   #experience .section-inner,
+  #leadership .section-inner,
   #education .section-inner,
   #certifications .section-inner {
     padding-top: 2.65rem;
@@ -380,6 +382,7 @@ html, body {
   }
 
   #experience .section-inner,
+  #leadership .section-inner,
   #education .section-inner,
   #certifications .section-inner {
     padding-top: 2.2rem;
