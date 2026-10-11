@@ -60,6 +60,30 @@ export const PROJECTS = [
     mockupBg: "linear-gradient(135deg,#1a1612,#2a2218,#1a1612)",
   },
   {
+    id: "cloudops",
+    title: "CloudOps - Automated Cloud Deployment & Reliability Platform",
+    description:
+        "A cloud deployment, observability, and Site Reliability Engineering (SRE) platform featuring automated infrastructure provisioning, zero-secret CI/CD, and real-time telemetry.",
+    contribution:
+        "Engineered modular Terraform IaC for AWS VPC/IAM/EC2/ECR, zero-trust GitHub Actions CI/CD with OIDC federation & Trivy security scanning, custom Prometheus RED telemetry, Grafana dashboards, and automated rollback runbooks.",
+    tags: [
+      "AWS",
+      "Terraform",
+      "Docker",
+      "Prometheus",
+      "Grafana",
+      "GitHub Actions",
+      "FastAPI",
+      "Python",
+    ],
+    color: "#38bdf8",
+    status: "Completed",
+    demo: null,
+    github: "https://github.com/nisa03-cloud/Cloudops",
+    mockupIcon: "☁️",
+    mockupBg: "linear-gradient(135deg,#0b1528,#13284c,#0b1528)",
+  },
+  {
     id: "dengue",
     title: "Dengue Outbreak Risk Classifier",
     description:
@@ -68,9 +92,9 @@ export const PROJECTS = [
       "Developing the automated training, MLflow experiment tracking, FastAPI serving, CI/CD and model monitoring workflow.",
     tags: ["Python", "Scikit-learn", "MLflow", "FastAPI"],
     color: "#a8c5b0",
-    status: "Completed",
+    status: "In progress",
     demo: null,
-    github: "https://github.com/nisa2003-ops/Dengue-Risk-MLOps-1",
+    github: "",
     mockupIcon: "🦟",
     mockupBg: "linear-gradient(135deg,#0d1812,#14251a,#0d1812)",
   },
