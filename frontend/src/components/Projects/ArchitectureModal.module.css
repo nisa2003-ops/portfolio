@@ -391,6 +391,16 @@
   user-select: none;
 }
 
+.viewportCentered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewportZoomed {
+  display: block;
+}
+
 .svgScrollCanvas {
   display: block;
   box-sizing: border-box;

@@ -201,9 +201,7 @@ function SvgDiagramViewer({ src }) {
 
       <div
         ref={viewportRef}
-        className={`${styles.diagramViewport} ${
-          !fitWidth ? styles.diagramViewportCanPan : ""
-        } ${isPanning ? styles.diagramViewportPanning : ""}`}
+        className={`${styles.diagramViewport} ${fitWidth ? styles.viewportCentered : styles.viewportZoomed} ${!fitWidth ? styles.diagramViewportCanPan : ""} ${isPanning ? styles.diagramViewportPanning : ""}`}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
