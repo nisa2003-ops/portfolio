@@ -370,22 +370,31 @@
 .diagramViewport {
   position: relative;
   width: 100%;
-  min-height: 380px;
-  max-height: 65vh;
+  min-height: 420px;
+  max-height: 68vh;
   overflow: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: #171520;
-  padding: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0;
   box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.4);
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.diagramViewportCanPan {
+  cursor: grab;
+}
+
+.diagramViewportPanning {
+  cursor: grabbing !important;
+  user-select: none;
 }
 
 .svgScrollCanvas {
   display: block;
+  box-sizing: border-box;
+  padding: 1.5rem;
   transition: width 0.15s ease-out;
 }
 
@@ -698,9 +707,13 @@
   }
 
   .diagramViewport {
-    min-height: 280px;
-    max-height: 52vh;
-    padding: 0.85rem;
+    min-height: 300px;
+    max-height: 58vh;
+    padding: 0;
+  }
+
+  .svgScrollCanvas {
+    padding: 0.75rem;
   }
 
   .k6Box {

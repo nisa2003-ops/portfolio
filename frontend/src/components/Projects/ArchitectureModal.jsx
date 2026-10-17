@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import styles from "./ArchitectureModal.module.css";
 
@@ -41,6 +41,10 @@ function SvgDiagramViewer({ src }) {
   const [error, setError] = useState(false);
   const [fitWidth, setFitWidth] = useState(true);
   const [zoom, setZoom] = useState(1);
+  const viewportRef = useRef(null);
+
+  const [isPanning, setIsPanning] = useState(false);
+  const panStartRef = useRef({ x: 0, y: 0, scrollLeft: 0, scrollTop: 0 });
 
   useEffect(() => {
     let isMounted = true;
@@ -79,18 +83,63 @@ function SvgDiagramViewer({ src }) {
   }, [src]);
 
   const handleZoomIn = () => {
-    setFitWidth(false);
-    setZoom((z) => Math.min(Number((z + 0.25).toFixed(2)), 3));
+    if (fitWidth) {
+      setFitWidth(false);
+      setZoom(1);
+    } else {
+      setZoom((z) => Math.min(Number((z + 0.25).toFixed(2)), 2.5));
+    }
   };
 
   const handleZoomOut = () => {
-    setFitWidth(false);
-    setZoom((z) => Math.max(Number((z - 0.25).toFixed(2)), 0.5));
+    if (fitWidth) {
+      setFitWidth(false);
+      setZoom(0.75);
+    } else {
+      setZoom((z) => Math.max(Number((z - 0.25).toFixed(2)), 0.5));
+    }
   };
 
   const handleFitWidth = () => {
     setFitWidth(true);
     setZoom(1);
+    if (viewportRef.current) {
+      viewportRef.current.scrollLeft = 0;
+      viewportRef.current.scrollTop = 0;
+    }
+  };
+
+  const handleResetZoom = () => {
+    setFitWidth(false);
+    setZoom(1);
+    if (viewportRef.current) {
+      viewportRef.current.scrollLeft = 0;
+      viewportRef.current.scrollTop = 0;
+    }
+  };
+
+  const handleMouseDown = (e) => {
+    if (e.button !== 0 || fitWidth) return;
+    setIsPanning(true);
+    panStartRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+      scrollLeft: viewportRef.current?.scrollLeft || 0,
+      scrollTop: viewportRef.current?.scrollTop || 0,
+    };
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isPanning || !viewportRef.current) return;
+    e.preventDefault();
+    const dx = e.clientX - panStartRef.current.x;
+    const dy = e.clientY - panStartRef.current.y;
+    viewportRef.current.scrollLeft = panStartRef.current.scrollLeft - dx;
+    viewportRef.current.scrollTop = panStartRef.current.scrollTop - dy;
+  };
+
+  const handleMouseUp = () => {
+    setIsPanning(false);
   };
 
   return (
@@ -114,9 +163,14 @@ function SvgDiagramViewer({ src }) {
           >
             −
           </button>
-          <span className={styles.zoomLevel}>
+          <button
+            type="button"
+            className={`${styles.fitBtn} ${!fitWidth && zoom === 1 ? styles.fitBtnActive : ""}`}
+            onClick={handleResetZoom}
+            title="100% natural resolution"
+          >
             {fitWidth ? "Fit" : `${Math.round(zoom * 100)}%`}
-          </span>
+          </button>
           <button
             type="button"
             className={styles.toolBtn}
@@ -131,8 +185,8 @@ function SvgDiagramViewer({ src }) {
         <div className={styles.toolbarRight}>
           <span className={styles.diagramHint}>
             {fitWidth
-              ? "Scaled to fit width · Click + to zoom in"
-              : "Zoomed view · Scroll horizontally to explore"}
+              ? "Scaled to fit width · Click + or zoom to expand"
+              : "Zoomed view · Drag or scroll in any direction to explore"}
           </span>
           <a
             href={src}
@@ -145,7 +199,16 @@ function SvgDiagramViewer({ src }) {
         </div>
       </div>
 
-      <div className={styles.diagramViewport}>
+      <div
+        ref={viewportRef}
+        className={`${styles.diagramViewport} ${
+          !fitWidth ? styles.diagramViewportCanPan : ""
+        } ${isPanning ? styles.diagramViewportPanning : ""}`}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
         {loading && (
           <div className={styles.loader}>
             <p>Loading System Architecture Diagram...</p>
@@ -175,10 +238,13 @@ function SvgDiagramViewer({ src }) {
                     width: "100%",
                     maxWidth: "100%",
                     margin: "0 auto",
+                    display: "block",
                   }
                 : {
-                    width: `${Math.round(zoom * 100)}%`,
-                    minWidth: `${Math.round(zoom * 1600)}px`,
+                    width: `${Math.round(zoom * 2800)}px`,
+                    minWidth: `${Math.round(zoom * 2800)}px`,
+                    margin: 0,
+                    display: "block",
                   }
             }
             dangerouslySetInnerHTML={{ __html: svgHtml }}
