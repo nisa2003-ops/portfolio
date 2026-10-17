@@ -263,6 +263,38 @@
   background: rgba(0,0,0,0.10);
 }
 
+.archBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 0.72rem 1.1rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.16), rgba(59, 130, 246, 0.16));
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-out);
+  margin-top: 0.2rem;
+}
+
+:global([data-theme="light"]) .archBtn {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08));
+  border-color: rgba(139, 92, 246, 0.28);
+}
+
+.archBtn:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.28), rgba(59, 130, 246, 0.28));
+  border-color: rgba(139, 92, 246, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(139, 92, 246, 0.22);
+}
+
 /* Links — pill buttons */
 .links {
   display: flex;
@@ -366,4 +398,61 @@
   .mockup {
     height: 124px;
   }
+}
+
+
+:global([data-theme="light"]) .card {
+  background: var(--surface);
+  box-shadow: 0 4px 20px rgba(38, 42, 64, 0.04);
+}
+
+:global([data-theme="light"]) .card:hover {
+  background: var(--surface-2);
+  box-shadow: 0 10px 30px rgba(38, 42, 64, 0.08);
+}
+
+:global([data-theme="light"]) .status {
+  background: #ffffff;
+  font-weight: 600;
+  filter: brightness(0.72) contrast(1.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+:global([data-theme="light"]) .tag {
+  color: var(--text) !important;
+  background: rgba(15, 18, 34, 0.05);
+  border-color: rgba(15, 18, 34, 0.12) !important;
+  font-weight: 500;
+}
+
+:global([data-theme="light"]) .performance {
+  border-color: rgba(15, 18, 34, 0.08);
+}
+
+:global([data-theme="light"]) .details summary {
+  color: var(--text);
+}
+
+:global([data-theme="light"]) .githubLink {
+  background: rgba(15, 18, 34, 0.05);
+  color: var(--text);
+  border-color: rgba(15, 18, 34, 0.12);
+}
+
+:global([data-theme="light"]) .githubLink:hover {
+  background: rgba(15, 18, 34, 0.10);
+  color: var(--accent);
+  border-color: rgba(15, 18, 34, 0.20);
+}
+
+:global([data-theme="light"]) .demoLink {
+  background: var(--text);
+  color: #ffffff;
+  border-color: var(--text);
+}
+
+:global([data-theme="light"]) .demoLink:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
 }

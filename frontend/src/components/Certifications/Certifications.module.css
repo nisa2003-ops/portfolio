@@ -219,3 +219,53 @@
     gap: 0.6rem;
   }
 }
+
+
+:global([data-theme="light"]) .card {
+  background: var(--surface);
+  box-shadow: 0 4px 20px rgba(38, 42, 64, 0.04);
+}
+
+:global([data-theme="light"]) .card:hover {
+  background: var(--surface-2);
+  box-shadow: 0 8px 28px rgba(38, 42, 64, 0.08);
+}
+
+:global([data-theme="light"]) .icon {
+  background: #ffffff;
+  border-color: rgba(15, 18, 34, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+:global([data-theme="light"]) .platform {
+  color: var(--accent) !important;
+  font-weight: 600;
+}
+
+:global([data-theme="light"]) .date {
+  color: var(--text-dim);
+}
+
+:global([data-theme="light"]) .credentialBtn {
+  background: rgba(124, 58, 237, 0.06);
+  color: var(--accent) !important;
+  border-color: rgba(124, 58, 237, 0.28) !important;
+}
+
+:global([data-theme="light"]) .credentialBtn:hover {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+}
+
+:global([data-theme="light"]) .viewAll {
+  background: #ffffff;
+  border-color: rgba(15, 18, 34, 0.14);
+  color: var(--text);
+}
+
+:global([data-theme="light"]) .viewAll:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+}

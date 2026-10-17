@@ -346,3 +346,66 @@
     font-size: clamp(1.8rem, 8vw, 2.4rem);
   }
 }
+
+
+:global([data-theme="light"]) .centreTitle {
+  background: linear-gradient(90deg, #0F1222 0%, #3B4260 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:global([data-theme="light"]) .copyBtn {
+  background: rgba(15, 18, 34, 0.05);
+  border-color: rgba(15, 18, 34, 0.10);
+  color: var(--text);
+}
+
+:global([data-theme="light"]) .copyBtn:hover {
+  background: rgba(15, 18, 34, 0.10);
+  color: var(--accent);
+  border-color: rgba(15, 18, 34, 0.20);
+}
+
+:global([data-theme="light"]) .resumeBtn {
+  background: #ffffff;
+  border-color: rgba(15, 18, 34, 0.12);
+  color: var(--text);
+}
+
+:global([data-theme="light"]) .resumeBtn:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+:global([data-theme="light"]) .input,
+:global([data-theme="light"]) .textarea {
+  background: #ffffff;
+  border-color: rgba(15, 18, 34, 0.14);
+  color: #0F1222;
+}
+
+:global([data-theme="light"]) .input::placeholder,
+:global([data-theme="light"]) .textarea::placeholder {
+  color: #8E96AB;
+}
+
+:global([data-theme="light"]) .input:focus,
+:global([data-theme="light"]) .textarea:focus {
+  background: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
+:global([data-theme="light"]) .successMsg {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+  border-color: rgba(5, 150, 105, 0.25);
+}
+
+:global([data-theme="light"]) .errorMsg {
+  color: #DC2626;
+  background: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.25);
+}

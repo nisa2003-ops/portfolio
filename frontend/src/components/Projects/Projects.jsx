@@ -1,5 +1,7 @@
+import { useState } from "react";
 import FadeIn from "../FadeIn";
 import { PROJECTS, STATUS_COLORS } from "../../constants/data";
+import ArchitectureModal from "./ArchitectureModal";
 import styles from "./Projects.module.css";
 
 function MockupCard({ project }) {
@@ -15,7 +17,7 @@ function MockupCard({ project }) {
   );
 }
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, onOpenArchModal }) {
   const featured = project.id === "lanka-microjob";
   return (
     <div className={styles.card}>
@@ -74,6 +76,15 @@ function ProjectCard({ project }) {
                 <p><strong>Also used</strong> {project.moreTags.join(" · ")}</p>
               </div>
             </details>
+
+            <button
+              type="button"
+              className={styles.archBtn}
+              onClick={onOpenArchModal}
+              aria-label="View system architecture and microservices breakdown"
+            >
+              <span>📐</span> View System Architecture &amp; Microservices ↗
+            </button>
           </>
         )}
 
@@ -110,6 +121,8 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects() {
+  const [isArchModalOpen, setIsArchModalOpen] = useState(false);
+
   return (
     <section id="projects" className={styles.section}>
       <div className="section-inner">
@@ -124,11 +137,19 @@ export default function Projects() {
         <div className={styles.grid}>
           {PROJECTS.map((p, i) => (
             <FadeIn key={p.id} delay={0.05 * i}>
-              <ProjectCard project={p} />
+              <ProjectCard
+                project={p}
+                onOpenArchModal={() => setIsArchModalOpen(true)}
+              />
             </FadeIn>
           ))}
         </div>
       </div>
+
+      <ArchitectureModal
+        isOpen={isArchModalOpen}
+        onClose={() => setIsArchModalOpen(false)}
+      />
     </section>
   );
 }

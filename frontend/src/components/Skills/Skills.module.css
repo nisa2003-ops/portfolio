@@ -120,3 +120,24 @@
   }
 }
 
+
+
+:global([data-theme="light"]) .card {
+  background: var(--surface);
+  box-shadow: 0 4px 20px rgba(38, 42, 64, 0.04);
+}
+
+:global([data-theme="light"]) .card:hover {
+  background: var(--surface-2);
+  box-shadow: 0 8px 24px rgba(38, 42, 64, 0.08);
+}
+
+:global([data-theme="light"]) .category {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+:global([data-theme="light"]) .iconLabel {
+  color: var(--text);
+  font-weight: 500;
+}

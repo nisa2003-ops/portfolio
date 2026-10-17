@@ -418,3 +418,25 @@
     transform: translateX(-50%);
   }
 }
+
+
+:global([data-theme="light"]) .card {
+  background: var(--surface);
+  box-shadow: 0 4px 20px rgba(38, 42, 64, 0.04);
+}
+
+:global([data-theme="light"]) .card:hover {
+  background: var(--surface-2);
+  box-shadow: 0 8px 28px rgba(38, 42, 64, 0.08);
+}
+
+:global([data-theme="light"]) .period {
+  background: rgba(15, 18, 34, 0.05);
+  border-color: rgba(15, 18, 34, 0.10);
+  color: var(--text);
+  font-weight: 500;
+}
+
+:global([data-theme="light"]) .tag {
+  color: var(--text);
+}
