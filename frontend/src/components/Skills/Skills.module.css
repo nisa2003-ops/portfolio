@@ -3,141 +3,422 @@
   z-index: 1;
 }
 
+/* 12-Column Asymmetric Bento Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(12, 1fr);
   gap: 1.25rem;
 }
 
+.cardWrapper {
+  display: flex;
+  min-width: 0;
+}
+
+/* Bento Column Spans */
+.cardHero {
+  grid-column: span 8;
+}
+
+.cardBackend {
+  grid-column: span 4;
+}
+
+.cardDatabase {
+  grid-column: span 4;
+}
+
+.cardMl {
+  grid-column: span 4;
+}
+
+.cardFrontend {
+  grid-column: span 4;
+}
+
+.cardLanguages {
+  grid-column: span 6;
+}
+
+.cardTools {
+  grid-column: span 6;
+}
+
+/* Card Base */
 .card {
+  width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.035);
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.25s var(--ease-out), background 0.25s var(--ease-out);
+  transition: transform 0.25s var(--ease-out), border-color 0.25s var(--ease-out), background 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
 }
 
 .card:hover {
-  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+  background: var(--surface-2);
   border-color: var(--border-strong);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
 }
 
-.category {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid var(--border-soft);
+/* Hero Card (Cloud & DevOps) */
+.cardHeroInner {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(59, 130, 246, 0.08), var(--surface));
+  border: 1px solid rgba(139, 92, 246, 0.32);
+}
+
+.cardHeroInner:hover {
+  border-color: rgba(139, 92, 246, 0.55);
+  box-shadow: 0 14px 38px rgba(139, 92, 246, 0.18);
+}
+
+.heroGlow {
+  position: absolute;
+  top: -90px;
+  right: -90px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(59, 130, 246, 0.12) 45%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Card Header */
+.cardHeader {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-soft);
+  position: relative;
+  z-index: 1;
 }
 
-.icons {
+.headerLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.categoryIcon {
+  font-size: 1.35rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.categoryDesc {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-top: 0.25rem;
+}
+
+/* Badges */
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c4b5fd;
+  background: rgba(139, 92, 246, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.15);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.countBadge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-soft);
+  padding: 4px 9px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Pill Grid */
+.pillGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem 1rem;
+  gap: 0.65rem;
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
 }
 
-.iconWrap {
+.heroPillGrid {
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.widePillGrid {
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+/* Individual Skill Pill */
+.skillPill {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 0.65rem;
+  padding: 0.55rem 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.22s var(--ease-out);
   cursor: default;
   min-width: 0;
 }
 
+.skillPill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+.iconBox {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
 .icon {
-  width: 1.3rem;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   line-height: 1;
-  text-align: center;
-  flex: 0 0 auto;
 }
 
 .iconMark {
-  width: 1.3rem;
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-align: center;
-  flex: 0 0 auto;
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .iconLabel {
   font-family: var(--font-sans);
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--text);
   letter-spacing: -0.01em;
-  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Mobile Optimized */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-  .card {
-    padding: 1.3rem;
-    border-radius: 18px;
-  }
-  .icon {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-  .card {
-    padding: 1.1rem;
-  }
-  .icons {
-    gap: 0.75rem;
-  }
-  .category {
-    font-size: 0.62rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.7rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .icons {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
+/* Light Theme Overrides */
 :global([data-theme="light"]) .card {
-  background: var(--surface);
+  background: #ffffff;
+  border-color: rgba(15, 18, 34, 0.08);
   box-shadow: 0 4px 20px rgba(38, 42, 64, 0.04);
 }
 
 :global([data-theme="light"]) .card:hover {
-  background: var(--surface-2);
-  box-shadow: 0 8px 24px rgba(38, 42, 64, 0.08);
+  background: #ffffff;
+  border-color: rgba(15, 18, 34, 0.18);
+  box-shadow: 0 10px 30px rgba(38, 42, 64, 0.08);
 }
 
-:global([data-theme="light"]) .category {
-  color: var(--accent);
-  font-weight: 600;
+:global([data-theme="light"]) .cardHeroInner {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.07), rgba(59, 130, 246, 0.05), #ffffff);
+  border-color: rgba(124, 58, 237, 0.28);
+  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.08);
+}
+
+:global([data-theme="light"]) .cardHeroInner:hover {
+  border-color: rgba(124, 58, 237, 0.45);
+  box-shadow: 0 12px 34px rgba(124, 58, 237, 0.14);
+}
+
+:global([data-theme="light"]) .heroGlow {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.14) 0%, rgba(59, 130, 246, 0.08) 45%, transparent 70%);
+}
+
+:global([data-theme="light"]) .heroBadge {
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.10);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+:global([data-theme="light"]) .countBadge {
+  background: rgba(15, 18, 34, 0.04);
+  border-color: rgba(15, 18, 34, 0.08);
+  color: #545D78;
+}
+
+:global([data-theme="light"]) .skillPill {
+  background: rgba(15, 18, 34, 0.035);
+  border-color: rgba(15, 18, 34, 0.08);
+}
+
+:global([data-theme="light"]) .skillPill:hover {
+  background: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
+}
+
+:global([data-theme="light"]) .iconBox {
+  background: rgba(15, 18, 34, 0.04);
+}
+
+:global([data-theme="light"]) .categoryTitle {
+  color: #0F1222;
+}
+
+:global([data-theme="light"]) .categoryDesc {
+  color: #475069;
 }
 
 :global([data-theme="light"]) .iconLabel {
-  color: var(--text);
-  font-weight: 500;
+  color: #0F1222;
+}
+
+/* Tablet: 2-column Balanced Grid */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+
+  .cardHero {
+    grid-column: span 2;
+  }
+
+  .cardBackend,
+  .cardDatabase,
+  .cardMl,
+  .cardFrontend,
+  .cardLanguages,
+  .cardTools {
+    grid-column: span 1;
+  }
+
+  .pillGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heroPillGrid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .widePillGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile: Single Column */
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cardHero,
+  .cardBackend,
+  .cardDatabase,
+  .cardMl,
+  .cardFrontend,
+  .cardLanguages,
+  .cardTools {
+    grid-column: span 1;
+  }
+
+  .card {
+    padding: 1.25rem;
+    border-radius: 18px;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .pillGrid,
+  .heroPillGrid,
+  .widePillGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .skillPill {
+    padding: 0.5rem 0.65rem;
+    gap: 0.5rem;
+  }
+
+  .iconBox {
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon {
+    font-size: 1.1rem;
+  }
+
+  .iconLabel {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .pillGrid,
+  .heroPillGrid,
+  .widePillGrid {
+    grid-template-columns: 1fr;
+  }
 }
