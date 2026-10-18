@@ -1,0 +1,84 @@
+/* ── Aurora Custom Cursor (Linear & Apple Style) ── */
+
+.cursorDot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  margin-left: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #A78BFA, #38BDF8);
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.75);
+  transition: opacity 0.2s ease-out;
+  will-change: transform, opacity;
+}
+
+.cursorHalo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  margin-top: -17px;
+  margin-left: -17px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(139, 92, 246, 0.45);
+  background: rgba(139, 92, 246, 0.08);
+  pointer-events: none;
+  z-index: 99998;
+  opacity: 0;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.15);
+  transition: opacity 0.25s ease-out, border-color 0.22s var(--ease-out), background 0.22s var(--ease-out), box-shadow 0.22s var(--ease-out);
+  will-change: transform, opacity;
+}
+
+/* Hovering interactive element */
+.isHovering {
+  border-color: rgba(56, 189, 248, 0.75);
+  background: rgba(56, 189, 248, 0.12);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.4), 0 0 10px rgba(56, 189, 248, 0.35);
+}
+
+/* Clicking / pointer down */
+.isClicking {
+  border-color: rgba(167, 139, 250, 0.9);
+  background: rgba(167, 139, 250, 0.22);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.6);
+}
+
+/* Light Theme Overrides */
+:global([data-theme="light"]) .cursorDot {
+  background: #7C3AED;
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.6);
+}
+
+:global([data-theme="light"]) .cursorHalo {
+  border-color: rgba(124, 58, 237, 0.4);
+  background: rgba(124, 58, 237, 0.07);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.16);
+}
+
+:global([data-theme="light"]) .isHovering {
+  border-color: rgba(14, 165, 233, 0.85);
+  background: rgba(14, 165, 233, 0.12);
+  box-shadow: 0 0 18px rgba(124, 58, 237, 0.26);
+}
+
+:global([data-theme="light"]) .isClicking {
+  border-color: #6D28D9;
+  background: rgba(109, 40, 217, 0.18);
+  box-shadow: 0 0 16px rgba(109, 40, 217, 0.45);
+}
+
+/* Disable completely on mobile touch devices or print */
+@media (pointer: coarse), print {
+  .cursorDot,
+  .cursorHalo {
+    display: none !important;
+  }
+}

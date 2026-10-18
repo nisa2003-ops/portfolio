@@ -3,6 +3,7 @@ import { useTheme } from "./hooks/useTheme";
 import { useSpotlight } from "./hooks/useSpotlight";
 
 import ScrollProgress from "./components/ScrollProgress/ScrollProgress";
+import CustomCursor from "./components/CustomCursor/CustomCursor";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -20,6 +21,7 @@ export default function App() {
 
   return (
     <>
+      <CustomCursor />
       <ScrollProgress />
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>

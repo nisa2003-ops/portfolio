@@ -123,8 +123,8 @@ body::before {
 
 /* Page entrance */
 @keyframes page-in {
-  from { opacity: 0; transform: translateY(14px) }
-  to { opacity: 1; transform: translateY(0) }
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
 }
 
 #root {
@@ -440,3 +440,13 @@ html, body {
     transparent 65%
   );
 }
+
+/* ── Custom Aurora Cursor Support ── */
+@media (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+
