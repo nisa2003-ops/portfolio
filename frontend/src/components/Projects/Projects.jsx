@@ -38,7 +38,7 @@ function ProjectCard({ project, onOpenArchModal }) {
   const isCloudOps = project.id === "cloudops";
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} data-spotlight="true">
       <MockupCard project={project} />
 
       <div className={styles.body}>

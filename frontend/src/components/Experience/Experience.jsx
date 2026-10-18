@@ -76,7 +76,7 @@ export default function Experience() {
         <div className={styles.timelineList}>
           {visibleItems.map((item, index) => (
             <FadeIn key={item.id} delay={0.08 * (index + 1)}>
-              <article className={styles.card}>
+              <article className={styles.card} data-spotlight="true">
                 <div className={styles.cardHeaderTop}>
                   <div className={styles.logoAndTitle}>
                     <div className={styles.logoWrap}>

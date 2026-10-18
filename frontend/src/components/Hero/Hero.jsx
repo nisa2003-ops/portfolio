@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <section id="home" className={styles.hero}>
-      <div className={styles.content}>
+      <div className={styles.content} data-spotlight="true">
         <div className={styles.tagRow}>
           <p className={styles.tag}>
             Available for internships · {OWNER.university}
@@ -70,22 +70,22 @@ export default function Hero() {
 
         {/* 4 Impact Metrics Counter */}
         <div className={styles.metricsGrid} aria-label="Key engineering achievements and production proof">
-          <div className={styles.metricCard}>
+          <div className={styles.metricCard} data-spotlight="true">
             <span className={styles.metricVal}>100 <span className={styles.metricUnit}>VUs</span></span>
             <span className={styles.metricLabel}>Peak Load Tested (0% Errors)</span>
           </div>
 
-          <div className={styles.metricCard}>
+          <div className={styles.metricCard} data-spotlight="true">
             <span className={styles.metricVal}>6+ <span className={styles.metricUnit}>Services</span></span>
             <span className={styles.metricLabel}>Microservices (k3s on EC2)</span>
           </div>
 
-          <div className={styles.metricCard}>
+          <div className={styles.metricCard} data-spotlight="true">
             <span className={styles.metricVal}>7+ <span className={styles.metricUnit}>Certs</span></span>
             <span className={styles.metricLabel}>AWS, Cisco &amp; KodeKloud</span>
           </div>
 
-          <div className={styles.metricCard}>
+          <div className={styles.metricCard} data-spotlight="true">
             <span className={styles.metricVal}>100% <span className={styles.metricUnit}>CI/CD</span></span>
             <span className={styles.metricLabel}>Zero-Secret OIDC &amp; Trivy</span>
           </div>

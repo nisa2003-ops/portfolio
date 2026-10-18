@@ -67,7 +67,10 @@ export default function Skills() {
                 delay={0.05 * gi}
                 className={`${styles.cardWrapper} ${meta.gridClass || ""}`}
               >
-                <div className={`${styles.card} ${isHero ? styles.cardHeroInner : ""}`}>
+                <div
+                  className={`${styles.card} ${isHero ? styles.cardHeroInner : ""}`}
+                  data-spotlight="true"
+                >
                   {isHero && <div className={styles.heroGlow} aria-hidden="true" />}
 
                   <div className={styles.cardHeader}>

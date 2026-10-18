@@ -28,7 +28,7 @@ export default function Certifications() {
         <div className={styles.grid}>
           {visible.map((cert, i) => (
             <FadeIn key={cert.id} delay={0.07 * i}>
-              <div className={styles.card}>
+              <div className={styles.card} data-spotlight="true">
 
                 <div className={styles.top}>
                   <span
