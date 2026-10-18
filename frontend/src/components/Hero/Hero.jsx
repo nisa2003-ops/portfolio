@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { OWNER } from "../../constants/data";
+import { useSound } from "../../hooks/useSound";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   const [colomboTime, setColomboTime] = useState("");
+  const { playTapSound } = useSound();
 
   useEffect(() => {
     const updateTime = () => {
@@ -25,14 +27,17 @@ export default function Hero() {
   }, []);
 
   const handleResume = () => {
+    playTapSound();
     const a = document.createElement("a");
     a.href = OWNER.resumeUrl;
     a.download = "Nisadu_Nimsitha_Resume.pdf";
     a.click();
   };
 
-  const scrollTo = (id) =>
+  const scrollTo = (id) => {
+    playTapSound();
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section id="home" className={styles.hero}>

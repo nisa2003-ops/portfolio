@@ -1,10 +1,12 @@
 import { useState } from "react";
 import FadeIn from "../FadeIn";
 import { CAREER_JOURNEY } from "../../constants/data";
+import { useSound } from "../../hooks/useSound";
 import styles from "./Experience.module.css";
 
 export default function Experience() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const { playTapSound } = useSound();
 
   const filterTabs = [
     { id: "all", label: "All Journey", count: CAREER_JOURNEY.length },
@@ -63,7 +65,10 @@ export default function Experience() {
                 className={`${styles.filterPill} ${
                   activeFilter === tab.id ? styles.filterPillActive : ""
                 }`}
-                onClick={() => setActiveFilter(tab.id)}
+                onClick={() => {
+                  playTapSound();
+                  setActiveFilter(tab.id);
+                }}
               >
                 <span>{tab.label}</span>
                 <span className={styles.filterCount}>{tab.count}</span>

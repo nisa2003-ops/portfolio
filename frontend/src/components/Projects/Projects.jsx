@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FadeIn from "../FadeIn";
 import { PROJECTS, STATUS_COLORS } from "../../constants/data";
+import { useSound } from "../../hooks/useSound";
 import ArchitectureModal from "./ArchitectureModal";
 import styles from "./Projects.module.css";
 
@@ -189,6 +190,7 @@ function ProjectCard({ project, onOpenArchModal }) {
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [isArchModalOpen, setIsArchModalOpen] = useState(false);
+  const { playTapSound } = useSound();
 
   const filteredProjects = activeFilter === "all"
     ? PROJECTS
@@ -232,7 +234,10 @@ export default function Projects() {
                   role="tab"
                   aria-selected={isActive}
                   className={`${styles.filterPill} ${isActive ? styles.filterPillActive : ""}`}
-                  onClick={() => setActiveFilter(f.id)}
+                  onClick={() => {
+                    playTapSound();
+                    setActiveFilter(f.id);
+                  }}
                 >
                   <span>{f.label}</span>
                   <span className={styles.filterCount}>{count}</span>
