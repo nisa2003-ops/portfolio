@@ -1,12 +1,12 @@
 import { useState } from "react";
 import FadeIn from "../FadeIn";
 import { CAREER_JOURNEY } from "../../constants/data";
-import { useSound } from "../../hooks/useSound";
+import { useHaptics } from "../../hooks/useHaptics";
 import styles from "./Experience.module.css";
 
 export default function Experience() {
   const [activeFilter, setActiveFilter] = useState("all");
-  const { playTapSound } = useSound();
+  const { triggerTapHaptic } = useHaptics();
 
   const filterTabs = [
     { id: "all", label: "All Journey", count: CAREER_JOURNEY.length },
@@ -66,7 +66,7 @@ export default function Experience() {
                   activeFilter === tab.id ? styles.filterPillActive : ""
                 }`}
                 onClick={() => {
-                  playTapSound();
+                  triggerTapHaptic();
                   setActiveFilter(tab.id);
                 }}
               >

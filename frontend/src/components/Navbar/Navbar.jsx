@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { NAV_LINKS } from "../../constants/data";
-import { useSound } from "../../hooks/useSound";
+import { useHaptics } from "../../hooks/useHaptics";
 import styles from "./Navbar.module.css";
 
 export default function Navbar({ theme, toggleTheme }) {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { playSwitchSound, playTapSound } = useSound();
+  const { triggerTapHaptic, triggerSwitchHaptic } = useHaptics();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -40,7 +40,7 @@ export default function Navbar({ theme, toggleTheme }) {
           type="button"
           className={styles.logo}
           onClick={() => {
-            playTapSound();
+            triggerTapHaptic();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           aria-label="Back to top"
@@ -55,7 +55,7 @@ export default function Navbar({ theme, toggleTheme }) {
               key={id}
               className={`${styles.link} ${active === id ? styles.linkActive : ""}`}
               onClick={() => {
-                playTapSound();
+                triggerTapHaptic();
                 scrollTo(id);
               }}
               aria-current={active === id ? "page" : undefined}
@@ -67,7 +67,7 @@ export default function Navbar({ theme, toggleTheme }) {
             type="button"
             className={styles.themeBtn}
             onClick={() => {
-              playSwitchSound();
+              triggerSwitchHaptic();
               toggleTheme();
             }}
             aria-label="Toggle theme"
@@ -82,7 +82,7 @@ export default function Navbar({ theme, toggleTheme }) {
             type="button"
             className={styles.themeBtn}
             onClick={() => {
-              playSwitchSound();
+              triggerSwitchHaptic();
               toggleTheme();
             }}
             aria-label="Toggle theme"
@@ -93,7 +93,7 @@ export default function Navbar({ theme, toggleTheme }) {
             type="button"
             className={styles.hamburger}
             onClick={() => {
-              playTapSound();
+              triggerTapHaptic();
               setMenuOpen(!menuOpen);
             }}
             aria-label="Toggle menu"
@@ -115,7 +115,7 @@ export default function Navbar({ theme, toggleTheme }) {
               key={id}
               className={`${styles.mobileLink} ${active === id ? styles.mobileLinkActive : ""}`}
               onClick={() => {
-                playTapSound();
+                triggerTapHaptic();
                 scrollTo(id);
               }}
             >

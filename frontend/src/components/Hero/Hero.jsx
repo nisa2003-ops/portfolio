@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { OWNER } from "../../constants/data";
-import { useSound } from "../../hooks/useSound";
+import { useHaptics } from "../../hooks/useHaptics";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   const [colomboTime, setColomboTime] = useState("");
-  const { playTapSound } = useSound();
+  const { triggerTapHaptic } = useHaptics();
 
   useEffect(() => {
     const updateTime = () => {
@@ -27,7 +27,7 @@ export default function Hero() {
   }, []);
 
   const handleResume = () => {
-    playTapSound();
+    triggerTapHaptic();
     const a = document.createElement("a");
     a.href = OWNER.resumeUrl;
     a.download = "Nisadu_Nimsitha_Resume.pdf";
@@ -35,7 +35,7 @@ export default function Hero() {
   };
 
   const scrollTo = (id) => {
-    playTapSound();
+    triggerTapHaptic();
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
