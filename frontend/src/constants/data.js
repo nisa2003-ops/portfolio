@@ -37,7 +37,7 @@ export const CAREER_JOURNEY = [
     period: "2026",
     link: "https://codexia-csa.vercel.app/",
     description:
-      "Contributed as an active organizing committee member, lead graphic designer, and co-web developer for CODEXIA — the premier inter-university computer science quiz competition and algorithmic challenge organized by the Computer Science Association (CSA), University of Sri Jayewardenepura. Single-handedly designed all official promotional media, while co-developing the official event web platform.",
+      "Contributed as an active organizing committee member, lead graphic designer, and co-web developer for CODEXIA - the premier computer science quiz competition and algorithmic challenge organized for Computer Science Department students by the Computer Science Association (CSA), University of Sri Jayewardenepura. Single-handedly designed all official promotional media, while co-developing the official event web platform",
     highlights: [
       "Organizing Committee & Event Coordination: Collaborated as an active organizing committee member to manage overall event logistics, guidelines, and competition tracks across various technical domains.",
       "Graphic Design & Media Production: Single-handedly designed and produced all official event visuals, including promotional flyers, formal invitations, and participant/winner certificates.",
