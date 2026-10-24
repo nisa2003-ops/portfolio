@@ -25,6 +25,35 @@ export const NAV_LINKS = [
 
 export const CAREER_JOURNEY = [
   {
+    id: "codexia",
+    role: "Organizing Committee Member, Lead Graphic Designer & Co-Web Developer",
+    organization: "CODEXIA 2026",
+    subtitle: "Computer Science Association (CSA) · University of Sri Jayewardenepura",
+    category: "volunteering",
+    categoryLabel: "Volunteering & Organizing Committee",
+    categoryBadge: "🤝 Volunteering & Organizing Committee",
+    logo: "/CodeXiA_logo.png",
+    logoBackground: "#000000",
+    period: "2026",
+    link: "https://codexia-csa.vercel.app/",
+    description:
+      "Contributed as an active organizing committee member, lead graphic designer, and co-web developer for CODEXIA — the premier inter-university computer science quiz competition and algorithmic challenge organized by the Computer Science Association (CSA), University of Sri Jayewardenepura. Single-handedly designed all official promotional media, while co-developing the official event web platform.",
+    highlights: [
+      "Organizing Committee & Event Coordination: Collaborated as an active organizing committee member to manage overall event logistics, guidelines, and competition tracks across various technical domains.",
+      "Graphic Design & Media Production: Single-handedly designed and produced all official event visuals, including promotional flyers, formal invitations, and participant/winner certificates.",
+      "Web Platform Co-Development: Co-developed and launched the official interstellar-themed web platform (codexia-csa.vercel.app) using Next.js, React, and Tailwind CSS, featuring particle starfields, deep space directives, and fully mobile-responsive layouts.",
+    ],
+    skills: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Graphic Design",
+      "Content Editing",
+      "Event Organization",
+      "Team Collaboration",
+    ],
+  },
+  {
     id: "sathsara-dahana",
     role: "Web Development Team Member",
     organization: "Sathsara Dahana 2026",
@@ -33,6 +62,7 @@ export const CAREER_JOURNEY = [
     categoryLabel: "University Leadership & Web Initiatives",
     categoryBadge: "🏛️ University Leadership & Web Initiatives",
     logo: "/sathsara-dahana-logo.png",
+    logoBackground: "#000000",
     period: "2026",
     link: "https://www.sathsaradahana.live/",
     description:
@@ -61,6 +91,7 @@ export const CAREER_JOURNEY = [
     categoryLabel: "Professional Experience",
     categoryBadge: "🏢 Professional Experience",
     logo: "/startek-logo.jpg",
+    logoBackground: "#000000",
     period: "Previous",
     description:
       "Supported enterprise customers with technical inquiries, active listening, and high-impact issue resolution under fast-paced service SLAs.",
@@ -80,10 +111,36 @@ export const CAREER_JOURNEY = [
 
 export const LEADERSHIP = [
   {
+    role: "Organizing Committee Member, Lead Graphic Designer & Co-Web Developer",
+    organization: "CODEXIA 2026",
+    subtitle: "Computer Science Association (CSA) · University of Sri Jayewardenepura",
+    logo: "/CodeXiA_logo.png",
+    logoBackground: "#000000",
+    period: "2026",
+    link: "https://codexia-csa.vercel.app/",
+    description:
+      "Contributed as an active organizing committee member, lead graphic designer, and co-web developer for CODEXIA — the premier inter-university computer science quiz competition and algorithmic challenge organized by the Computer Science Association (CSA), University of Sri Jayewardenepura. Single-handedly designed all official promotional media, while co-developing the official event web platform.",
+    highlights: [
+      "Organizing Committee & Event Coordination: Collaborated as an active organizing committee member to manage overall event logistics, guidelines, and competition tracks across various technical domains.",
+      "Graphic Design & Media Production: Single-handedly designed and produced all official event visuals, including promotional flyers, formal invitations, and participant/winner certificates.",
+      "Web Platform Co-Development: Co-developed and launched the official interstellar-themed web platform (codexia-csa.vercel.app) using Next.js, React, and Tailwind CSS, featuring particle starfields, deep space directives, and fully mobile-responsive layouts.",
+    ],
+    skills: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Graphic Design",
+      "Content Editing",
+      "Event Organization",
+      "Team Collaboration",
+    ],
+  },
+  {
     role: "Web Development Team Member",
     organization: "Sathsara Dahana 2026",
     subtitle: "Faculty of Applied Sciences · University of Sri Jayewardenepura",
     logo: "/sathsara-dahana-logo.png",
+    logoBackground: "#000000",
     period: "2026",
     link: "https://www.sathsaradahana.live/",
     description:
@@ -110,6 +167,7 @@ export const EXPERIENCE = [
     role: "Customer Care Executive",
     company: "Startek",
     logo: "/startek-logo.jpg",
+    logoBackground: "#000000",
     description:
       "Supported customers with their inquiries, provided clear solutions, and helped deliver a positive service experience.",
     skills: [

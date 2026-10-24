@@ -126,11 +126,11 @@
   place-items: center;
   flex-shrink: 0;
   overflow: hidden;
-  background: #ffffff;
-  border: 1px solid var(--border);
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
   padding: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 .logo {
@@ -214,6 +214,23 @@
   white-space: nowrap;
 }
 
+.badgeVolunteering {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.12);
+  white-space: nowrap;
+}
+
 .period {
   font-family: var(--font-sans);
   font-size: 0.74rem;
@@ -272,6 +289,11 @@
   font-size: 0.86rem;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+.highlightItem strong {
+  color: var(--text);
+  font-weight: 600;
 }
 
 .highlightItem::before {
@@ -340,6 +362,13 @@
   background: rgba(4, 120, 87, 0.08);
   border-color: rgba(4, 120, 87, 0.25);
   box-shadow: 0 2px 8px rgba(4, 120, 87, 0.08);
+}
+
+:global([data-theme="light"]) .badgeVolunteering {
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.08);
+  border-color: rgba(2, 132, 199, 0.25);
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
 }
 
 :global([data-theme="light"]) .period {
@@ -457,6 +486,7 @@
   }
   .badgeIndustry,
   .badgeUniversity,
+  .badgeVolunteering,
   .badgeCampus {
     font-size: 0.68rem;
     padding: 4px 11px;
@@ -521,6 +551,7 @@
   }
   .badgeIndustry,
   .badgeUniversity,
+  .badgeVolunteering,
   .badgeCampus {
     font-size: 0.66rem;
     padding: 4px 9px;

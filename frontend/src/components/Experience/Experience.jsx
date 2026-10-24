@@ -17,9 +17,12 @@ export default function Experience() {
     },
     {
       id: "university",
-      label: "🏛️ University Leadership & Web Initiatives",
+      label: "🏛️ University Leadership & Volunteering",
       count: CAREER_JOURNEY.filter(
-        (item) => item.category === "university" || item.category === "campus"
+        (item) =>
+          item.category === "university" ||
+          item.category === "campus" ||
+          item.category === "volunteering"
       ).length,
     },
   ];
@@ -27,11 +30,17 @@ export default function Experience() {
   const visibleItems =
     activeFilter === "all"
       ? CAREER_JOURNEY
-      : CAREER_JOURNEY.filter(
-          (item) =>
-            item.category === activeFilter ||
-            (activeFilter === "university" && item.category === "campus")
-        );
+      : CAREER_JOURNEY.filter((item) => {
+          if (activeFilter === "industry") return item.category === "industry";
+          if (activeFilter === "university") {
+            return (
+              item.category === "university" ||
+              item.category === "campus" ||
+              item.category === "volunteering"
+            );
+          }
+          return item.category === activeFilter;
+        });
 
   return (
     <section id="experience" className={styles.section}>
@@ -49,7 +58,7 @@ export default function Experience() {
         </FadeIn>
         <FadeIn delay={0.15}>
           <p className="section-description">
-            A cohesive track record bridging enterprise customer operations with hands-on university web engineering leadership.
+            A cohesive track record bridging enterprise customer operations with hands-on university web engineering leadership and community volunteering.
           </p>
         </FadeIn>
 
@@ -84,7 +93,10 @@ export default function Experience() {
               <article className={styles.card} data-spotlight="true">
                 <div className={styles.cardHeaderTop}>
                   <div className={styles.logoAndTitle}>
-                    <div className={styles.logoWrap}>
+                    <div
+                      className={styles.logoWrap}
+                      style={item.logoBackground ? { background: item.logoBackground } : undefined}
+                    >
                       <img
                         src={item.logo}
                         alt={`${item.organization} logo`}
@@ -108,6 +120,10 @@ export default function Experience() {
                     {item.category === "industry" ? (
                       <span className={styles.badgeIndustry}>
                         🏢 Professional Experience
+                      </span>
+                    ) : item.category === "volunteering" ? (
+                      <span className={styles.badgeVolunteering}>
+                        🤝 Volunteering &amp; Organizing
                       </span>
                     ) : (
                       <span className={styles.badgeUniversity}>
@@ -135,11 +151,23 @@ export default function Experience() {
 
                 {item.highlights && item.highlights.length > 0 && (
                   <ul className={styles.highlights} aria-label="Key contributions and achievements">
-                    {item.highlights.map((highlight, idx) => (
-                      <li key={idx} className={styles.highlightItem}>
-                        {highlight}
-                      </li>
-                    ))}
+                    {item.highlights.map((highlight, idx) => {
+                      const colonIdx = highlight.indexOf(":");
+                      if (colonIdx > 0 && colonIdx < 50) {
+                        const title = highlight.slice(0, colonIdx);
+                        const rest = highlight.slice(colonIdx + 1);
+                        return (
+                          <li key={idx} className={styles.highlightItem}>
+                            <strong>{title}:</strong>{rest}
+                          </li>
+                        );
+                      }
+                      return (
+                        <li key={idx} className={styles.highlightItem}>
+                          {highlight}
+                        </li>
+                      );
+                    })}
                   </ul>
                 )}
 
