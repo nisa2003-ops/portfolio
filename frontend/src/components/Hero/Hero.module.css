@@ -6,7 +6,7 @@
   justify-content: center;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 10rem 1.5rem 5rem;
+  padding: 8.5rem 1.5rem 2.5rem;
   position: relative;
   z-index: 1;
   gap: 2rem;
@@ -432,7 +432,7 @@
 @media (max-width: 980px) {
   .hero {
     flex-direction: column;
-    padding: 7.5rem 1.25rem 2.5rem;
+    padding: 7rem 1.25rem 1.75rem;
     min-height: auto;
     gap: 1.5rem;
   }
@@ -466,7 +466,7 @@
 /* Mobile */
 @media (max-width: 768px) {
   .hero {
-    padding: 6.5rem 1rem 2rem;
+    padding: 6rem 1rem 1.25rem;
   }
   .content {
     padding: 1.5rem;

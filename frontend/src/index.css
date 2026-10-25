@@ -31,7 +31,7 @@
   
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --section-pad: 5rem 2rem;
+  --section-pad: 2.85rem 2rem;
   --max-w: 1180px;
   --radius-xl: 20px;
   --radius-lg: 16px;
@@ -123,12 +123,12 @@ body::before {
 
 /* Page entrance */
 @keyframes page-in {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 #root {
-  animation: page-in 0.8s var(--ease-out) forwards;
+  animation: page-in 0.5s var(--ease-out) forwards;
   position: relative;
   z-index: 1;
 }
@@ -186,19 +186,19 @@ section {
 
 /* Slightly tighten the transitions from toolkit through contact. */
 #skills .section-inner {
-  padding-bottom: 4.25rem;
+  padding-bottom: 2rem;
 }
 
 #experience .section-inner,
 #leadership .section-inner,
 #education .section-inner,
 #certifications .section-inner {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+  padding-top: 1.85rem;
+  padding-bottom: 1.85rem;
 }
 
 #contact .section-inner {
-  padding-top: 4.25rem;
+  padding-top: 2rem;
 }
 
 /* Section title — gradient accent */
@@ -291,7 +291,7 @@ section {
 /* ── Mobile Optimizations ── */
 @media (max-width: 768px) {
   :root {
-    --section-pad: 3.5rem 1.25rem;
+    --section-pad: 2.15rem 1.25rem;
     --radius-xl: 20px;
     --radius-lg: 14px;
     --radius-md: 12px;
@@ -314,19 +314,19 @@ section {
   }
 
   #skills .section-inner {
-    padding-bottom: 3rem;
+    padding-bottom: 1.65rem;
   }
 
   #experience .section-inner,
   #leadership .section-inner,
   #education .section-inner,
   #certifications .section-inner {
-    padding-top: 2.65rem;
-    padding-bottom: 2.65rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   #contact .section-inner {
-    padding-top: 3rem;
+    padding-top: 1.65rem;
   }
 
   .section-title {
@@ -341,7 +341,7 @@ section {
 
 @media (max-width: 480px) {
   :root {
-    --section-pad: 2.5rem 1rem;
+    --section-pad: 1.65rem 1rem;
   }
 
   .section-label {
@@ -384,19 +384,19 @@ html, body {
 
 @media (max-width: 480px) {
   #skills .section-inner {
-    padding-bottom: 2.2rem;
+    padding-bottom: 1.35rem;
   }
 
   #experience .section-inner,
   #leadership .section-inner,
   #education .section-inner,
   #certifications .section-inner {
-    padding-top: 2.2rem;
-    padding-bottom: 2.2rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 
   #contact .section-inner {
-    padding-top: 2.2rem;
+    padding-top: 1.35rem;
   }
 }
 
