@@ -1,12 +1,15 @@
 import FadeIn from "../FadeIn";
 import { OWNER } from "../../constants/data";
+import CurrentDirection from "./CurrentDirection";
 import styles from "./About.module.css";
 
 export default function About() {
   return (
     <section id="about" className={styles.section}>
       <div className="section-inner">
-        <FadeIn><p className="section-label">About</p></FadeIn>
+        <FadeIn>
+          <p className="section-label">About</p>
+        </FadeIn>
 
         <div className={styles.grid}>
           <FadeIn delay={0.1}>
@@ -20,18 +23,14 @@ export default function About() {
               {OWNER.bio.map((para, i) => (
                 <p key={i} className={styles.para}>{para}</p>
               ))}
-
-              <div className={styles.direction}>
-                <p className={styles.directionLabel}>Current direction</p>
-                <div className={styles.directionList}>
-                  <span><strong>Primary Focus</strong> Cloud &amp; DevOps</span>
-                  <span><strong>Also Exploring</strong> Networking &amp; Backend Systems</span>
-                  <span><strong>Alongside</strong> Machine Learning &amp; AI</span>
-                </div>
-              </div>
             </div>
           </FadeIn>
         </div>
+
+        {/* Current Direction - Primary Focus, Networking & AI showcase */}
+        <FadeIn delay={0.25}>
+          <CurrentDirection />
+        </FadeIn>
       </div>
     </section>
   );

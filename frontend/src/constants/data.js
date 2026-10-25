@@ -7,7 +7,7 @@ export const OWNER = {
   github: "https://github.com/nisa2003-ops",
   linkedin: "https://www.linkedin.com/in/nisadu-nimsitha-512a24348",
   bio: [
-    "I’m a Computer Science undergraduate interested in cloud infrastructure, DevOps, networking, backend systems, and machine learning. I enjoy taking applications beyond development by containerizing and deploying them, building CI/CD pipelines, working with databases and networking, and testing how systems perform under realistic workloads.",
+    "I am a Computer Science undergraduate passionate about Cloud Infrastructure, DevOps Engineering, and Networking. My interests include cloud computing, containerization, CI/CD automation, backend development, and machine learning. I enjoy building and deploying practical solutions, automating workflows, and exploring technologies that improve system reliability, scalability, and performance. I am continuously developing my technical skills through hands-on projects and exploring modern infrastructure technologies.",
   ],
   resumeUrl: "/Nisadu_Nimsitha_CV.pdf"
 };
