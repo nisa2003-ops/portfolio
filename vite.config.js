@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
+    allowedHosts: ["princeton-brilliant-paint-courts.trycloudflare.com"],
     // Proxy API calls to the Express backend during development
     proxy: {
       "/api": {

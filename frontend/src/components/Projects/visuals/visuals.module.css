@@ -1,0 +1,2002 @@
+/* ── Shared Visual Styles for Selected Work Bento Cards ── */
+
+/* -------------------------------------------------------------
+   LANKA MICROJOB: Live Kubernetes & CI/CD Terminal Visualizer
+   ------------------------------------------------------------- */
+.terminalCard {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  background: linear-gradient(135deg, rgba(10, 16, 30, 0.94) 0%, rgba(6, 10, 20, 0.98) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  border-radius: 16px;
+  padding: 1.15rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.windowControls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.dotRed {
+  background: #ef4444;
+}
+
+.dotYellow {
+  background: #f59e0b;
+}
+
+.dotGreen {
+  background: #10b981;
+}
+
+.terminalTitle {
+  font-family: var(--project-font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-left: 6px;
+  letter-spacing: 0.02em;
+}
+
+.terminalTabs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tabBtn {
+  font-family: var(--project-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.tabBtnActive {
+  background: rgba(56, 189, 248, 0.18) !important;
+  color: #38bdf8 !important;
+  border-color: rgba(56, 189, 248, 0.5) !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+/* Terminal Body Screen */
+.terminalBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 175px;
+}
+
+.terminalScreen {
+  background: rgba(4, 8, 16, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 10px;
+  padding: 0.85rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  position: relative;
+}
+
+.screenTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.k8sToggleGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.subPill {
+  font-family: var(--project-font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.subPill:hover {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+}
+
+.subPillActive {
+  background: rgba(56, 189, 248, 0.2) !important;
+  color: #38bdf8 !important;
+  border-color: rgba(56, 189, 248, 0.5) !important;
+}
+
+.cmdPromptRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--project-font-mono);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  flex-wrap: wrap;
+}
+
+.promptUser {
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.promptSep {
+  color: #64748b;
+}
+
+.promptPath {
+  color: #818cf8;
+  font-weight: 700;
+}
+
+.promptCmd {
+  color: #f8fafc;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* Table View for Pods & Services */
+.terminalTableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.15rem 0;
+  max-height: 180px;
+}
+
+.terminalTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--project-font-mono);
+  font-size: 0.68rem;
+  text-align: left;
+}
+
+.terminalTable th {
+  color: #64748b;
+  font-weight: 600;
+  padding: 4px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.04em;
+  position: sticky;
+  top: 0;
+  background: rgba(4, 8, 16, 0.95);
+}
+
+.terminalTable td {
+  padding: 3.5px 6px;
+  color: #cbd5e1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.podName {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.statusRunning {
+  color: #34d399;
+  font-weight: 700;
+}
+
+.dimText {
+  color: #64748b;
+}
+
+.portText {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.typeNodePort {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.typeClusterIp {
+  color: #818cf8;
+}
+
+/* -------------------------------------------------------------
+   SERPENTINE S-CURVE JENKINS PIPELINE
+   ------------------------------------------------------------- */
+.serpentineWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.jenkinsStatusBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  background: rgba(16, 24, 40, 0.7);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  font-family: var(--project-font-mono);
+  font-size: 0.63rem;
+}
+
+.jenkinsStatusLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jenkinsBuildId {
+  color: #34d399;
+  font-weight: 700;
+}
+
+.jenkinsBranch {
+  color: #94a3b8;
+}
+
+.jenkinsDuration {
+  color: #cbd5e1;
+}
+
+.serpentineCanvas {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  position: relative;
+  padding: 0.2rem 0;
+}
+
+.snakeRow1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+}
+
+.curveRightWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 28px;
+  margin: -5px 0;
+  height: 32px;
+}
+
+.snakeRow2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  width: 100%;
+}
+
+.curveLeftWrapper {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 28px;
+  margin: -5px 0;
+  height: 32px;
+}
+
+.snakeRow3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  width: 100%;
+}
+
+.snakeNode {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 8px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.snakeNode:hover {
+  transform: translateY(-2px);
+  border-color: #34d399;
+  box-shadow: 0 4px 14px rgba(52, 211, 153, 0.25);
+}
+
+.nodeActive {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.4) !important;
+  background: rgba(14, 25, 48, 0.95) !important;
+}
+
+.nodeIcon {
+  color: #34d399;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.nodeTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.nodeTitle {
+  font-family: var(--project-font-mono);
+  font-size: 0.63rem;
+  font-weight: 700;
+  color: #f8fafc;
+  white-space: nowrap;
+}
+
+.nodeDuration {
+  font-family: var(--project-font-mono);
+  font-size: 0.54rem;
+  color: #94a3b8;
+  font-variant-numeric: tabular-nums;
+}
+
+.snakeLineRight {
+  flex: 1;
+  min-width: 12px;
+  height: 2px;
+  background: linear-gradient(90deg, #34d399, #38bdf8);
+  position: relative;
+  overflow: hidden;
+}
+
+.snakeLineRight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: #ffffff;
+  box-shadow: 0 0 8px #38bdf8;
+  animation: snakePulseRight 1.5s infinite linear;
+}
+
+@keyframes snakePulseRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}
+
+.snakeLineLeft {
+  flex: 1;
+  min-width: 14px;
+  max-width: 45px;
+  height: 2px;
+  background: linear-gradient(270deg, #34d399, #38bdf8);
+  position: relative;
+  overflow: hidden;
+}
+
+.snakeLineLeft::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: #ffffff;
+  box-shadow: 0 0 8px #38bdf8;
+  animation: snakePulseLeft 1.5s infinite linear;
+}
+
+@keyframes snakePulseLeft {
+  0% { transform: translateX(200%); }
+  100% { transform: translateX(-100%); }
+}
+
+.curveSvg {
+  overflow: visible;
+}
+
+.animatedStroke {
+  animation: strokeFlow 1.8s infinite linear;
+}
+
+@keyframes strokeFlow {
+  from { stroke-dashoffset: 20; }
+  to { stroke-dashoffset: 0; }
+}
+
+.snakeParallelBox {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: rgba(14, 20, 36, 0.65);
+  border: 1px dashed rgba(56, 189, 248, 0.38);
+  border-radius: 8px;
+  padding: 4px 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.snakeParallelTag {
+  font-family: var(--project-font-mono);
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.parallelTracksCol {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.parallelItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-radius: 5px;
+  padding: 3px 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.parallelItem:hover {
+  border-color: #34d399;
+  box-shadow: 0 2px 10px rgba(52, 211, 153, 0.25);
+}
+
+.parallelTitle {
+  font-family: var(--project-font-mono);
+  font-size: 0.59rem;
+  font-weight: 700;
+  color: #f8fafc;
+  white-space: nowrap;
+}
+
+.parallelDuration {
+  font-family: var(--project-font-mono);
+  font-size: 0.52rem;
+  color: #94a3b8;
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.stageInspectorBox {
+  background: rgba(8, 12, 22, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 6px;
+  padding: 0.38rem 0.65rem;
+  font-family: var(--project-font-mono);
+  font-size: 0.63rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.inspectorLabel {
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: 0.58rem;
+  letter-spacing: 0.05em;
+}
+
+.inspectorCmd {
+  color: #cbd5e1;
+}
+
+/* -------------------------------------------------------------
+   MOBILE ADAPTIVE PIPELINE (Native vertical flow for <= 640px)
+   ------------------------------------------------------------- */
+.serpentineCanvasDesktop {
+  display: flex;
+}
+
+.mobilePipelineCanvas {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  padding: 0.2rem 0;
+}
+
+.mobileStageNode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.mobileStageNode:hover {
+  border-color: #34d399;
+  background: rgba(18, 28, 52, 0.95);
+  box-shadow: 0 2px 10px rgba(52, 211, 153, 0.2);
+}
+
+.mobileStageHeader {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.mobileStageIndex {
+  font-family: var(--project-font-mono);
+  font-size: 0.54rem;
+  font-weight: 700;
+  color: #38bdf8;
+  opacity: 0.85;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.mobileStageTitle {
+  font-family: var(--project-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #f8fafc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobileStageDuration {
+  font-family: var(--project-font-mono);
+  font-size: 0.6rem;
+  color: #94a3b8;
+  font-variant-numeric: tabular-nums;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.mobileVConnector {
+  width: 2px;
+  height: 10px;
+  background: linear-gradient(180deg, #34d399 0%, #38bdf8 100%);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobileVConnector::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 6px #38bdf8;
+  animation: mobileVPulse 1.2s infinite linear;
+}
+
+@keyframes mobileVPulse {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+.mobileParallelBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(14, 20, 36, 0.7);
+  border: 1px dashed rgba(56, 189, 248, 0.4);
+  border-radius: 8px;
+  padding: 5px 6px;
+  width: 100%;
+}
+
+.mobileParallelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+
+.mobileParallelSub {
+  font-family: var(--project-font-mono);
+  font-size: 0.52rem;
+  color: #94a3b8;
+}
+
+.mobileParallelRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.mobileParallelCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-radius: 6px;
+  padding: 5px 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 0;
+}
+
+.mobileParallelCard:hover {
+  border-color: #34d399;
+}
+
+/* AWS CodePipeline Flow UI */
+.awsPipelineHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.awsPipelineTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.awsLogoIcon {
+  font-size: 0.85rem;
+}
+
+.awsPipelineName {
+  font-family: var(--project-font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.awsStatusSuccessPill {
+  font-family: var(--project-font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.15);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  padding: 1px 7px;
+  border-radius: 9999px;
+  margin-left: auto;
+}
+
+.awsExecIdRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-family: var(--project-font-mono);
+  font-size: 0.62rem;
+  color: #94a3b8;
+}
+
+.commitCode {
+  color: #38bdf8;
+}
+
+.pipelineFlowGrid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0.4rem;
+  align-items: center;
+  margin: 0.35rem 0;
+}
+
+.pipelineStageCard {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stageCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--project-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #34d399;
+}
+
+.stageCheckIcon {
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.stageActionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: var(--project-font-mono);
+}
+
+.stageActionProvider {
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.stageActionCommit {
+  font-size: 0.58rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stageActionStatus {
+  font-size: 0.58rem;
+  color: #34d399;
+  font-weight: 600;
+}
+
+.stageConnector {
+  color: #38bdf8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+.stageConnectorVertical {
+  display: none;
+  color: #38bdf8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.85;
+  margin: -2px 0;
+}
+
+.hideOnMobile {
+  /* shown by default on desktop */
+}
+
+.terminalSubBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--project-font-mono);
+  font-size: 0.64rem;
+  color: #94a3b8;
+}
+
+.subBarItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Pipeline Log Box */
+.pipelineLogBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+  font-family: var(--project-font-mono);
+  font-size: 0.68rem;
+}
+
+.pipelineStep {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stepBadgePassed {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.62rem;
+}
+
+.stepBadgeActive {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.62rem;
+}
+
+.stepTitle {
+  color: #cbd5e1;
+}
+
+.stepTime {
+  color: #64748b;
+  margin-left: auto;
+  font-size: 0.62rem;
+}
+
+.stepPassedText {
+  color: #34d399;
+  font-weight: 600;
+  margin-left: auto;
+  font-size: 0.64rem;
+}
+
+.stepDeployHighlight {
+  color: #38bdf8;
+  font-weight: 700;
+  margin-left: auto;
+  font-size: 0.64rem;
+}
+
+/* k6 Stress Test Log Box */
+.k6LogBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-family: var(--project-font-mono);
+  font-size: 0.68rem;
+}
+
+.k6AssertRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.k6CheckGreen {
+  color: #34d399;
+  font-weight: 800;
+  font-size: 0.78rem;
+}
+
+.k6CheckText {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.k6CheckVal {
+  color: #34d399;
+  font-weight: 600;
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.k6MetricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 0.75rem;
+  margin-top: 0.2rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.k6MetricItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.64rem;
+}
+
+.k6MetricKey {
+  color: #94a3b8;
+}
+
+.k6MetricVal {
+  color: #cbd5e1;
+  font-variant-numeric: tabular-nums;
+}
+
+.k6MetricValGreen {
+  color: #34d399;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.k6MetricValCyan {
+  color: #38bdf8;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Topology Footer Stats */
+.topologyFooter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 2;
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.statLabel {
+  font-family: var(--project-font-mono);
+  font-size: 0.62rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.statValue {
+  font-family: var(--project-font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* -------------------------------------------------------------
+   CLOUDOPS: Option B - Terraform Infrastructure Blueprint & IaC Spec
+   ------------------------------------------------------------- */
+.blueprintCard {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  background: linear-gradient(135deg, rgba(11, 21, 40, 0.88) 0%, rgba(8, 14, 28, 0.96) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.blueprintHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.blueprintTitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wipBadge {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 3px 9px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pulseAmber {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+  animation: pulseAmberAnim 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseAmberAnim {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+}
+
+/* Terraform Resource Tree */
+.treeContainer {
+  background: rgba(10, 16, 32, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.treeItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.treeIcon {
+  color: #818cf8;
+}
+
+.treeResource {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.treeComment {
+  color: #64748b;
+  font-size: 0.7rem;
+}
+
+/* Milestone Roadmap */
+.roadmapBox {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.milestoneRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+}
+
+.phaseTag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.phaseDone {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.phaseActive {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.milestoneDesc {
+  color: #e2e8f0;
+}
+
+/* -------------------------------------------------------------
+   DENGUE MLOPS: Experiment Tracking & Evaluation Benchmark
+   ------------------------------------------------------------- */
+.mlopsCard {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  background: linear-gradient(135deg, rgba(13, 24, 20, 0.92) 0%, rgba(8, 16, 13, 0.97) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.85rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.mlopsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mlopsTitle {
+  font-family: var(--project-font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.registryBadge {
+  font-family: var(--project-font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: #a7f3d0;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+/* Benchmark Bars & Production Metrics Grid */
+.mlopsBody {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0.95rem;
+  align-items: stretch;
+}
+
+.rocChartBox {
+  background: rgba(6, 14, 11, 0.75);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chartLabel {
+  font-family: var(--project-font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #6ee7b7;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.benchmarkBarGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.benchmarkItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.benchmarkHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--project-font-mono);
+  font-size: 0.7rem;
+}
+
+.benchmarkName {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.benchmarkValHighlight {
+  color: #34d399;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: rgba(52, 211, 153, 0.12);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.benchmarkVal {
+  color: #94a3b8;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.barTrack {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.barFillGreen {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
+}
+
+.barFillCyan {
+  height: 100%;
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+  border-radius: 9999px;
+}
+
+.barFillPurple {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+  border-radius: 9999px;
+}
+
+.mlopsMetricsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.metricTile {
+  background: rgba(12, 24, 18, 0.75);
+  border: 1px solid rgba(52, 211, 153, 0.18);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.metricTileLabel {
+  font-family: var(--project-font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.metricTileVal {
+  font-family: var(--project-font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f8fafc;
+  font-variant-numeric: tabular-nums;
+}
+
+.mlopsMethodologyNote {
+  background: rgba(6, 14, 11, 0.6);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--project-font-mono);
+  font-size: 0.66rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+.mlopsMethodologyNote strong {
+  color: #34d399;
+}
+
+/* -------------------------------------------------------------
+   LIGHT MODE OVERRIDES
+   ------------------------------------------------------------- */
+:global([data-theme="light"]) .terminalCard {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-color: rgba(14, 165, 233, 0.35);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.08);
+}
+
+:global([data-theme="light"]) .terminalScreen {
+  background: #ffffff;
+  border-color: rgba(203, 213, 225, 0.9);
+}
+
+:global([data-theme="light"]) .tabBtn {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+:global([data-theme="light"]) .tabBtn:hover {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+:global([data-theme="light"]) .tabBtnActive {
+  background: #e0f2fe !important;
+  color: #0284c7 !important;
+  border-color: #38bdf8 !important;
+}
+
+:global([data-theme="light"]) .podName {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .promptCmd {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .stepTitle {
+  color: #334155;
+}
+
+:global([data-theme="light"]) .k6CheckText {
+  color: #334155;
+}
+
+:global([data-theme="light"]) .k6MetricVal {
+  color: #334155;
+}
+
+:global([data-theme="light"]) .terminalTable td {
+  color: #334155;
+}
+
+:global([data-theme="light"]) .jenkinsStatusBanner {
+  background: #ffffff;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+:global([data-theme="light"]) .snakeNode {
+  background: #ffffff;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+:global([data-theme="light"]) .nodeTitle {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .snakeParallelBox {
+  background: #f8fafc;
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+:global([data-theme="light"]) .parallelItem {
+  background: #ffffff;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+:global([data-theme="light"]) .parallelTitle {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .mobileStageNode,
+:global([data-theme="light"]) .mobileParallelCard {
+  background: #ffffff;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+:global([data-theme="light"]) .mobileStageTitle {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .mobileParallelBlock {
+  background: #f8fafc;
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+:global([data-theme="light"]) .mobileStageIndex {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+:global([data-theme="light"]) .stageInspectorBox {
+  background: #f8fafc;
+  border-color: rgba(14, 165, 233, 0.25);
+}
+
+:global([data-theme="light"]) .inspectorCmd {
+  color: #334155;
+}
+
+:global([data-theme="light"]) .subPill {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+
+:global([data-theme="light"]) .subPillActive {
+  background: #e0f2fe !important;
+  color: #0284c7 !important;
+  border-color: #38bdf8 !important;
+}
+
+:global([data-theme="light"]) .terminalTable th {
+  background: #f8fafc;
+  color: #64748b;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+:global([data-theme="light"]) .pipelineStageCard {
+  background: #ffffff;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+:global([data-theme="light"]) .stageActionProvider {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .awsPipelineName {
+  color: #0284c7;
+}
+
+:global([data-theme="light"]) .statBox {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(14, 165, 233, 0.2);
+}
+
+:global([data-theme="light"]) .statLabel {
+  color: #64748b;
+}
+
+:global([data-theme="light"]) .statValue {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .blueprintCard {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+:global([data-theme="light"]) .blueprintTitle {
+  color: #0284c7;
+}
+
+:global([data-theme="light"]) .treeContainer {
+  background: #ffffff;
+  border-color: rgba(203, 213, 225, 0.8);
+  color: #334155;
+}
+
+:global([data-theme="light"]) .treeResource {
+  color: #0284c7;
+}
+
+:global([data-theme="light"]) .milestoneDesc {
+  color: #1e293b;
+}
+
+:global([data-theme="light"]) .mlopsCard {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.06);
+}
+
+:global([data-theme="light"]) .mlopsTitle {
+  color: #059669;
+}
+
+:global([data-theme="light"]) .rocChartBox {
+  background: #ffffff;
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+:global([data-theme="light"]) .metricTile {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+:global([data-theme="light"]) .metricTileLabel {
+  color: #64748b;
+}
+
+:global([data-theme="light"]) .metricTileVal {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .benchmarkName {
+  color: #334155;
+}
+
+:global([data-theme="light"]) .barTrack {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* -------------------------------------------------------------
+   TRAVEL PLANNER: GenAI Route & Leaflet Maps Visualizer
+   ------------------------------------------------------------- */
+.travelVisualCard {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  background: linear-gradient(135deg, rgba(20, 14, 32, 0.92) 0%, rgba(10, 8, 20, 0.97) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  border-radius: 16px;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.travelVisualHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.travelTitle {
+  font-family: var(--project-font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c084fc;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.aiSparkle {
+  font-size: 0.85rem;
+}
+
+.travelWaypointsBadge {
+  font-family: var(--project-font-mono);
+  font-size: 0.64rem;
+  font-weight: 600;
+  color: #e9d5ff;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.promptSnippetBox {
+  background: rgba(6, 4, 12, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--project-font-mono);
+  font-size: 0.66rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.promptLabel {
+  color: #a855f7;
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+.promptText {
+  color: #e2e8f0;
+  font-style: italic;
+}
+
+.routeTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.15rem 0;
+}
+
+.routeStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.stepBulletCyan {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.stepBulletPurple {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c084fc;
+  box-shadow: 0 0 8px #c084fc;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.stepBulletGreen {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.stepInfo {
+  flex: 1;
+}
+
+.stepHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-family: var(--project-font-mono);
+  font-size: 0.68rem;
+  flex-wrap: wrap;
+}
+
+.stepDay {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.stepLocation {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.stepBudget {
+  color: #34d399;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+
+.stepSub {
+  margin: 2px 0 0 0;
+  font-family: var(--project-font-body);
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+.travelMetricsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.travelMiniMetric {
+  background: rgba(12, 10, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 4px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.miniMetricLabel {
+  font-family: var(--project-font-mono);
+  font-size: 0.58rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.miniMetricVal {
+  font-family: var(--project-font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+:global([data-theme="light"]) .travelVisualCard {
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+  border-color: rgba(168, 85, 247, 0.35);
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.08);
+}
+
+:global([data-theme="light"]) .travelTitle {
+  color: #7e22ce;
+}
+
+:global([data-theme="light"]) .promptSnippetBox {
+  background: #ffffff;
+  border-color: rgba(168, 85, 247, 0.25);
+}
+
+:global([data-theme="light"]) .promptText {
+  color: #334155;
+}
+
+:global([data-theme="light"]) .stepLocation {
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .stepSub {
+  color: #475569;
+}
+
+:global([data-theme="light"]) .travelMiniMetric {
+  background: #ffffff;
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+:global([data-theme="light"]) .mlopsMethodologyNote {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #334155;
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .terminalCard {
+    padding: 1rem 1rem 1.15rem;
+  }
+
+  .terminalHeader {
+    gap: 0.5rem;
+  }
+
+  .terminalTabs {
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
+  }
+
+  .terminalTabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabBtn {
+    padding: 4px 8px;
+    font-size: 0.62rem;
+    flex-shrink: 0;
+  }
+
+  .pipelineFlowGrid {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .stageConnector {
+    display: none;
+  }
+
+  .stageConnectorVertical {
+    display: block;
+  }
+
+  .topologyFooter {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .statBox {
+    padding: 5px 6px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .statLabel {
+    font-size: 0.52rem;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  .statValue {
+    font-size: 0.85rem;
+  }
+
+  .mlopsBody {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .terminalCard {
+    padding: 0.85rem 0.85rem 1rem;
+    border-radius: 12px;
+    min-height: auto;
+  }
+
+  .terminalScreen {
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+  }
+
+  /* Switch CI/CD: Hide desktop S-curve & show native vertical pipeline */
+  .serpentineCanvasDesktop {
+    display: none !important;
+  }
+
+  .mobilePipelineCanvas {
+    display: flex !important;
+  }
+
+  /* Command & Subview Prompts */
+  .screenTopRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+  }
+
+  .cmdPromptRow {
+    font-size: 0.64rem;
+    word-break: break-all;
+  }
+
+  .k8sToggleGroup,
+  .jenkinsToggleGroup {
+    width: 100%;
+    display: flex;
+    gap: 6px;
+  }
+
+  .subPill {
+    flex: 1;
+    text-align: center;
+    padding: 4px 6px;
+    font-size: 0.62rem;
+  }
+
+  /* Stage Inspector */
+  .stageInspectorBox {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.58rem;
+    gap: 4px;
+  }
+
+  .inspectorCmd {
+    word-break: break-word;
+  }
+
+  /* Tables: hide non-essential columns & truncate pod names */
+  .hideOnMobile {
+    display: none !important;
+  }
+
+  .terminalTable th,
+  .terminalTable td {
+    padding: 3.5px 5px;
+    font-size: 0.64rem;
+  }
+
+  .podName {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Terminal Sub-bar */
+  .terminalSubBar {
+    gap: 0.3rem 0.6rem;
+    font-size: 0.58rem;
+    padding-top: 0.4rem;
+  }
+
+  /* k6 Stress Test View */
+  .k6AssertRow {
+    flex-wrap: wrap;
+    gap: 3px;
+    font-size: 0.62rem;
+  }
+
+  .k6CheckVal {
+    font-size: 0.62rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminalHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+  }
+
+  .windowControls {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .terminalTitle {
+    font-size: 0.6rem;
+  }
+
+  .terminalTable th,
+  .terminalTable td {
+    font-size: 0.6rem;
+    padding: 2.5px 4px;
+  }
+
+  .podName {
+    max-width: 95px;
+  }
+
+  .k6MetricsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .topologyFooter {
+    gap: 0.3rem;
+  }
+
+  .statBox {
+    padding: 4px 4px;
+  }
+
+  .statLabel {
+    font-size: 0.48rem;
+  }
+
+  .statValue {
+    font-size: 0.78rem;
+  }
+}
