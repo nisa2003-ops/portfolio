@@ -46,9 +46,9 @@ export default function LankaTopologyVisual() {
     setCicdMode(mode);
   };
 
-  const handleStageSelect = (id, name, duration, cmd) => {
+  const handleStageSelect = (id, name, cmd) => {
     triggerTapHaptic();
-    setSelectedStage((prev) => (prev?.id === id ? null : { id, name, duration, cmd }));
+    setSelectedStage((prev) => (prev?.id === id ? null : { id, name, cmd }));
   };
 
   return (
@@ -140,12 +140,11 @@ export default function LankaTopologyVisual() {
                     {/* Stage 1: Tool Install */}
                     <div
                       className={`${styles.snakeNode} ${selectedStage?.id === "tool_install" ? styles.nodeActive : ""}`}
-                      onClick={() => handleStageSelect("tool_install", "Tool Install", "12s", "setup JDK 17, Maven 3.9, Node.js 18, Docker CLI")}
+                      onClick={() => handleStageSelect("tool_install", "Tool Install", "setup JDK 17, Maven 3.9, Node.js 18, Docker CLI")}
                     >
                       <span className={styles.nodeIcon}>✓</span>
                       <div className={styles.nodeTextCol}>
                         <span className={styles.nodeTitle}>Tool Install</span>
-                        <span className={styles.nodeDuration}>12s</span>
                       </div>
                     </div>
 
@@ -154,12 +153,11 @@ export default function LankaTopologyVisual() {
                     {/* Stage 2: Checkout Source Code */}
                     <div
                       className={`${styles.snakeNode} ${selectedStage?.id === "checkout" ? styles.nodeActive : ""}`}
-                      onClick={() => handleStageSelect("checkout", "Checkout Source Code", "4s", "git clone & checkout main @ commit 7b2adf49")}
+                      onClick={() => handleStageSelect("checkout", "Checkout Source Code", "git clone & checkout main @ commit 7b2adf49")}
                     >
                       <span className={styles.nodeIcon}>✓</span>
                       <div className={styles.nodeTextCol}>
                         <span className={styles.nodeTitle}>Checkout Source</span>
-                        <span className={styles.nodeDuration}>4s</span>
                       </div>
                     </div>
 
@@ -171,19 +169,17 @@ export default function LankaTopologyVisual() {
                       <div className={styles.parallelTracksCol}>
                         <div
                           className={`${styles.parallelItem} ${selectedStage?.id === "build_backend" ? styles.nodeActive : ""}`}
-                          onClick={() => handleStageSelect("build_backend", "Build Backend", "48s", "mvn clean package -DskipTests=false (Spring Boot)")}
+                          onClick={() => handleStageSelect("build_backend", "Build Backend", "mvn clean package -DskipTests=false (Spring Boot)")}
                         >
                           <span className={styles.nodeIcon}>✓</span>
                           <span className={styles.parallelTitle}>Build Backend</span>
-                          <span className={styles.parallelDuration}>48s</span>
                         </div>
                         <div
                           className={`${styles.parallelItem} ${selectedStage?.id === "build_frontend" ? styles.nodeActive : ""}`}
-                          onClick={() => handleStageSelect("build_frontend", "Build Frontend", "22s", "npm run build (React / Vite production)")}
+                          onClick={() => handleStageSelect("build_frontend", "Build Frontend", "npm run build (React / Vite production)")}
                         >
                           <span className={styles.nodeIcon}>✓</span>
                           <span className={styles.parallelTitle}>Build Frontend</span>
-                          <span className={styles.parallelDuration}>22s</span>
                         </div>
                       </div>
                     </div>
@@ -193,12 +189,11 @@ export default function LankaTopologyVisual() {
                     {/* Stage 4: SonarQube Analysis */}
                     <div
                       className={`${styles.snakeNode} ${selectedStage?.id === "sonarqube" ? styles.nodeActive : ""}`}
-                      onClick={() => handleStageSelect("sonarqube", "SonarQube Analysis", "18s", "sonar-scanner: 0 Bugs, 0 Vulnerabilities · Quality Gate: PASSED")}
+                      onClick={() => handleStageSelect("sonarqube", "SonarQube Analysis", "sonar-scanner: 0 Bugs, 0 Vulnerabilities · Quality Gate: PASSED")}
                     >
                       <span className={styles.nodeIcon}>✓</span>
                       <div className={styles.nodeTextCol}>
                         <span className={styles.nodeTitle}>SonarQube</span>
-                        <span className={styles.nodeDuration}>18s</span>
                       </div>
                     </div>
                   </div>
@@ -222,12 +217,11 @@ export default function LankaTopologyVisual() {
                     {/* Stage 7: Deploy to Kubernetes */}
                     <div
                       className={`${styles.snakeNode} ${selectedStage?.id === "deploy_k8s" ? styles.nodeActive : ""}`}
-                      onClick={() => handleStageSelect("deploy_k8s", "Deploy to Kubernetes", "8s", "kubectl apply -f k8s/ (k3s manifest rollout)")}
+                      onClick={() => handleStageSelect("deploy_k8s", "Deploy to Kubernetes", "kubectl apply -f k8s/ (k3s manifest rollout)")}
                     >
                       <span className={styles.nodeIcon}>✓</span>
                       <div className={styles.nodeTextCol}>
                         <span className={styles.nodeTitle}>Deploy to K8s</span>
-                        <span className={styles.nodeDuration}>8s</span>
                       </div>
                     </div>
 
@@ -236,12 +230,11 @@ export default function LankaTopologyVisual() {
                     {/* Stage 6: Push Docker Images */}
                     <div
                       className={`${styles.snakeNode} ${selectedStage?.id === "push_docker" ? styles.nodeActive : ""}`}
-                      onClick={() => handleStageSelect("push_docker", "Push Docker Images", "28s", "docker push to Amazon ECR (sha256:7c9e81b)")}
+                      onClick={() => handleStageSelect("push_docker", "Push Docker Images", "docker push to Amazon ECR (sha256:7c9e81b)")}
                     >
                       <span className={styles.nodeIcon}>✓</span>
                       <div className={styles.nodeTextCol}>
                         <span className={styles.nodeTitle}>Push ECR Images</span>
-                        <span className={styles.nodeDuration}>28s</span>
                       </div>
                     </div>
 
@@ -250,12 +243,11 @@ export default function LankaTopologyVisual() {
                     {/* Stage 5: Build Docker Images */}
                     <div
                       className={`${styles.snakeNode} ${selectedStage?.id === "build_docker" ? styles.nodeActive : ""}`}
-                      onClick={() => handleStageSelect("build_docker", "Build Docker Images", "35s", "docker build -t lanka/api-gateway -t lanka/user-service ...")}
+                      onClick={() => handleStageSelect("build_docker", "Build Docker Images", "docker build -t lanka/api-gateway -t lanka/user-service ...")}
                     >
                       <span className={styles.nodeIcon}>✓</span>
                       <div className={styles.nodeTextCol}>
                         <span className={styles.nodeTitle}>Build Docker</span>
-                        <span className={styles.nodeDuration}>35s</span>
                       </div>
                     </div>
                   </div>
@@ -278,12 +270,11 @@ export default function LankaTopologyVisual() {
                     {/* Stage 8: Restart Kubernetes Deployments */}
                     <div
                       className={`${styles.snakeNode} ${selectedStage?.id === "restart_k8s" ? styles.nodeActive : ""}`}
-                      onClick={() => handleStageSelect("restart_k8s", "Restart Kubernetes Deployments", "15s", "kubectl rollout restart deployment -n default (0 downtime)")}
+                      onClick={() => handleStageSelect("restart_k8s", "Restart Kubernetes Deployments", "kubectl rollout restart deployment -n default (0 downtime)")}
                     >
                       <span className={styles.nodeIcon}>✓</span>
                       <div className={styles.nodeTextCol}>
                         <span className={styles.nodeTitle}>Restart K8s Deploy</span>
-                        <span className={styles.nodeDuration}>15s</span>
                       </div>
                     </div>
 
@@ -292,12 +283,11 @@ export default function LankaTopologyVisual() {
                     {/* Stage 9: Verify Kubernetes Deployment */}
                     <div
                       className={`${styles.snakeNode} ${selectedStage?.id === "verify_k8s" ? styles.nodeActive : ""}`}
-                      onClick={() => handleStageSelect("verify_k8s", "Verify Kubernetes Deployment", "10s", "kubectl rollout status (8/8 pods Running & Healthy)")}
+                      onClick={() => handleStageSelect("verify_k8s", "Verify Kubernetes Deployment", "kubectl rollout status (8/8 pods Running & Healthy)")}
                     >
                       <span className={styles.nodeIcon}>✓</span>
                       <div className={styles.nodeTextCol}>
                         <span className={styles.nodeTitle}>Verify K8s Deploy</span>
-                        <span className={styles.nodeDuration}>10s</span>
                       </div>
                     </div>
 
@@ -306,12 +296,11 @@ export default function LankaTopologyVisual() {
                     {/* Stage 10: Post Actions */}
                     <div
                       className={`${styles.snakeNode} ${selectedStage?.id === "post_actions" ? styles.nodeActive : ""}`}
-                      onClick={() => handleStageSelect("post_actions", "Post Actions", "2s", "workspace cleanup & webhook deployment notification dispatched")}
+                      onClick={() => handleStageSelect("post_actions", "Post Actions", "workspace cleanup & webhook deployment notification dispatched")}
                     >
                       <span className={styles.nodeIcon}>✓</span>
                       <div className={styles.nodeTextCol}>
                         <span className={styles.nodeTitle}>Post Actions</span>
-                        <span className={styles.nodeDuration}>2s</span>
                       </div>
                     </div>
                   </div>
@@ -323,14 +312,13 @@ export default function LankaTopologyVisual() {
                   {/* Stage 1: Tool Install */}
                   <div
                     className={`${styles.mobileStageNode} ${selectedStage?.id === "tool_install" ? styles.nodeActive : ""}`}
-                    onClick={() => handleStageSelect("tool_install", "Tool Install", "12s", "setup JDK 17, Maven 3.9, Node.js 18, Docker CLI")}
+                    onClick={() => handleStageSelect("tool_install", "Tool Install", "setup JDK 17, Maven 3.9, Node.js 18, Docker CLI")}
                   >
                     <div className={styles.mobileStageHeader}>
                       <span className={styles.nodeIcon}>✓</span>
                       <span className={styles.mobileStageIndex}>01</span>
                       <span className={styles.mobileStageTitle}>Tool Install</span>
                     </div>
-                    <span className={styles.mobileStageDuration}>12s</span>
                   </div>
 
                   <div className={styles.mobileVConnector} />
@@ -338,14 +326,13 @@ export default function LankaTopologyVisual() {
                   {/* Stage 2: Checkout Source Code */}
                   <div
                     className={`${styles.mobileStageNode} ${selectedStage?.id === "checkout" ? styles.nodeActive : ""}`}
-                    onClick={() => handleStageSelect("checkout", "Checkout Source Code", "4s", "git clone & checkout main @ commit 7b2adf49")}
+                    onClick={() => handleStageSelect("checkout", "Checkout Source Code", "git clone & checkout main @ commit 7b2adf49")}
                   >
                     <div className={styles.mobileStageHeader}>
                       <span className={styles.nodeIcon}>✓</span>
                       <span className={styles.mobileStageIndex}>02</span>
                       <span className={styles.mobileStageTitle}>Checkout Source Code</span>
                     </div>
-                    <span className={styles.mobileStageDuration}>4s</span>
                   </div>
 
                   <div className={styles.mobileVConnector} />
@@ -359,23 +346,21 @@ export default function LankaTopologyVisual() {
                     <div className={styles.mobileParallelRow}>
                       <div
                         className={`${styles.mobileParallelCard} ${selectedStage?.id === "build_backend" ? styles.nodeActive : ""}`}
-                        onClick={() => handleStageSelect("build_backend", "Build Backend", "48s", "mvn clean package -DskipTests=false (Spring Boot)")}
+                        onClick={() => handleStageSelect("build_backend", "Build Backend", "mvn clean package -DskipTests=false (Spring Boot)")}
                       >
                         <div className={styles.mobileStageHeader}>
                           <span className={styles.nodeIcon}>✓</span>
                           <span className={styles.mobileStageTitle}>Build Backend</span>
                         </div>
-                        <span className={styles.mobileStageDuration}>48s</span>
                       </div>
                       <div
                         className={`${styles.mobileParallelCard} ${selectedStage?.id === "build_frontend" ? styles.nodeActive : ""}`}
-                        onClick={() => handleStageSelect("build_frontend", "Build Frontend", "22s", "npm run build (React / Vite production)")}
+                        onClick={() => handleStageSelect("build_frontend", "Build Frontend", "npm run build (React / Vite production)")}
                       >
                         <div className={styles.mobileStageHeader}>
                           <span className={styles.nodeIcon}>✓</span>
                           <span className={styles.mobileStageTitle}>Build Frontend</span>
                         </div>
-                        <span className={styles.mobileStageDuration}>22s</span>
                       </div>
                     </div>
                   </div>
@@ -385,14 +370,13 @@ export default function LankaTopologyVisual() {
                   {/* Stage 4: SonarQube */}
                   <div
                     className={`${styles.mobileStageNode} ${selectedStage?.id === "sonarqube" ? styles.nodeActive : ""}`}
-                    onClick={() => handleStageSelect("sonarqube", "SonarQube Analysis", "18s", "sonar-scanner: 0 Bugs, 0 Vulnerabilities · Quality Gate: PASSED")}
+                    onClick={() => handleStageSelect("sonarqube", "SonarQube Analysis", "sonar-scanner: 0 Bugs, 0 Vulnerabilities · Quality Gate: PASSED")}
                   >
                     <div className={styles.mobileStageHeader}>
                       <span className={styles.nodeIcon}>✓</span>
                       <span className={styles.mobileStageIndex}>04</span>
                       <span className={styles.mobileStageTitle}>SonarQube Quality Gate</span>
                     </div>
-                    <span className={styles.mobileStageDuration}>18s</span>
                   </div>
 
                   <div className={styles.mobileVConnector} />
@@ -400,14 +384,13 @@ export default function LankaTopologyVisual() {
                   {/* Stage 5: Build Docker Images */}
                   <div
                     className={`${styles.mobileStageNode} ${selectedStage?.id === "build_docker" ? styles.nodeActive : ""}`}
-                    onClick={() => handleStageSelect("build_docker", "Build Docker Images", "35s", "docker build -t lanka/api-gateway -t lanka/user-service ...")}
+                    onClick={() => handleStageSelect("build_docker", "Build Docker Images", "docker build -t lanka/api-gateway -t lanka/user-service ...")}
                   >
                     <div className={styles.mobileStageHeader}>
                       <span className={styles.nodeIcon}>✓</span>
                       <span className={styles.mobileStageIndex}>05</span>
                       <span className={styles.mobileStageTitle}>Build Docker Images</span>
                     </div>
-                    <span className={styles.mobileStageDuration}>35s</span>
                   </div>
 
                   <div className={styles.mobileVConnector} />
@@ -415,14 +398,13 @@ export default function LankaTopologyVisual() {
                   {/* Stage 6: Push Docker Images */}
                   <div
                     className={`${styles.mobileStageNode} ${selectedStage?.id === "push_docker" ? styles.nodeActive : ""}`}
-                    onClick={() => handleStageSelect("push_docker", "Push Docker Images", "28s", "docker push to Amazon ECR (sha256:7c9e81b)")}
+                    onClick={() => handleStageSelect("push_docker", "Push Docker Images", "docker push to Amazon ECR (sha256:7c9e81b)")}
                   >
                     <div className={styles.mobileStageHeader}>
                       <span className={styles.nodeIcon}>✓</span>
                       <span className={styles.mobileStageIndex}>06</span>
                       <span className={styles.mobileStageTitle}>Push ECR Images</span>
                     </div>
-                    <span className={styles.mobileStageDuration}>28s</span>
                   </div>
 
                   <div className={styles.mobileVConnector} />
@@ -430,14 +412,13 @@ export default function LankaTopologyVisual() {
                   {/* Stage 7: Deploy to Kubernetes */}
                   <div
                     className={`${styles.mobileStageNode} ${selectedStage?.id === "deploy_k8s" ? styles.nodeActive : ""}`}
-                    onClick={() => handleStageSelect("deploy_k8s", "Deploy to Kubernetes", "8s", "kubectl apply -f k8s/ (k3s manifest rollout)")}
+                    onClick={() => handleStageSelect("deploy_k8s", "Deploy to Kubernetes", "kubectl apply -f k8s/ (k3s manifest rollout)")}
                   >
                     <div className={styles.mobileStageHeader}>
                       <span className={styles.nodeIcon}>✓</span>
                       <span className={styles.mobileStageIndex}>07</span>
                       <span className={styles.mobileStageTitle}>Deploy to Kubernetes</span>
                     </div>
-                    <span className={styles.mobileStageDuration}>8s</span>
                   </div>
 
                   <div className={styles.mobileVConnector} />
@@ -445,14 +426,13 @@ export default function LankaTopologyVisual() {
                   {/* Stage 8: Restart Kubernetes Deployments */}
                   <div
                     className={`${styles.mobileStageNode} ${selectedStage?.id === "restart_k8s" ? styles.nodeActive : ""}`}
-                    onClick={() => handleStageSelect("restart_k8s", "Restart Kubernetes Deployments", "15s", "kubectl rollout restart deployment -n default (0 downtime)")}
+                    onClick={() => handleStageSelect("restart_k8s", "Restart Kubernetes Deployments", "kubectl rollout restart deployment -n default (0 downtime)")}
                   >
                     <div className={styles.mobileStageHeader}>
                       <span className={styles.nodeIcon}>✓</span>
                       <span className={styles.mobileStageIndex}>08</span>
                       <span className={styles.mobileStageTitle}>Restart K8s Deployments</span>
                     </div>
-                    <span className={styles.mobileStageDuration}>15s</span>
                   </div>
 
                   <div className={styles.mobileVConnector} />
@@ -460,14 +440,13 @@ export default function LankaTopologyVisual() {
                   {/* Stage 9: Verify Kubernetes Deployment */}
                   <div
                     className={`${styles.mobileStageNode} ${selectedStage?.id === "verify_k8s" ? styles.nodeActive : ""}`}
-                    onClick={() => handleStageSelect("verify_k8s", "Verify Kubernetes Deployment", "10s", "kubectl rollout status (8/8 pods Running & Healthy)")}
+                    onClick={() => handleStageSelect("verify_k8s", "Verify Kubernetes Deployment", "kubectl rollout status (8/8 pods Running & Healthy)")}
                   >
                     <div className={styles.mobileStageHeader}>
                       <span className={styles.nodeIcon}>✓</span>
                       <span className={styles.mobileStageIndex}>09</span>
                       <span className={styles.mobileStageTitle}>Verify K8s Health (8/8)</span>
                     </div>
-                    <span className={styles.mobileStageDuration}>10s</span>
                   </div>
 
                   <div className={styles.mobileVConnector} />
@@ -475,14 +454,13 @@ export default function LankaTopologyVisual() {
                   {/* Stage 10: Post Actions */}
                   <div
                     className={`${styles.mobileStageNode} ${selectedStage?.id === "post_actions" ? styles.nodeActive : ""}`}
-                    onClick={() => handleStageSelect("post_actions", "Post Actions", "2s", "workspace cleanup & webhook deployment notification dispatched")}
+                    onClick={() => handleStageSelect("post_actions", "Post Actions", "workspace cleanup & webhook deployment notification dispatched")}
                   >
                     <div className={styles.mobileStageHeader}>
                       <span className={styles.nodeIcon}>✓</span>
                       <span className={styles.mobileStageIndex}>10</span>
                       <span className={styles.mobileStageTitle}>Post Actions &amp; Notify</span>
                     </div>
-                    <span className={styles.mobileStageDuration}>2s</span>
                   </div>
                 </div>
 
@@ -492,7 +470,7 @@ export default function LankaTopologyVisual() {
                     STAGE LOG:
                   </span>
                   <span className={styles.inspectorCmd}>
-                    {selectedStage ? `${selectedStage.name} (${selectedStage.duration}) ➔ ${selectedStage.cmd}` : "Click any stage node to inspect automated command & verify rollout"}
+                    {selectedStage ? `${selectedStage.name} ➔ ${selectedStage.cmd}` : "Click any stage node to inspect automated command & verify rollout"}
                   </span>
                 </div>
               </div>
@@ -598,8 +576,6 @@ export default function LankaTopologyVisual() {
                       <th>NAME</th>
                       <th>READY</th>
                       <th>STATUS</th>
-                      <th className={styles.hideOnMobile}>RESTARTS</th>
-                      <th>AGE</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -608,8 +584,6 @@ export default function LankaTopologyVisual() {
                         <td className={styles.podName}>{pod.name}</td>
                         <td>{pod.ready}</td>
                         <td className={styles.statusRunning}>{pod.status}</td>
-                        <td className={`${styles.dimText} ${styles.hideOnMobile}`}>{pod.restarts}</td>
-                        <td className={styles.dimText}>{pod.age}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -624,7 +598,6 @@ export default function LankaTopologyVisual() {
                       <th>TYPE</th>
                       <th>CLUSTER-IP</th>
                       <th>PORT(S)</th>
-                      <th className={styles.hideOnMobile}>AGE</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -638,7 +611,6 @@ export default function LankaTopologyVisual() {
                         </td>
                         <td className={styles.dimText}>{svc.clusterIp}</td>
                         <td className={styles.portText}>{svc.ports}</td>
-                        <td className={`${styles.dimText} ${styles.hideOnMobile}`}>{svc.age}</td>
                       </tr>
                     ))}
                   </tbody>
