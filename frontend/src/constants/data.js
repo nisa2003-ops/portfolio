@@ -353,6 +353,17 @@ export const CERTIFICATIONS = [
     color: "#8eafc2",
   },
   {
+    id: "cert-8",
+    title: "Networking Basics",
+    platform: "Cisco Networking Academy",
+    date: "October 2026",
+    credentialUrl: "https://www.credly.com/badges/cf521714-f640-46cc-b75e-948206550a1d/public_url",
+    logo: "/certifications/cisco.svg",
+    logoAlt: "Cisco logo",
+    logoBackground: "#ffffff",
+    color: "#8eafc2",
+  },
+  {
     id: "cert-2",
     title: "AWS Academy Graduate - Cloud Foundations",
     platform: "Amazon Web Services (AWS)",

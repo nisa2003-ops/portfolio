@@ -5,7 +5,7 @@ import styles from "./Certifications.module.css";
 
 export default function Certifications() {
   const [showAll, setShowAll] = useState(false);
-  const priority = ["cert-5", "cert-7", "cert-2", "cert-3", "cert-1", "cert-6", "cert-4"];
+  const priority = ["cert-8","cert-5", "cert-7", "cert-2", "cert-3", "cert-1", "cert-6", "cert-4"];
   const rank = (id) => priority.includes(id) ? priority.indexOf(id) : priority.length;
   const ordered = [...CERTIFICATIONS].sort((a, b) => rank(a.id) - rank(b.id));
   const visible = showAll ? ordered : ordered.slice(0, 6);
