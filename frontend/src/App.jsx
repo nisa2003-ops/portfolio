@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./index.css";
 import { useTheme } from "./hooks/useTheme";
 import { useSpotlight } from "./hooks/useSpotlight";
@@ -14,27 +15,33 @@ import Experience from "./components/Experience/Experience";
 import Certifications from "./components/Certifications/Certifications";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import ResumeModal from "./components/ResumeModal/ResumeModal";
 
 export default function App() {
   const [theme, toggleTheme] = useTheme();
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
   useSpotlight();
+
+  const handleOpenResume = () => setIsResumeOpen(true);
+  const handleCloseResume = () => setIsResumeOpen(false);
 
   return (
     <>
       <CustomCursor />
       <ScrollProgress />
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar theme={theme} toggleTheme={toggleTheme} onOpenResume={handleOpenResume} />
       <main>
-        <Hero />
+        <Hero onOpenResume={handleOpenResume} />
         <About />
         <Education />
         <Projects />
         <Skills />
         <Experience />
         <Certifications />
-        <Contact />
+        <Contact onOpenResume={handleOpenResume} />
       </main>
       <Footer />
+      <ResumeModal isOpen={isResumeOpen} onClose={handleCloseResume} />
     </>
   );
 }

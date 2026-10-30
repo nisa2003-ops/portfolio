@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nisadu Nimsitha – CV</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 9.8pt;
+      line-height: 1.38;
+      color: #000000;
+      background-color: #f1f5f9;
+      padding: 24px 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: #ffffff;
+      margin: 0 auto 20px auto;
+      padding: 18mm 22mm;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      position: relative;
+      text-align: left;
+    }
+
+    /* Print bar */
+    .no-print {
+      position: fixed;
+      top: 16px;
+      right: 24px;
+      z-index: 1000;
+    }
+
+    .btn-print {
+      background: #0f172a;
+      color: #ffffff;
+      border: 1px solid #334155;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-print:hover {
+      background: #1e293b;
+    }
+
+    header {
+      text-align: left;
+      margin-bottom: 14px;
+    }
+
+    h1.name {
+      font-size: 20pt;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 3px;
+      line-height: 1.2;
+    }
+
+    .tagline {
+      font-size: 10.2pt;
+      font-weight: 500;
+      color: #111827;
+      margin-bottom: 3px;
+    }
+
+    .contact-line {
+      font-size: 8.8pt;
+      color: #1f2937;
+      line-height: 1.45;
+    }
+
+    a {
+      color: #1d4ed8;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    section {
+      margin-top: 12px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 10.2pt;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 5px;
+    }
+
+    p.summary-text {
+      text-align: justify;
+      color: #111827;
+    }
+
+    .item-row {
+      margin-bottom: 2px;
+      font-size: 9.6pt;
+    }
+
+    .bold-title {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .project-meta {
+      font-size: 8.8pt;
+      color: #374151;
+      margin-bottom: 4px;
+    }
+
+    ul.bullets {
+      list-style-type: disc;
+      padding-left: 18px;
+      margin-bottom: 6px;
+    }
+
+    ul.bullets li {
+      margin-bottom: 3px;
+      color: #111827;
+      text-align: justify;
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .page {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 12mm 16mm;
+        box-shadow: none;
+      }
+
+      .page-break {
+        page-break-after: always;
+        break-after: page;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="page page-break">
+    <header>
+      <h1 class="name">Nisadu Nimsitha – CV</h1>
+      <div class="tagline">Cloud &amp; DevOps Engineer | Backend &amp; Distributed Systems | Computer Science Undergraduate</div>
+      <div class="contact-line">
+        Colombo, Sri Lanka | <a href="mailto:nisadu2003@gmail.com">nisadu2003@gmail.com</a> | 
+        <a href="https://www.linkedin.com/in/nisadu-nimsitha-512a24348" target="_blank">linkedin.com/in/nisadu-nimsitha-512a24348</a> | 
+        <a href="https://github.com/nisa2003-ops" target="_blank">github.com/nisa2003-ops</a> | 
+        <a href="https://nisadu-nimsitha.vercel.app" target="_blank">nisadu-nimsitha.vercel.app</a>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Computer Science undergraduate at the University of Sri Jayewardenepura (GPA 3.31/4.00) focused on cloud infrastructure, DevOps
+        automation and distributed backend systems. Deployed six Spring Boot microservices on AWS EC2 with k3s, Amazon RDS PostgreSQL
+        and AWS CodePipeline CI/CD, load-tested with k6 at 100 concurrent users and 0% failures. Hands-on with Terraform, GitHub Actions
+        (OIDC, Trivy), Prometheus and Grafana.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Technical Skills</h2>
+      <ul class="bullets">
+        <li><strong>Cloud &amp; Infrastructure:</strong> AWS (EC2, VPC, ECR, RDS PostgreSQL, CodePipeline, CodeBuild, IAM, S3, KMS), Kubernetes (k3s), Docker, Docker Compose, Linux (Ubuntu, Bash, systemd, SSH)</li>
+        <li><strong>DevOps &amp; CI/CD:</strong> Terraform, GitHub Actions (OIDC, Trivy), AWS CodePipeline, AWS CodeBuild, Jenkins, Maven, Git</li>
+        <li><strong>Backend:</strong> Java, Spring Boot (Spring Security, Spring Data JPA), Python, FastAPI, Node.js, Express, REST APIs, Microservices, JWT Authentication</li>
+        <li><strong>Observability &amp; Testing:</strong> Prometheus, Grafana, k6, pytest, Postman</li>
+        <li><strong>Databases:</strong> PostgreSQL, MySQL, Database Design &amp; ER Modeling</li>
+        <li><strong>Machine Learning &amp; MLOps:</strong> Scikit-learn, XGBoost, MLflow</li>
+        <li><strong>Frontend:</strong> React, Next.js, Vite, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS</li>
+        <li><strong>Networking &amp; Security:</strong> TCP/IP, Subnetting (VLSM), OSI Model, Cisco Packet Tracer, VPC Security Groups &amp; NACLs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">Education</h2>
+      <div class="item-row">
+        University of Sri Jayewardenepura, Colombo, Sri Lanka | 2024 – Expected 2026
+      </div>
+      <div class="item-row">
+        Bachelor of Science (Honours) in Computer Science (Statistics &amp; Mathematics) | GPA: 3.31 / 4.00
+      </div>
+      <ul class="bullets" style="margin-top: 4px;">
+        <li><strong>Coursework:</strong> Service-Oriented Computing, Data Structures &amp; Algorithms, Computer Security, Machine Learning, Database Design &amp; ER Modeling, Net-Centric Computing, Software Quality Assurance, Object-Oriented Programming, Regression Analysis, Inference Statistics</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">Projects</h2>
+
+      <div style="margin-bottom: 8px;">
+        <div class="bold-title">Lanka MicroJob – Distributed Cloud Microservices Platform</div>
+        <div class="project-meta">
+          Spring Boot, React, AWS EC2, k3s, Amazon ECR, AWS CodePipeline, Amazon RDS, k6 | 
+          <a href="https://github.com/nisa2003-ops/Lanka-Microjob-V1" target="_blank">GitHub</a> | 
+          <a href="https://medium.com/@nisadu2003/from-docker-compose-to-kubernetes-on-aws-deploying-lanka-microjob-with-ci-cd-rds-and-load-6bfe6eea0be4" target="_blank">Architecture case study</a> | 
+          <a href="https://lanka-microjob.vercel.app/" target="_blank">Live demo</a>
+        </div>
+        <ul class="bullets">
+          <li>Engineered six Spring Boot microservices (API Gateway, User, Job, Matching, Broker, Notification) covering authentication, job placement, commission logic and audit trails</li>
+          <li>Containerized the services with Docker and deployed them to a single-node k3s cluster on AWS EC2 using YAML manifests, ClusterIP services, NodePort ingress and an Elastic IP</li>
+          <li>Built an AWS CodePipeline and CodeBuild workflow, triggered by GitHub webhooks, that runs Maven tests, builds Docker images, pushes to Amazon ECR and performs rolling updates</li>
+          <li>Integrated Amazon RDS PostgreSQL in an isolated VPC subnet with connection pooling; k6 tests sustained 100 peak virtual users with 0% failures and about 480 ms P95 latency</li>
+          <li>Resolved CORS preflight issues and JWT propagation through the API Gateway; added health endpoints for Kubernetes liveness and readiness probes</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 8px;">
+        <div class="bold-title">CloudOps – Automated Cloud Deployment &amp; Reliability Platform</div>
+        <div class="project-meta">
+          Terraform, AWS (VPC, IAM, EC2, ECR), Docker, GitHub Actions, Prometheus, Grafana, FastAPI, Python
+        </div>
+        <ul class="bullets">
+          <li>Wrote modular Terraform to provision reproducible AWS infrastructure: custom VPCs, public and private subnets, internet gateways, route tables, security groups and Amazon ECR repositories</li>
+          <li>Designed a GitHub Actions pipeline using AWS OIDC federation to remove long-lived IAM credentials, with Trivy scans that gate releases on container vulnerabilities</li>
+          <li>Instrumented a FastAPI service with Prometheus RED metrics (rate, errors, duration) and latency histograms, and built Grafana dashboards for latency and error tracking</li>
+          <li>Added pytest suites to the pre-merge CI workflow and wrote rollback runbooks for deployment regressions</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 8px;">
+        <div class="bold-title">Dengue Outbreak Risk Classifier &amp; MLOps Pipeline</div>
+        <div class="project-meta">
+          Python, Scikit-learn, XGBoost, MLflow, FastAPI, GitHub Actions | 
+          <a href="https://github.com/nisa2003-ops/Dengue-Risk-MLOps-1" target="_blank">GitHub</a>
+        </div>
+        <ul class="bullets">
+          <li>Built an end-to-end outbreak risk classifier on historical case counts and weather data, splitting 13,150 training and 2,800 validation records chronologically to prevent target leakage</li>
+          <li>Engineered rolling lag features and weather moving averages; compared Logistic Regression, Random Forest and XGBoost, reaching a validation macro F1 of 0.7888 and 0.8437 recall on the high-risk class</li>
+          <li>Tracked experiments with MLflow and served the champion model through an asynchronous FastAPI endpoint with automated GitHub Actions tests</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <div class="page">
+    <section>
+      <div style="margin-bottom: 8px;">
+        <div class="bold-title">Lanka Travel Planner – AI-Powered Travel Engine</div>
+        <div class="project-meta">
+          React, Node.js, Express, Google Gemini API, Leaflet, OpenStreetMap | 
+          <a href="https://github.com/nisa2003-ops/Lanka-Travel-Planner" target="_blank">GitHub</a>
+        </div>
+        <ul class="bullets">
+          <li>Built a full-stack planner that generates multi-day Sri Lankan itineraries from destination preferences, budget and traveler profile, with Gemini-generated cost breakdowns and daily schedules</li>
+          <li>Rendered interactive route maps with Leaflet and OpenStreetMap, including waypoints and location popups</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Experience &amp; Leadership</h2>
+
+      <div style="margin-bottom: 8px;">
+        <div class="bold-title">Web Developer &amp; Lead Graphic Designer, CODEXIA 2026</div>
+        <div class="project-meta">
+          Computer Science Association (CSA), University of Sri Jayewardenepura | 2026 | 
+          <a href="https://codexia-csa.vercel.app/" target="_blank">Event platform</a>
+        </div>
+        <ul class="bullets">
+          <li>Co-developed the event platform with Next.js, React and Tailwind CSS, including a canvas starfield and mobile-responsive layouts</li>
+          <li>Produced the official media kit: promotional campaigns, formal invitations and participant and winner certificates</li>
+          <li>Worked with the CSA committee on competition logistics, problem guidelines and technical infrastructure</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 8px;">
+        <div class="bold-title">Web Development Team Member, Sathsara Dahana 2026</div>
+        <div class="project-meta">
+          Faculty of Applied Sciences, University of Sri Jayewardenepura | 2026 | 
+          <a href="https://www.sathsaradahana.live/" target="_blank">Event platform</a>
+        </div>
+        <ul class="bullets">
+          <li>Built the official portal for the faculty's annual cultural festival with Next.js, React and Tailwind CSS</li>
+          <li>Implemented an audition verification system that lets candidates check selection results by index number, plus an HTML5 canvas terminal bootloader and live countdowns</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom: 8px;">
+        <div class="bold-title">Customer Care Executive, Startek</div>
+        <div class="project-meta">Colombo, Sri Lanka</div>
+        <ul class="bullets">
+          <li>Resolved tier-1 technical and customer issues for global enterprise accounts under strict SLAs, using structured root-cause troubleshooting</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Certifications</h2>
+      <ul class="bullets">
+        <li><strong>AWS Academy Graduate:</strong> Cloud Foundations (May 2026), Cloud Security Foundations (Jul 2026), Microservices &amp; CI/CD Pipeline Builder (Aug 2026), Cloud Security Builder (Sep 2026)</li>
+        <li><strong>Cisco Networking Academy:</strong> Networking Basics (Oct 2026), Introduction to Packet Tracer (Sep 2026)</li>
+        <li><strong>KodeKloud:</strong> Kubernetes Crash Course (May 2026), Linux for Absolute Beginners (May 2026)</li>
+        <li><strong>In progress:</strong> Linux Essentials (Cisco / LPI), GitOps for Platform Engineering (KodeKloud)</li>
+      </ul>
+    </section>
+  </div>
+
+</body>
+</html>

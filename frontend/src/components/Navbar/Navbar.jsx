@@ -3,7 +3,7 @@ import { NAV_LINKS } from "../../constants/data";
 import { useHaptics } from "../../hooks/useHaptics";
 import styles from "./Navbar.module.css";
 
-export default function Navbar({ theme, toggleTheme }) {
+export default function Navbar({ theme, toggleTheme, onOpenResume }) {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -63,6 +63,19 @@ export default function Navbar({ theme, toggleTheme }) {
               {label}
             </button>
           ))}
+          {onOpenResume && (
+            <button
+              type="button"
+              className={styles.cvDockBtn}
+              onClick={() => {
+                triggerTapHaptic();
+                onOpenResume();
+              }}
+              title="Preview CV in-browser without download"
+            >
+              CV
+            </button>
+          )}
           <button
             type="button"
             className={styles.themeBtn}
@@ -122,6 +135,19 @@ export default function Navbar({ theme, toggleTheme }) {
               {label}
             </button>
           ))}
+          {onOpenResume && (
+            <button
+              type="button"
+              className={styles.mobileCvBtn}
+              onClick={() => {
+                triggerTapHaptic();
+                setMenuOpen(false);
+                onOpenResume();
+              }}
+            >
+              📄 Preview CV / Resume
+            </button>
+          )}
         </div>
       )}
     </nav>

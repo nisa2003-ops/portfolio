@@ -3,7 +3,7 @@ import { OWNER } from "../../constants/data";
 import { useHaptics } from "../../hooks/useHaptics";
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+export default function Hero({ onOpenResume }) {
   const [colomboTime, setColomboTime] = useState("");
   const { triggerTapHaptic } = useHaptics();
 
@@ -28,6 +28,10 @@ export default function Hero() {
 
   const handleResume = () => {
     triggerTapHaptic();
+    if (onOpenResume) {
+      onOpenResume();
+      return;
+    }
     const a = document.createElement("a");
     a.href = OWNER.resumeUrl;
     a.download = "Nisadu_Nimsitha_Resume.pdf";
@@ -68,8 +72,8 @@ export default function Hero() {
           <button type="button" className={styles.ctaSecondary} onClick={() => scrollTo("contact")}>
             Contact Me
           </button>
-          <button type="button" className={styles.ctaTertiary} onClick={handleResume}>
-            ↓ Download CV
+          <button type="button" className={styles.ctaTertiary} onClick={handleResume} title="View CV in-browser">
+            👁️ Preview CV
           </button>
         </div>
 

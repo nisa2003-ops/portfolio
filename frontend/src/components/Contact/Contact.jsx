@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import FadeIn from "../FadeIn";
 import { OWNER } from "../../constants/data";
@@ -10,7 +10,7 @@ const PUBLIC_KEY  = "jewkLNoRoysScc5nu";
 
 const INITIAL = { name: "", email: "", message: "" };
 
-export default function Contact() {
+export default function Contact({ onOpenResume }) {
   const [form, setForm]     = useState(INITIAL);
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [copied, setCopied] = useState(false);
@@ -48,9 +48,13 @@ export default function Contact() {
   };
 
   const handleResume = () => {
-    const a = document.createElement("a");
+    if (onOpenResume) {
+      onOpenResume();
+      return;
+    }
+    const a = document.createElement('a');
     a.href = OWNER.resumeUrl;
-    a.download = "Nisadu_Nimsitha_Resume.pdf";
+    a.download = 'Nisadu_Nimsitha_Resume.pdf';
     a.click();
   };
 
@@ -102,7 +106,7 @@ export default function Contact() {
                 ))}
 
                 <button type="button" className={styles.resumeBtn} onClick={handleResume}>
-                  ↓ Download Full Resume / CV
+                  👁️ View Full CV / Resume
                 </button>
               </div>
             </FadeIn>
