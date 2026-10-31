@@ -261,8 +261,7 @@ export default function ResumeModal({ isOpen, onClose }) {
               <article
                 className={styles.pdfExactSheet}
                 style={{
-                  transform: zoomLevel !== 1 ? `scale(${zoomLevel})` : undefined,
-                  transformOrigin: "top center",
+                  fontSize: zoomLevel !== 1 ? `${(0.88 * zoomLevel).toFixed(3)}rem` : undefined,
                 }}
               >
                 {/* ── HEADER ── */}

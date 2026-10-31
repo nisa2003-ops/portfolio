@@ -341,8 +341,10 @@
 
 /* ── Modal Content Body ── */
 .modalBody {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
   z-index: 1;
   display: flex;
@@ -363,16 +365,19 @@
 
 /* ── Paper Container (Interactive View) ── */
 .paperWrap {
-  padding: 1.6rem 1.25rem 2.5rem 1.25rem;
+  width: 100%;
+  min-height: 100%;
+  padding: 2rem 1.25rem 3.5rem 1.25rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   transition: background 0.2s ease;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  flex: 1 0 auto;
 }
 
 .lightPaper {
-  background: #334155;
+  background: #1e293b;
 }
 
 .darkPaper {
@@ -383,58 +388,61 @@
 .pdfExactSheet {
   width: 100%;
   max-width: 820px;
-  border-radius: 3px;
-  padding: 2.8rem 3.2rem;
-  transition: transform 0.15s ease, background 0.2s ease;
-  line-height: 1.4;
+  height: auto;
+  min-height: min-content;
+  border-radius: 4px;
+  padding: 3rem 3.4rem;
+  transition: background 0.2s ease;
+  line-height: 1.42;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 0.88rem;
   text-align: left;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 /* Light paper (matches official printed PDF) */
 .lightPaper .pdfExactSheet {
   background: #ffffff;
   color: #000000;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45), 0 2px 10px rgba(0, 0, 0, 0.2);
   border: 1px solid #cbd5e1;
 }
 
-.lightPaper .docTitle {
+.lightPaper .pdfExactSheet .docTitle {
   color: #000000;
 }
 
-.lightPaper .docSubtitle {
+.lightPaper .pdfExactSheet .docSubtitle {
   color: #111827;
 }
 
-.lightPaper .docContactLine {
+.lightPaper .pdfExactSheet .docContactLine {
   color: #111827;
 }
 
-.lightPaper .docContactLine a,
-.lightPaper .emailBtn,
-.lightPaper .projectMetaLine a,
-.lightPaper .bulletList a {
+.lightPaper .pdfExactSheet .docContactLine a,
+.lightPaper .pdfExactSheet .emailBtn,
+.lightPaper .pdfExactSheet .projectMetaLine a,
+.lightPaper .pdfExactSheet .bulletList a {
   color: #1d4ed8;
 }
 
-.lightPaper .sectionHeader {
+.lightPaper .pdfExactSheet .sectionHeader {
   color: #000000;
 }
 
-.lightPaper .sectionParagraph,
-.lightPaper .bulletList li,
-.lightPaper .entryLine {
+.lightPaper .pdfExactSheet .sectionParagraph,
+.lightPaper .pdfExactSheet .bulletList li,
+.lightPaper .pdfExactSheet .entryLine {
   color: #111827;
 }
 
-.lightPaper .projectTitle {
+.lightPaper .pdfExactSheet .projectTitle {
   color: #000000;
 }
 
-.lightPaper .projectMetaLine {
+.lightPaper .pdfExactSheet .projectMetaLine {
   color: #374151;
 }
 
@@ -442,44 +450,44 @@
 .darkPaper .pdfExactSheet {
   background: #0f172a;
   color: #e2e8f0;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.65), 0 2px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.darkPaper .docTitle {
+.darkPaper .pdfExactSheet .docTitle {
   color: #ffffff;
 }
 
-.darkPaper .docSubtitle {
+.darkPaper .pdfExactSheet .docSubtitle {
   color: #93c5fd;
 }
 
-.darkPaper .docContactLine {
+.darkPaper .pdfExactSheet .docContactLine {
   color: #94a3b8;
 }
 
-.darkPaper .docContactLine a,
-.darkPaper .emailBtn,
-.darkPaper .projectMetaLine a,
-.darkPaper .bulletList a {
+.darkPaper .pdfExactSheet .docContactLine a,
+.darkPaper .pdfExactSheet .emailBtn,
+.darkPaper .pdfExactSheet .projectMetaLine a,
+.darkPaper .pdfExactSheet .bulletList a {
   color: #38bdf8;
 }
 
-.darkPaper .sectionHeader {
+.darkPaper .pdfExactSheet .sectionHeader {
   color: #f8fafc;
 }
 
-.darkPaper .sectionParagraph,
-.darkPaper .bulletList li,
-.darkPaper .entryLine {
+.darkPaper .pdfExactSheet .sectionParagraph,
+.darkPaper .pdfExactSheet .bulletList li,
+.darkPaper .pdfExactSheet .entryLine {
   color: #cbd5e1;
 }
 
-.darkPaper .projectTitle {
+.darkPaper .pdfExactSheet .projectTitle {
   color: #ffffff;
 }
 
-.darkPaper .projectMetaLine {
+.darkPaper .pdfExactSheet .projectMetaLine {
   color: #94a3b8;
 }
 
@@ -915,7 +923,10 @@
 
   /* Document Padding & Typography */
   .paperWrap {
-    padding: 0.65rem 0.4rem 1.5rem 0.4rem;
+    padding: 0.65rem 0.4rem 2rem 0.4rem;
+    min-height: 100%;
+    width: 100%;
+    flex: 1 0 auto;
   }
 
   .pdfExactSheet {
@@ -923,6 +934,8 @@
     font-size: 0.81rem;
     line-height: 1.36;
     border-radius: 8px;
+    height: auto !important;
+    width: 100%;
   }
 
   .docTitle {
