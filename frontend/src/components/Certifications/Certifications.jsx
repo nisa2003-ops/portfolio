@@ -23,13 +23,13 @@ export default function Certifications() {
     { id: "all", label: "All Credentials", count: totalCount },
     { id: "aws", label: "☁️ AWS Cloud", count: awsCount },
     { id: "cisco", label: "🌐 Cisco Networking", count: ciscoCount },
-    { id: "linux-k8s", label: "🐧 Linux & Kubernetes", count: linuxK8sCount },
+    { id: "linux-k8s", label: "🐧 Linux & DevOps", count: linuxK8sCount },
     ...(platformCount > 0
       ? [{ id: "platform", label: "⚙️ Platform & GitOps", count: platformCount }]
       : []),
   ];
 
-  const priority = ["cert-8", "cert-5", "cert-7", "cert-2", "cert-3", "cert-1", "cert-6", "cert-4"];
+  const priority = ["cert-9", "cert-8", "cert-5", "cert-3", "cert-4", "cert-1", "cert-2"];
   const rank = (id) => (priority.includes(id) ? priority.indexOf(id) : priority.length);
   const ordered = [...CERTIFICATIONS].sort((a, b) => rank(a.id) - rank(b.id));
 
@@ -106,7 +106,7 @@ export default function Certifications() {
             <div className={styles.statDivider} />
             <div className={`${styles.statChip} ${styles.statChipVendor}`}>
               <span className={styles.statCountEmerald}>{linuxK8sCount}x</span>
-              <span className={styles.statName}>Linux &amp; K8s</span>
+              <span className={styles.statName}>Linux &amp; DevOps</span>
             </div>
             {platformCount > 0 && (
               <>
@@ -173,7 +173,7 @@ export default function Certifications() {
 
                   <span className={styles.verifiedChip}>
                     <span className={styles.pulseGreenDot} />
-                    {cert.verificationType?.includes("Credly") ? "Credly" : "KodeKloud"}
+                    {cert.verificationType?.includes("Credly") ? "Credly" : cert.issuerShort || "Verified"}
                   </span>
                 </div>
 

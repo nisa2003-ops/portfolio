@@ -181,7 +181,7 @@ export default function CertificateModal({ certificate, isOpen, onClose }) {
             className={styles.verifyPrimaryBtn}
             onClick={handleVerifyClick}
           >
-            <span>Verify on {certificate.verificationType?.includes("Credly") ? "Credly" : "KodeKloud"}</span>
+            <span>Verify on {certificate.verificationType?.includes("Credly") ? "Credly" : certificate.issuerShort || "Registry"}</span>
             <span className={styles.arrowIcon}>↗</span>
           </a>
         </div>

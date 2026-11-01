@@ -580,13 +580,9 @@ export default function ResumeModal({ isOpen, onClose }) {
                       </a>
                     </li>
                     <li>
-                      <strong>KodeKloud:</strong>{" "}
-                      <a href="https://learn.kodekloud.com/certificate/8a90819f-6656-4cc5-ba1a-1e0103bd7e66" target="_blank" rel="noopener noreferrer">
-                        Kubernetes Crash Course (May 2026)
-                      </a>
-                      ,{" "}
-                      <a href="https://learn.kodekloud.com/certificate/16b70d88-49fa-45b6-87ff-315738e5ee4b" target="_blank" rel="noopener noreferrer">
-                        Linux for Absolute Beginners (May 2026)
+                      <strong>The Linux Foundation:</strong>{" "}
+                      <a href="https://www.credly.com/badges/adf2bc53-69fb-4cd2-97f7-1b9d3af5f5bb/public_url" target="_blank" rel="noopener noreferrer">
+                        LFS162: Introduction to DevOps and Site Reliability Engineering (Nov 2026)
                       </a>
                     </li>
                     <li>
