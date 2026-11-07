@@ -586,6 +586,12 @@ export default function ResumeModal({ isOpen, onClose }) {
                       </a>
                     </li>
                     <li>
+                      <strong>KodeKloud Engineer:</strong>{" "}
+                      <a href="https://engineer.kodekloud.com/certificate-verification/b944e521-cebb-42c9-affe-830b6b18f9fd" target="_blank" rel="noopener noreferrer">
+                        Kubernetes - Level 1 (Nov 2026)
+                      </a>
+                    </li>
+                    <li>
                       <strong>In progress:</strong> Linux Essentials (Cisco / LPI), GitOps for Platform Engineering (KodeKloud)
                     </li>
                   </ul>

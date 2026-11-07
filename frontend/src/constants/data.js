@@ -342,6 +342,23 @@ export const EDUCATION = [
 
 export const CERTIFICATIONS = [
   {
+    id: "cert-10",
+    title: "Kubernetes - Level 1",
+    platform: "KodeKloud Engineer",
+    issuerShort: "KodeKloud",
+    category: "linux-k8s",
+    date: "November 2026",
+    credentialUrl: "https://engineer.kodekloud.com/certificate-verification/b944e521-cebb-42c9-affe-830b6b18f9fd",
+    credentialId: "B944e521-Cebb-42c9-Affe-830b6b18f9fd",
+    verificationType: "KodeKloud Verified",
+    logo: "/certifications/kodekloud.svg",
+    logoAlt: "KodeKloud Engineer logo",
+    logoBackground: "#111827",
+    accentColor: "#10b981",
+    skills: ["Kubernetes (k8s)", "Pods & Deployments", "Cluster Management", "YAML Manifests", "Hands-on Troubleshooting"],
+    summary: "Hands-on engineering certificate validating practical competence in Kubernetes cluster operations, deploying containerized pods, multi-replica deployments, and resolving live evaluated cluster tasks.",
+  },
+  {
     id: "cert-9",
     title: "LFS162: Introduction to DevOps and Site Reliability Engineering",
     platform: "The Linux Foundation",

@@ -23,13 +23,13 @@ export default function Certifications() {
     { id: "all", label: "All Credentials", count: totalCount },
     { id: "aws", label: "☁️ AWS Cloud", count: awsCount },
     { id: "cisco", label: "🌐 Cisco Networking", count: ciscoCount },
-    { id: "linux-k8s", label: "🐧 Linux & DevOps", count: linuxK8sCount },
+    { id: "linux-k8s", label: "🐧 Linux & Kubernetes", count: linuxK8sCount },
     ...(platformCount > 0
       ? [{ id: "platform", label: "⚙️ Platform & GitOps", count: platformCount }]
       : []),
   ];
 
-  const priority = ["cert-9", "cert-8", "cert-5", "cert-3", "cert-4", "cert-1", "cert-2"];
+  const priority = ["cert-10", "cert-9", "cert-8", "cert-5", "cert-3", "cert-4", "cert-1", "cert-2"];
   const rank = (id) => (priority.includes(id) ? priority.indexOf(id) : priority.length);
   const ordered = [...CERTIFICATIONS].sort((a, b) => rank(a.id) - rank(b.id));
 
@@ -106,7 +106,7 @@ export default function Certifications() {
             <div className={styles.statDivider} />
             <div className={`${styles.statChip} ${styles.statChipVendor}`}>
               <span className={styles.statCountEmerald}>{linuxK8sCount}x</span>
-              <span className={styles.statName}>Linux &amp; DevOps</span>
+              <span className={styles.statName}>Linux &amp; K8s</span>
             </div>
             {platformCount > 0 && (
               <>
