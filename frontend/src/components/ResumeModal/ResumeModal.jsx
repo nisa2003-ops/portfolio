@@ -592,7 +592,13 @@ export default function ResumeModal({ isOpen, onClose }) {
                       </a>
                     </li>
                     <li>
-                      <strong>In progress:</strong> Linux Essentials (Cisco / LPI), GitOps for Platform Engineering (KodeKloud)
+                      <strong>PlatformEngineering.org:</strong>{" "}
+                      <a href="https://www.virtualbadge.io/certificate-validator?credential=bbaee91b-1973-482c-8714-0d51c5293e85" target="_blank" rel="noopener noreferrer">
+                        GitOps for Platform Engineering (Nov 2026)
+                      </a>
+                    </li>
+                    <li>
+                      <strong>In progress:</strong> Linux Essentials (Cisco / LPI)
                     </li>
                   </ul>
                 </section>

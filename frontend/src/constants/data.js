@@ -342,6 +342,23 @@ export const EDUCATION = [
 
 export const CERTIFICATIONS = [
   {
+    id: "cert-11",
+    title: "GitOps for Platform Engineering",
+    platform: "PlatformEngineering.org",
+    issuerShort: "Platform Eng",
+    category: "platform",
+    date: "November 2026",
+    credentialUrl: "https://www.virtualbadge.io/certificate-validator?credential=bbaee91b-1973-482c-8714-0d51c5293e85",
+    credentialId: "bbaee91b-1973-482c-8714-0d51c5293e85",
+    verificationType: "Virtualbadge.io Verified",
+    logo: "/certifications/platformengineering.svg",
+    logoAlt: "Platform Engineering logo",
+    logoBackground: "#1e1b4b",
+    accentColor: "#ef4444",
+    skills: ["GitOps Principles", "Argo CD", "Flux CD", "Sveltos", "Enterprise GitOps Security"],
+    summary: "Completed a 6-module curriculum covering GitOps fundamentals, architecture patterns and anti-patterns, declarative tooling (Argo CD, Flux CD, Sveltos), enterprise scaling and security, and managing configuration sprawl.",
+  },
+  {
     id: "cert-10",
     title: "Kubernetes - Level 1",
     platform: "KodeKloud Engineer",

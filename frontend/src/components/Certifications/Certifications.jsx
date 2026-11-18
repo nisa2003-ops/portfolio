@@ -29,7 +29,7 @@ export default function Certifications() {
       : []),
   ];
 
-  const priority = ["cert-10", "cert-9", "cert-8", "cert-5", "cert-3", "cert-4", "cert-1", "cert-2"];
+  const priority = ["cert-11", "cert-10", "cert-9", "cert-8", "cert-5", "cert-3", "cert-4", "cert-1", "cert-2"];
   const rank = (id) => (priority.includes(id) ? priority.indexOf(id) : priority.length);
   const ordered = [...CERTIFICATIONS].sort((a, b) => rank(a.id) - rank(b.id));
 
@@ -173,7 +173,11 @@ export default function Certifications() {
 
                   <span className={styles.verifiedChip}>
                     <span className={styles.pulseGreenDot} />
-                    {cert.verificationType?.includes("Credly") ? "Credly" : cert.issuerShort || "Verified"}
+                    {cert.verificationType?.includes("Credly")
+                      ? "Credly"
+                      : cert.verificationType?.includes("Virtualbadge")
+                        ? "Virtualbadge"
+                        : cert.issuerShort || "Verified"}
                   </span>
                 </div>
 

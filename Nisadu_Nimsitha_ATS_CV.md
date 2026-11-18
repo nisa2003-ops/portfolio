@@ -82,4 +82,5 @@ Computer Science undergraduate at the University of Sri Jayewardenepura (GPA 3.3
 - **Cisco Networking Academy:** [Networking Basics (Oct 2026)](https://www.credly.com/badges/cf521714-f640-46cc-b75e-948206550a1d/public_url), [Introduction to Packet Tracer (Sep 2026)](https://www.credly.com/badges/2d0be4e4-a562-4b2a-a779-1f2313a7a4e9/public_url)
 - **The Linux Foundation:** [LFS162: Introduction to DevOps and Site Reliability Engineering (Nov 2026)](https://www.credly.com/badges/adf2bc53-69fb-4cd2-97f7-1b9d3af5f5bb/public_url)
 - **KodeKloud Engineer:** [Kubernetes - Level 1 (Nov 2026)](https://engineer.kodekloud.com/certificate-verification/b944e521-cebb-42c9-affe-830b6b18f9fd)
-- **In progress:** Linux Essentials (Cisco / LPI), GitOps for Platform Engineering (KodeKloud)
+- **PlatformEngineering.org:** [GitOps for Platform Engineering (Nov 2026)](https://www.virtualbadge.io/certificate-validator?credential=bbaee91b-1973-482c-8714-0d51c5293e85)
+- **In progress:** Linux Essentials (Cisco / LPI)

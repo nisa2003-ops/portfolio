@@ -1,0 +1,9 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Platform Engineering</title>
+  <!-- Bottom Green Layer -->
+  <path d="M24 27L8 34.5L24 42L40 34.5L24 27Z" fill="#22C55E"/>
+  <!-- Middle Teal/Blue Layer -->
+  <path d="M24 17.5L8 25L24 32.5L40 25L24 17.5Z" fill="#38BDF8" fill-opacity="0.9"/>
+  <!-- Top Indigo/Purple Layer -->
+  <path d="M24 8L8 15.5L24 23L40 15.5L24 8Z" fill="#818CF8"/>
+</svg>

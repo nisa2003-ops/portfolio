@@ -90,8 +90,8 @@ export default function Hero({ onOpenResume }) {
           </div>
 
           <div className={styles.metricCard} data-spotlight="true">
-            <span className={styles.metricVal}>8 <span className={styles.metricUnit}>Certs</span></span>
-            <span className={styles.metricLabel}>AWS, Cisco, LF &amp; KodeKloud</span>
+            <span className={styles.metricVal}>9 <span className={styles.metricUnit}>Certs</span></span>
+            <span className={styles.metricLabel}>AWS, Cisco, LF, KodeKloud &amp; GitOps</span>
           </div>
 
           <div className={styles.metricCard} data-spotlight="true">
