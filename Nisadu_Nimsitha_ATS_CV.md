@@ -39,11 +39,11 @@ Computer Science undergraduate at the University of Sri Jayewardenepura (GPA 3.3
 - Resolved CORS preflight issues and JWT propagation through the API Gateway; added health endpoints for Kubernetes liveness and readiness probes
 
 ### **CloudOps – Automated Cloud Deployment & Reliability Platform**
-*Terraform, AWS (VPC, IAM, EC2, ECR), Docker, GitHub Actions, Prometheus, Grafana, FastAPI, Python*
-- Wrote modular Terraform to provision reproducible AWS infrastructure: custom VPCs, public and private subnets, internet gateways, route tables, security groups and Amazon ECR repositories
-- Designed a GitHub Actions pipeline using AWS OIDC federation to remove long-lived IAM credentials, with Trivy scans that gate releases on container vulnerabilities
-- Instrumented a FastAPI service with Prometheus RED metrics (rate, errors, duration) and latency histograms, and built Grafana dashboards for latency and error tracking
-- Added pytest suites to the pre-merge CI workflow and wrote rollback runbooks for deployment regressions
+*Python 3.11, FastAPI, Terraform, AWS (VPC, EC2, ECR, IAM, SSM, S3, DynamoDB), Docker, Trivy, GitHub Actions (OIDC), Prometheus, Grafana* | [GitHub](https://github.com/nisa2003-ops/Cloudops-platform) | [Medium article](https://medium.com/@nisadu2003/how-i-built-a-production-style-cloudops-platform-without-burning-my-aws-budget-6fdea5d7ac5e?sharedUserId=nisadu2003)
+- Built an instrumented FastAPI microservice exposing Prometheus RED metrics (`http_requests_total`, `http_request_duration_seconds`) at `/metrics` (excluding scrape traffic) with split liveness (`/health`) and readiness (`/ready`, 503 when unready) probes
+- Hardened a two-stage `python:3.11-slim` Docker image running as non-root `cloudops` (UID 10001) with a stdlib Python `HEALTHCHECK` and Trivy vulnerability scanning
+- Authored modular AWS Terraform (`vpc`, `security_groups`, `iam`, `ecr`, `ec2`) with optional S3/DynamoDB state locking, closing SSH port 22 in favor of AWS SSM Session Manager and omitting a dev NAT Gateway (~$32/month saved)
+- Built zero-secret GitHub Actions CI/CD (Flake8, Pytest, Docker, Trivy; AWS OIDC `AssumeRoleWithWebIdentity`, ECR commit-SHA deploy via SSM Run Command with automatic rollback to `:previous`) and chaos endpoints validating `ServiceDown`, `HighHttpErrorRate`, and `HighRequestLatencyP95` alerts
 
 ### **Dengue Outbreak Risk Classifier & MLOps Pipeline**
 *Python, Scikit-learn, XGBoost, MLflow, FastAPI, GitHub Actions* | [GitHub](https://github.com/nisa2003-ops/Dengue-Risk-MLOps-1)

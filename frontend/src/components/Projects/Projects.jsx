@@ -215,39 +215,63 @@ export default function Projects() {
             </FadeIn>
           )}
 
-          {/* 2. BENTO CARD #2: CloudOps Platform (Option B: Terraform IaC Blueprint) */}
+          {/* 2. BENTO CARD #2: CloudOps Platform */}
           {isCloudOpsVisible && (
             <FadeIn delay={0.15} className={activeFilter === "cloud-devops" ? styles.heroSpan12 : styles.span6}>
               <article className={`${styles.bentoCard} ${styles.subBentoCard}`} data-spotlight="true">
                 <div className={styles.cardStatusBar}>
                   <div className={styles.statusChipsLeft}>
-                    <span className={styles.chipWip}>
-                      <span className={styles.pulseDotAmber} />
-                      In Active Development
+                    <span className={styles.chipCompleted}>
+                      <span className={styles.pulseDotGreen} />
+                      Completed · AWS SRE
                     </span>
                     <span className={styles.chipTech}>Terraform IaC</span>
-                    <span className={styles.chipTech}>Zero-Trust OIDC</span>
+                    <span className={styles.chipTech}>OIDC + SSM</span>
                   </div>
                 </div>
 
                 <div className={styles.cardBody}>
                   <div>
-                    <p className={styles.cardCategory}>SRE &amp; Infrastructure as Code</p>
+                    <p className={styles.cardCategory}>Cloud Deployment, Observability &amp; SRE</p>
                     <h3 className={styles.cardTitle}>CloudOps Platform</h3>
                     <p className={styles.cardDesc}>
-                      A cloud deployment, observability, and Site Reliability Engineering (SRE) platform featuring automated infrastructure provisioning, zero-secret CI/CD, and real-time telemetry.
+                      Automated cloud deployment, observability, and SRE platform built around a containerized FastAPI microservice—uniting modular AWS Terraform IaC, zero-secret OIDC CI/CD with SSM auto-rollback, Trivy non-root container hardening, Prometheus/Grafana RED telemetry, and live chaos-testing drills.
                     </p>
                   </div>
 
-                  {/* Option B: Terraform Blueprint & Roadmap Visualizer */}
+                  {/* Interactive CloudOps SRE & IaC Visualizer */}
                   <div className={styles.visualHolder}>
                     <CloudOpsBlueprintVisual />
                   </div>
 
-                  <div className={styles.tagPillsRow}>
-                    {["AWS", "Terraform", "GitHub Actions", "Docker", "Prometheus", "Grafana", "Python"].map((t) => (
-                      <span key={t} className={styles.tagPill}>{t}</span>
-                    ))}
+                  <div className={styles.cardFooterRow}>
+                    <div className={styles.tagPillsRow}>
+                      {["AWS", "Terraform", "FastAPI", "Docker", "Trivy", "GitHub Actions", "Prometheus", "Grafana"].map((t) => (
+                        <span key={t} className={styles.tagPill}>{t}</span>
+                      ))}
+                    </div>
+
+                    <div className={styles.heroSubActionsRow}>
+                      <a
+                        href="https://medium.com/@nisadu2003/how-i-built-a-production-style-cloudops-platform-without-burning-my-aws-budget-6fdea5d7ac5e?sharedUserId=nisadu2003"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.tertiaryActionBtn}
+                        onClick={triggerTapHaptic}
+                      >
+                        Medium Article ↗
+                      </a>
+
+                      <a
+                        href="https://github.com/nisa2003-ops/Cloudops-platform"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.secondaryActionBtn}
+                        onClick={triggerTapHaptic}
+                      >
+                        GitHub Repo ↗
+                      </a>
+                    </div>
                   </div>
                 </div>
               </article>

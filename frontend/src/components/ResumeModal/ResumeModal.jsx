@@ -407,23 +407,28 @@ export default function ResumeModal({ isOpen, onClose }) {
                       CloudOps – Automated Cloud Deployment &amp; Reliability Platform
                     </div>
                     <div className={styles.projectMetaLine}>
-                      <span>Terraform, AWS (VPC, IAM, EC2, ECR), Docker, GitHub Actions, Prometheus, Grafana, FastAPI, Python</span>
+                      <span>Python 3.11, FastAPI, Terraform, AWS (VPC, EC2, ECR, IAM, SSM, S3, DynamoDB), Docker, Trivy, GitHub Actions (OIDC), Prometheus, Grafana</span>
+                      <span className={styles.metaSep}>|</span>
+                      <a href="https://github.com/nisa2003-ops/Cloudops-platform" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                      </a>
+                      <span className={styles.metaSep}>|</span>
+                      <a href="https://medium.com/@nisadu2003/how-i-built-a-production-style-cloudops-platform-without-burning-my-aws-budget-6fdea5d7ac5e?sharedUserId=nisadu2003" target="_blank" rel="noopener noreferrer">
+                        Medium article
+                      </a>
                     </div>
                     <ul className={styles.bulletList}>
                       <li>
-                        Wrote modular Terraform to provision reproducible AWS infrastructure: custom VPCs, public and private subnets, internet
-                        gateways, route tables, security groups and Amazon ECR repositories
+                        Built an instrumented FastAPI microservice exposing Prometheus RED metrics (<code>http_requests_total</code>, <code>http_request_duration_seconds</code>) at <code>/metrics</code> while excluding scrape traffic, plus split liveness (<code>/health</code>) and readiness (<code>/ready</code>, returning 503 when unready) probes
                       </li>
                       <li>
-                        Designed a GitHub Actions pipeline using AWS OIDC federation to remove long-lived IAM credentials, with Trivy scans that
-                        gate releases on container vulnerabilities
+                        Hardened a two-stage <code>python:3.11-slim</code> container running as non-root user <code>cloudops</code> (UID 10001) with a stdlib Python <code>HEALTHCHECK</code> and Trivy vulnerability scanning
                       </li>
                       <li>
-                        Instrumented a FastAPI service with Prometheus RED metrics (rate, errors, duration) and latency histograms, and built
-                        Grafana dashboards for latency and error tracking
+                        Authored modular AWS Terraform (<code>vpc</code>, <code>security_groups</code>, <code>iam</code>, <code>ecr</code>, <code>ec2</code>) with optional S3/DynamoDB state locking, closing SSH port 22 in favor of AWS SSM Session Manager and omitting a dev NAT Gateway (~$32/month saved)
                       </li>
                       <li>
-                        Added pytest suites to the pre-merge CI workflow and wrote rollback runbooks for deployment regressions
+                        Implemented zero-secret GitHub Actions CI/CD (Flake8, Pytest, Docker, Trivy; AWS OIDC <code>AssumeRoleWithWebIdentity</code>, ECR commit-SHA deploy via SSM Run Command with automatic rollback to <code>:previous</code>) and chaos endpoints validating <code>ServiceDown</code>, <code>HighHttpErrorRate</code>, and <code>HighRequestLatencyP95</code> Prometheus alerts
                       </li>
                     </ul>
                   </div>
